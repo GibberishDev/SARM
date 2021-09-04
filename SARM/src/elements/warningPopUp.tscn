@@ -1,0 +1,207 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=1]
+[ext_resource path="res://assets/bg.png" type="Texture" id=2]
+[ext_resource path="res://assets/header_bg.png" type="Texture" id=3]
+[ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=4]
+[ext_resource path="res://assets/gui_close.png" type="Texture" id=5]
+[ext_resource path="res://src/elements/warningSign.gd" type="Script" id=6]
+[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 7 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 5, 5, 16, 16 )
+
+[node name="Control" type="Control"]
+margin_right = 144.0
+margin_bottom = 100.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 144.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/HBoxContainer"]
+margin_right = 118.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+draw_center = false
+region_rect = Rect2( 0, 0, 16, 10 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/NinePatchRect"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/NinePatchRect"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 88.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 1 )
+text = " Warning!"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="closeBTN" type="NinePatchRect" parent="VBoxContainer/HBoxContainer"]
+margin_left = 118.0
+margin_right = 144.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 26, 25 )
+texture = ExtResource( 4 )
+draw_center = false
+region_rect = Rect2( 2, 0, 14, 10 )
+patch_margin_left = 2
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 2
+axis_stretch_horizontal = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bgtxtre" type="TextureRect" parent="VBoxContainer/HBoxContainer/closeBTN"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn" type="TextureButton" parent="VBoxContainer/HBoxContainer/closeBTN"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -3.0
+texture_normal = SubResource( 10 )
+texture_pressed = SubResource( 10 )
+texture_hover = SubResource( 10 )
+texture_disabled = SubResource( 10 )
+texture_focused = SubResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer"]
+margin_top = 25.0
+margin_right = 144.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 12, 12 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/NinePatchRect"]
+modulate = Color( 1, 0.231373, 0.231373, 1 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dud" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2"]
+margin_right = 8.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 8, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/NinePatchRect/HBoxContainer2"]
+margin_left = 8.0
+margin_right = 136.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="dud" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
+margin_right = 128.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 0, 8 )
+size_flags_horizontal = 3
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
+margin_top = 8.0
+margin_right = 128.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Allowed symbols:
+a-z and _"
+readonly = true
+
+[node name="dud2" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
+margin_top = 67.0
+margin_right = 128.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 0, 8 )
+size_flags_horizontal = 3
+
+[node name="dud2" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2"]
+margin_left = 136.0
+margin_right = 144.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 8, 0 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/closeBTN/btn" to="." method="close"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

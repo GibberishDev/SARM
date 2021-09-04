@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://src/mainWindowScripts/seqAssemblyGenText.gd" type="Script" id=1]
 [ext_resource path="res://assets/toggle_button.png" type="Texture" id=2]
@@ -15,49 +15,63 @@
 [ext_resource path="res://src/mainWindowScripts/changeSize.gd" type="Script" id=13]
 [ext_resource path="res://src/elements/closePopUp.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/mainWindowScripts/closeBTN.gd" type="Script" id=15]
+[ext_resource path="res://src/elements/RecipeView.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/elements/warningPopUp.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/mainWindowScripts/transit_item.gd" type="Script" id=18]
+[ext_resource path="res://src/signalScripts/NumberEdit.gd" type="Script" id=19]
+[ext_resource path="res://src/mainWindowScripts/loops.gd" type="Script" id=20]
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 64, 16 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 5 )
 region = Rect2( 64, 0, 64, 16 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 5 )
 region = Rect2( 128, 0, 64, 16 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 16, 64, 16 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 5 )
 region = Rect2( 64, 16, 64, 16 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 5 )
 region = Rect2( 128, 16, 64, 16 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 5 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ), SubResource( 5 ), SubResource( 4 ), SubResource( 4 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 8 ), SubResource( 7 ), SubResource( 6 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 2 ), SubResource( 1 ), SubResource( 1 ), SubResource( 2 ), SubResource( 2 ), SubResource( 1 ), SubResource( 1 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 5 ), SubResource( 4 ), SubResource( 3 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 12 )
+region = Rect2( 3, 3, 20, 20 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 11 )
+region = Rect2( 5, 5, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
 region = Rect2( -1, 0, 33, 16 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 33, 16 )
 
 [node name="MainWindow" type="Node"]
 script = ExtResource( 1 )
+recipeTextScene = ExtResource( 16 )
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
@@ -122,8 +136,8 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Control/bgOverlay/Control/HBoxContainer/header_ninePatch"]
 position = Vector2( 37, 13 )
-frames = SubResource( 10 )
-frame = 5
+frames = SubResource( 7 )
+frame = 8
 playing = true
 
 [node name="titlebarHitbox" type="Control" parent="Control/bgOverlay/Control/HBoxContainer/header_ninePatch"]
@@ -167,11 +181,13 @@ __meta__ = {
 [node name="btn" type="TextureButton" parent="Control/bgOverlay/Control/HBoxContainer/changeSize"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 12 )
-texture_hover = ExtResource( 12 )
-texture_disabled = ExtResource( 12 )
-texture_focused = ExtResource( 12 )
+margin_top = 2.0
+margin_right = -2.0
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 11 )
+texture_hover = SubResource( 11 )
+texture_disabled = SubResource( 11 )
+texture_focused = SubResource( 11 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -210,11 +226,15 @@ __meta__ = {
 [node name="btn" type="TextureButton" parent="Control/bgOverlay/Control/HBoxContainer/closeBTN"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 11 )
-texture_hover = ExtResource( 11 )
-texture_disabled = ExtResource( 11 )
-texture_focused = ExtResource( 11 )
+margin_left = 3.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -3.0
+texture_normal = SubResource( 10 )
+texture_pressed = SubResource( 10 )
+texture_hover = SubResource( 10 )
+texture_disabled = SubResource( 10 )
+texture_focused = SubResource( 10 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -269,361 +289,363 @@ margin_right = 1024.0
 margin_bottom = 575.0
 size_flags_horizontal = 3
 
-[node name="mainMenu" type="VBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/separation = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="startingItem" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu"]
-margin_right = 1024.0
-margin_bottom = 64.0
+[node name="dud" type="Control" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer"]
+margin_right = 16.0
+margin_bottom = 575.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer"]
+margin_left = 20.0
+margin_right = 1004.0
+margin_bottom = 575.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="dud" type="Control" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer"]
+margin_right = 984.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 0, 16 )
+size_flags_horizontal = 3
+
+[node name="mainMenu" type="VBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 984.0
+margin_bottom = 555.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="startingItem" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu"]
+margin_right = 984.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem"]
+[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem"]
 margin_right = 128.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 128, 0 )
 size_flags_vertical = 0
 text = "Starting Ingridient:"
 
-[node name="startingItemParams" type="VBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem"]
+[node name="startingItemParams" type="VBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem"]
 margin_left = 132.0
-margin_right = 1024.0
-margin_bottom = 64.0
+margin_right = 984.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
+custom_constants/separation = 0
 script = ExtResource( 3 )
 
-[node name="dudLine" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams"]
-margin_right = 892.0
+[node name="dudLine" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams"]
+margin_right = 852.0
 margin_bottom = 14.0
 
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/dudLine"]
+[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/dudLine"]
 margin_bottom = 14.0
 
-[node name="tagModeChanger" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams"]
-margin_top = 18.0
-margin_right = 892.0
-margin_bottom = 42.0
+[node name="tagModeChanger" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams"]
+margin_top = 14.0
+margin_right = 852.0
+margin_bottom = 38.0
 
-[node name="itemLabel" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/tagModeChanger"]
+[node name="itemLabel" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger"]
 margin_top = 5.0
 margin_right = 30.0
 margin_bottom = 19.0
 text = "item"
 
-[node name="modeSwithcer" type="CheckButton" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/tagModeChanger"]
+[node name="modeSwithcer" type="CheckButton" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger"]
 margin_left = 34.0
 margin_right = 79.0
 margin_bottom = 24.0
 focus_mode = 0
-custom_icons/off = SubResource( 2 )
-custom_icons/on = SubResource( 3 )
+custom_icons/off = SubResource( 8 )
+custom_icons/on = SubResource( 9 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="tagLabel" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/tagModeChanger"]
+[node name="tagLabel" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger"]
 margin_left = 83.0
 margin_top = 5.0
 margin_right = 102.0
 margin_bottom = 19.0
 text = "tag"
 
-[node name="idLine" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams"]
-margin_top = 46.0
-margin_right = 892.0
-margin_bottom = 64.0
+[node name="idLine" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams"]
+margin_top = 38.0
+margin_right = 852.0
+margin_bottom = 56.0
 rect_min_size = Vector2( 0, 18 )
 size_flags_horizontal = 3
 
-[node name="identifierLabel" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/idLine"]
+[node name="identifierLabel" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
 margin_top = 2.0
-margin_right = 218.0
+margin_right = 256.0
 margin_bottom = 16.0
-size_flags_horizontal = 3
+rect_min_size = Vector2( 256, 0 )
 size_flags_vertical = 6
-text = "MODID:IDENTIFIER"
+text = "[MODID]:[IDENTIFIER]"
 
-[node name="identifierKey" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/idLine"]
-margin_left = 222.0
-margin_right = 440.0
+[node name="identifierKey" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
+margin_left = 260.0
+margin_right = 550.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 caret_blink = true
 script = ExtResource( 4 )
+warnPopUp = ExtResource( 17 )
 
-[node name="colon" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/idLine"]
-margin_left = 444.0
+[node name="colon" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
+margin_left = 554.0
 margin_top = 2.0
-margin_right = 448.0
+margin_right = 558.0
 margin_bottom = 16.0
 size_flags_vertical = 6
 text = ":"
 
-[node name="identifierValue" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/idLine"]
-margin_left = 452.0
-margin_right = 670.0
+[node name="identifierValue" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
+margin_left = 562.0
+margin_right = 852.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 caret_blink = true
 script = ExtResource( 4 )
+warnPopUp = ExtResource( 17 )
 
-[node name="warning" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/idLine"]
-margin_left = 674.0
-margin_top = 2.0
-margin_right = 892.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 195, 0 )
-size_flags_horizontal = 3
-size_flags_vertical = 6
-text = "Allowed symbols: a-z and _"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu"]
-margin_top = 66.0
-margin_right = 1024.0
-margin_bottom = 106.0
+[node name="TransitItem" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu"]
+margin_top = 63.0
+margin_right = 984.0
+margin_bottom = 99.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer2"]
+[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem"]
 margin_right = 128.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 128, 0 )
 size_flags_vertical = 0
 text = "Transitional item:"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer2"]
+[node name="TransitItemParams" type="VBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem"]
 margin_left = 132.0
-margin_right = 1024.0
-margin_bottom = 40.0
+margin_right = 984.0
+margin_bottom = 36.0
 size_flags_horizontal = 3
+custom_constants/separation = 0
+script = ExtResource( 18 )
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer2/VBoxContainer"]
-margin_right = 892.0
+[node name="dud" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams"]
+margin_right = 852.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 0, 18 )
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer2/VBoxContainer/HBoxContainer3"]
+[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/dud"]
 margin_top = 2.0
-margin_right = 892.0
+margin_right = 852.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer2/VBoxContainer"]
-margin_top = 22.0
-margin_right = 892.0
-margin_bottom = 40.0
+[node name="idLine" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams"]
+margin_top = 18.0
+margin_right = 852.0
+margin_bottom = 36.0
 rect_min_size = Vector2( 0, 18 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer2/VBoxContainer/HBoxContainer2"]
+[node name="identifierLabel" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
 margin_top = 2.0
-margin_right = 218.0
+margin_right = 256.0
 margin_bottom = 16.0
-size_flags_horizontal = 3
+rect_min_size = Vector2( 256, 0 )
 size_flags_vertical = 6
-text = "MODID:IDENTIFIER"
+text = "[MODID]:[IDENTIFIER]"
 
-[node name="TextEdit" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer2/VBoxContainer/HBoxContainer2"]
-margin_left = 222.0
-margin_right = 440.0
+[node name="identifierKey" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
+margin_left = 260.0
+margin_right = 550.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 caret_blink = true
+script = ExtResource( 4 )
+warnPopUp = ExtResource( 17 )
 
-[node name="Label2" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer2/VBoxContainer/HBoxContainer2"]
-margin_left = 444.0
+[node name="colon" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
+margin_left = 554.0
 margin_top = 2.0
-margin_right = 448.0
+margin_right = 558.0
 margin_bottom = 16.0
 size_flags_vertical = 6
 text = ":"
 
-[node name="TextEdit2" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer2/VBoxContainer/HBoxContainer2"]
-margin_left = 452.0
-margin_right = 670.0
+[node name="identifierValue" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
+margin_left = 562.0
+margin_right = 852.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 caret_blink = true
+script = ExtResource( 4 )
+warnPopUp = ExtResource( 17 )
 
-[node name="Label3" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer2/VBoxContainer/HBoxContainer2"]
-margin_left = 674.0
+[node name="loopsParams" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu"]
+margin_top = 106.0
+margin_right = 984.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 0, 18 )
+size_flags_horizontal = 3
+script = ExtResource( 20 )
+
+[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams"]
 margin_top = 2.0
-margin_right = 892.0
+margin_right = 128.0
 margin_bottom = 16.0
-rect_min_size = Vector2( 195, 0 )
-size_flags_horizontal = 3
-size_flags_vertical = 6
-text = "Allowed symbols: a-z and _"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu"]
-margin_top = 108.0
-margin_right = 1024.0
-margin_bottom = 133.0
-rect_min_size = Vector2( 0, 25 )
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer3"]
-margin_top = 5.0
-margin_right = 128.0
-margin_bottom = 19.0
 rect_min_size = Vector2( 128, 0 )
-text = "number of loops:"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams"]
 margin_left = 132.0
-margin_right = 1024.0
-margin_bottom = 25.0
+margin_right = 984.0
+margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer3/VBoxContainer"]
-margin_right = 892.0
-margin_bottom = 25.0
+[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams/HBoxContainer"]
+margin_right = 256.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 256, 0 )
+size_flags_vertical = 1
+text = "Number of loops"
+valign = 1
+
+[node name="TextEdit" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams/HBoxContainer"]
+margin_left = 260.0
+margin_right = 324.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 64, 0 )
+size_flags_vertical = 3
+caret_blink = true
+script = ExtResource( 19 )
+warnPopUp = ExtResource( 17 )
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu"]
+margin_top = 131.0
+margin_right = 984.0
+margin_bottom = 149.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer4"]
+margin_right = 128.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 128, 0 )
+size_flags_vertical = 3
+text = "Result item:"
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer4"]
+margin_left = 132.0
+margin_right = 984.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 0, 18 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextEdit" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer3/VBoxContainer/HBoxContainer"]
-margin_right = 444.0
-margin_bottom = 25.0
+[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer4/HBoxContainer"]
+margin_right = 256.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 256, 0 )
+size_flags_vertical = 3
+text = "[MODID]:[IDENTIFIER]"
+
+[node name="TextEdit" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer4/HBoxContainer"]
+margin_left = 260.0
+margin_right = 550.0
+margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 caret_blink = true
 
-[node name="Label2" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer3/VBoxContainer/HBoxContainer"]
-margin_left = 448.0
-margin_top = 5.0
-margin_right = 892.0
-margin_bottom = 19.0
-size_flags_horizontal = 3
+[node name="Label2" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer4/HBoxContainer"]
+margin_left = 554.0
+margin_top = 2.0
+margin_right = 558.0
+margin_bottom = 16.0
 size_flags_vertical = 6
-text = "allowed: 1-999 (if ya r madlad)"
+text = ":"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu"]
-margin_top = 135.0
-margin_right = 1024.0
-margin_bottom = 185.0
+[node name="TextEdit2" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer4/HBoxContainer"]
+margin_left = 562.0
+margin_right = 852.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+caret_blink = true
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu"]
+margin_top = 156.0
+margin_right = 984.0
+margin_bottom = 206.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
+custom_constants/separation = 0
 
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer4"]
-margin_top = 18.0
-margin_right = 128.0
-margin_bottom = 32.0
+[node name="dud" type="Control" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer5"]
+margin_right = 856.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer5"]
+margin_left = 856.0
+margin_right = 984.0
+margin_bottom = 50.0
 rect_min_size = Vector2( 128, 0 )
-text = "Result item:"
+size_flags_vertical = 3
+text = "Show recipe"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer4"]
-margin_left = 132.0
+[node name="dud2" type="Control" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer"]
+margin_top = 559.0
+margin_right = 984.0
+margin_bottom = 575.0
+rect_min_size = Vector2( 0, 16 )
+size_flags_horizontal = 3
+
+[node name="dud2" type="Control" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer"]
+margin_left = 1008.0
 margin_right = 1024.0
-margin_bottom = 50.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer4/VBoxContainer"]
-margin_right = 892.0
-margin_bottom = 23.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer4/VBoxContainer/HBoxContainer"]
-margin_top = 4.0
-margin_right = 294.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 6
-text = "mod id:"
-
-[node name="TextEdit" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer4/VBoxContainer/HBoxContainer"]
-margin_left = 298.0
-margin_right = 593.0
-margin_bottom = 23.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-caret_blink = true
-
-[node name="Label2" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer4/VBoxContainer/HBoxContainer"]
-margin_left = 597.0
-margin_top = 4.0
-margin_right = 892.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 6
-text = "allowed: a-z and _"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer4/VBoxContainer"]
-margin_top = 27.0
-margin_right = 892.0
-margin_bottom = 50.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer4/VBoxContainer/HBoxContainer2"]
-margin_top = 4.0
-margin_right = 294.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 6
-text = "Identifier:"
-
-[node name="TextEdit" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer4/VBoxContainer/HBoxContainer2"]
-margin_left = 298.0
-margin_right = 593.0
-margin_bottom = 23.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-caret_blink = true
-
-[node name="Label2" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer4/VBoxContainer/HBoxContainer2"]
-margin_left = 597.0
-margin_top = 4.0
-margin_right = 892.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 6
-text = "allowed: a-z and _"
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu"]
-margin_top = 187.0
-margin_right = 1024.0
-margin_bottom = 237.0
-rect_min_size = Vector2( 0, 50 )
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer5"]
-margin_top = 18.0
-margin_right = 128.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 128, 0 )
-text = "Result item:"
-
-[node name="Button" type="Button" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer5"]
-margin_left = 132.0
-margin_right = 1024.0
-margin_bottom = 50.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Update"
+margin_bottom = 575.0
+rect_min_size = Vector2( 16, 0 )
 
 [connection signal="gui_input" from="Control/bgOverlay/Control/HBoxContainer/header_ninePatch/titlebarHitbox" to="Control/bgOverlay/Control/HBoxContainer/header_ninePatch/titlebarHitbox" method="_on_titlebar_gui_input"]
 [connection signal="button_up" from="Control/bgOverlay/Control/HBoxContainer/changeSize/btn" to="Control/bgOverlay/Control/HBoxContainer/changeSize" method="onButtonPress"]
 [connection signal="button_up" from="Control/bgOverlay/Control/HBoxContainer/closeBTN/btn" to="Control/bgOverlay/Control/HBoxContainer/closeBTN" method="closePopUp"]
-[connection signal="pressed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/tagModeChanger/modeSwithcer" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams" method="onToggleModePressed"]
-[connection signal="successfulText" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/idLine/identifierKey" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams" method="changeIKT"]
-[connection signal="text_changed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/idLine/identifierKey" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/idLine/identifierKey" method="textChanged"]
-[connection signal="successfulText" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/idLine/identifierValue" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams" method="changeIVT"]
-[connection signal="text_changed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/idLine/identifierValue" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/startingItem/startingItemParams/idLine/identifierValue" method="textChanged"]
-[connection signal="button_up" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/mainMenu/HBoxContainer5/Button" to="." method="genText"]
+[connection signal="pressed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger/modeSwithcer" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams" method="onToggleModePressed"]
+[connection signal="successfulText" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierKey" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams" method="changeIKT"]
+[connection signal="text_changed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierKey" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierKey" method="textChanged"]
+[connection signal="successfulText" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierValue" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams" method="changeIVT"]
+[connection signal="text_changed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierValue" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierValue" method="textChanged"]
+[connection signal="successfulText" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierKey" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams" method="changeIKT"]
+[connection signal="text_changed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierKey" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierKey" method="textChanged"]
+[connection signal="successfulText" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierValue" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams" method="changeIVT"]
+[connection signal="text_changed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierValue" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierValue" method="textChanged"]
+[connection signal="successfulText" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams/HBoxContainer/TextEdit" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams" method="loops"]
+[connection signal="text_changed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams/HBoxContainer/TextEdit" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams/HBoxContainer/TextEdit" method="textChanged"]
+[connection signal="button_up" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer5/Button" to="." method="genText"]

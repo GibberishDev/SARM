@@ -1,0 +1,697 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://src/create/SequencedAssembly/elements/closePopUp.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/create/SequencedAssembly/elements/RecipeView.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/create/SequencedAssembly/elements/warningPopUp.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/toggle_button.png" type="Texture" id=4]
+[ext_resource path="res://assets/maximizeBtnFrames.png" type="Texture" id=5]
+[ext_resource path="res://assets/bg.png" type="Texture" id=6]
+[ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=7]
+[ext_resource path="res://assets/loading_anim.png" type="Texture" id=8]
+[ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=9]
+[ext_resource path="res://assets/header_bg.png" type="Texture" id=10]
+[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=11]
+[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/changeSize.gd" type="Script" id=12]
+[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/seqAssemblyGenText.gd" type="Script" id=13]
+[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/starting_ingridient.gd" type="Script" id=14]
+[ext_resource path="res://src/create/SequencedAssembly/signalScripts/NumberEdit.gd" type="Script" id=15]
+[ext_resource path="res://src/create/SequencedAssembly/signalScripts/TextEdit.gd" type="Script" id=16]
+[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/titlebarHitbox.gd" type="Script" id=17]
+[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/loops.gd" type="Script" id=18]
+[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/closeBTN.gd" type="Script" id=19]
+[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/transit_item.gd" type="Script" id=20]
+[ext_resource path="res://assets/closeBtnFrames.png" type="Texture" id=21]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 8 )
+region = Rect2( 64, 0, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 8 )
+region = Rect2( 128, 0, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 16, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 8 )
+region = Rect2( 64, 16, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 8 )
+region = Rect2( 128, 16, 64, 16 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 2 ), SubResource( 1 ), SubResource( 1 ), SubResource( 2 ), SubResource( 2 ), SubResource( 1 ), SubResource( 1 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 5 ), SubResource( 4 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 25, 25 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 50, 0, 25, 25 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 25, 0, 25, 25 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 25, 25 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 21 )
+region = Rect2( 50, 0, 25, 25 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 21 )
+region = Rect2( 25, 0, 25, 25 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 21 )
+region = Rect2( 50, 0, 25, 25 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 20
+font_data = ExtResource( 11 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 4 )
+region = Rect2( -1, 0, 33, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 4 )
+region = Rect2( 32, 0, 33, 16 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 20
+font_data = ExtResource( 11 )
+
+[sub_resource type="Gradient" id=19]
+offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=20]
+gradient = SubResource( 19 )
+width = 256
+
+[sub_resource type="DynamicFont" id=21]
+size = 20
+font_data = ExtResource( 11 )
+
+[node name="Root" type="Node"]
+script = ExtResource( 13 )
+recipeTextScene = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bgOverlay" type="VBoxContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleBar" type="Control" parent="Control/bgOverlay"]
+margin_right = 1024.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/bgOverlay/TitleBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="header_ninePatch" type="NinePatchRect" parent="Control/bgOverlay/TitleBar/HBoxContainer"]
+margin_right = 974.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+size_flags_horizontal = 3
+texture = ExtResource( 7 )
+draw_center = false
+region_rect = Rect2( 0, 0, 16, 10 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 2
+axis_stretch_horizontal = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="header_ninePatch" type="TextureRect" parent="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -1.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch"]
+position = Vector2( 37, 13 )
+frames = SubResource( 7 )
+frame = 4
+playing = true
+
+[node name="titlebarHitbox" type="Control" parent="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch"]
+anchor_right = 1.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaimizeBtn" type="TextureButton" parent="Control/bgOverlay/TitleBar/HBoxContainer"]
+margin_left = 974.0
+margin_right = 999.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 25, 0 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 8 )
+texture_pressed = SubResource( 9 )
+texture_hover = SubResource( 10 )
+texture_disabled = SubResource( 9 )
+texture_focused = SubResource( 10 )
+expand = true
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseBtn" type="TextureButton" parent="Control/bgOverlay/TitleBar/HBoxContainer"]
+margin_left = 999.0
+margin_right = 1024.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 25, 0 )
+hint_tooltip = "Close SARM"
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 12 )
+texture_hover = SubResource( 13 )
+texture_disabled = SubResource( 14 )
+expand = true
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+closePopUp = ExtResource( 1 )
+
+[node name="MainFrame" type="Control" parent="Control/bgOverlay"]
+margin_top = 25.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="TextureRect" parent="Control/bgOverlay/MainFrame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg_ninPatch" type="NinePatchRect" parent="Control/bgOverlay/MainFrame/bg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBC" type="HBoxContainer" parent="Control/bgOverlay/MainFrame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dud" type="Control" parent="Control/bgOverlay/MainFrame/HBC"]
+margin_right = 16.0
+margin_bottom = 575.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/bgOverlay/MainFrame/HBC"]
+margin_left = 20.0
+margin_right = 1004.0
+margin_bottom = 575.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="dud" type="Control" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer"]
+margin_right = 984.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 0, 16 )
+size_flags_horizontal = 3
+
+[node name="mainMenu" type="VBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer"]
+margin_top = 20.0
+margin_right = 984.0
+margin_bottom = 555.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="startingItem" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
+margin_right = 984.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem"]
+margin_right = 196.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 196, 0 )
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 15 )
+text = "Starting Ingridient:"
+valign = 1
+
+[node name="startingItemParams" type="VBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem"]
+margin_left = 196.0
+margin_right = 984.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+script = ExtResource( 14 )
+
+[node name="tagModeChanger" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams"]
+margin_right = 788.0
+margin_bottom = 24.0
+
+[node name="itemLabel" type="Label" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger"]
+margin_top = 2.0
+margin_right = 36.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 15 )
+text = "item"
+
+[node name="modeSwithcer" type="CheckButton" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger"]
+margin_left = 40.0
+margin_right = 85.0
+margin_bottom = 24.0
+focus_mode = 0
+custom_icons/off = SubResource( 16 )
+custom_icons/on = SubResource( 17 )
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tagLabel" type="Label" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger"]
+margin_left = 89.0
+margin_top = 2.0
+margin_right = 121.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 15 )
+text = "tag"
+
+[node name="idLine" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams"]
+margin_top = 24.0
+margin_right = 788.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 18 )
+size_flags_horizontal = 3
+
+[node name="identifierLabel" type="Label" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
+margin_top = 3.0
+margin_right = 256.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 256, 0 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 15 )
+text = "[MODID]:[IDENTIFIER]"
+
+[node name="identifierKey" type="TextEdit" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
+margin_left = 260.0
+margin_right = 518.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 18 )
+caret_blink = true
+script = ExtResource( 16 )
+warnPopUp = ExtResource( 3 )
+
+[node name="colon" type="Label" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
+margin_left = 522.0
+margin_top = 3.0
+margin_right = 526.0
+margin_bottom = 23.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 15 )
+text = ":"
+
+[node name="identifierValue" type="TextEdit" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
+margin_left = 530.0
+margin_right = 788.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 18 )
+caret_blink = true
+script = ExtResource( 16 )
+warnPopUp = ExtResource( 3 )
+
+[node name="separator" type="TextureRect" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
+margin_top = 53.0
+margin_right = 984.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 20 )
+expand = true
+
+[node name="TransitItem" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
+margin_top = 57.0
+margin_right = 984.0
+margin_bottom = 83.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem"]
+margin_right = 196.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 196, 0 )
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 15 )
+text = "Transitional item:"
+valign = 1
+
+[node name="TransitItemParams" type="VBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem"]
+margin_left = 196.0
+margin_right = 984.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+script = ExtResource( 20 )
+
+[node name="idLine" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams"]
+margin_right = 788.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 18 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="identifierLabel" type="Label" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
+margin_top = 3.0
+margin_right = 256.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 256, 0 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 15 )
+text = "[MODID]:[IDENTIFIER]"
+
+[node name="identifierKey" type="TextEdit" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
+margin_left = 260.0
+margin_right = 518.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 18 )
+caret_blink = true
+script = ExtResource( 16 )
+warnPopUp = ExtResource( 3 )
+
+[node name="colon" type="Label" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
+margin_left = 522.0
+margin_top = 3.0
+margin_right = 526.0
+margin_bottom = 23.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 15 )
+text = ":"
+
+[node name="identifierValue" type="TextEdit" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
+margin_left = 530.0
+margin_right = 788.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 18 )
+caret_blink = true
+script = ExtResource( 16 )
+warnPopUp = ExtResource( 3 )
+
+[node name="separator2" type="TextureRect" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
+margin_top = 86.0
+margin_right = 984.0
+margin_bottom = 87.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 20 )
+expand = true
+
+[node name="SequenceParams" type="Control" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
+margin_top = 90.0
+margin_right = 984.0
+margin_bottom = 412.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/SequenceParams"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/SequenceParams/VBoxContainer"]
+margin_right = 100.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 15 )
+text = "Sequence:"
+valign = 1
+
+[node name="SequenceVisualizer" type="Control" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/SequenceParams/VBoxContainer"]
+margin_top = 30.0
+margin_right = 984.0
+margin_bottom = 322.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="separator3" type="TextureRect" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
+margin_top = 415.0
+margin_right = 984.0
+margin_bottom = 416.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 20 )
+expand = true
+
+[node name="loopsParams" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
+margin_top = 419.0
+margin_right = 984.0
+margin_bottom = 445.0
+rect_min_size = Vector2( 0, 18 )
+size_flags_horizontal = 3
+custom_constants/separation = 0
+script = ExtResource( 18 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/loopsParams"]
+margin_right = 984.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/loopsParams/HBoxContainer"]
+margin_right = 452.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 452, 0 )
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 15 )
+text = "Number of loops:"
+valign = 1
+
+[node name="TextEdit" type="TextEdit" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/loopsParams/HBoxContainer"]
+margin_left = 456.0
+margin_right = 520.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 64, 26 )
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 18 )
+caret_blink = true
+script = ExtResource( 15 )
+warnPopUp = ExtResource( 3 )
+
+[node name="separator4" type="TextureRect" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
+margin_top = 448.0
+margin_right = 984.0
+margin_bottom = 449.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 20 )
+expand = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
+margin_top = 452.0
+margin_right = 984.0
+margin_bottom = 478.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/HBoxContainer4"]
+margin_right = 196.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 196, 0 )
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 15 )
+text = "Result item:"
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/HBoxContainer4"]
+margin_left = 196.0
+margin_right = 984.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 18 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/HBoxContainer4/HBoxContainer"]
+margin_right = 256.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 256, 0 )
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 15 )
+text = "[MODID]:[IDENTIFIER]"
+
+[node name="TextEdit" type="TextEdit" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/HBoxContainer4/HBoxContainer"]
+margin_left = 260.0
+margin_right = 518.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 18 )
+caret_blink = true
+
+[node name="Label2" type="Label" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/HBoxContainer4/HBoxContainer"]
+margin_left = 522.0
+margin_top = 3.0
+margin_right = 526.0
+margin_bottom = 23.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 15 )
+text = ":"
+
+[node name="TextEdit2" type="TextEdit" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/HBoxContainer4/HBoxContainer"]
+margin_left = 530.0
+margin_right = 788.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 18 )
+caret_blink = true
+
+[node name="separator5" type="TextureRect" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
+margin_top = 481.0
+margin_right = 984.0
+margin_bottom = 482.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 20 )
+expand = true
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
+margin_top = 485.0
+margin_right = 984.0
+margin_bottom = 535.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Button" type="Button" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/HBoxContainer5"]
+margin_left = 394.0
+margin_right = 590.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 196, 0 )
+focus_mode = 0
+size_flags_horizontal = 6
+custom_fonts/font = SubResource( 21 )
+enabled_focus_mode = 0
+text = "Show recipe"
+
+[node name="dud2" type="Control" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer"]
+margin_top = 559.0
+margin_right = 984.0
+margin_bottom = 575.0
+rect_min_size = Vector2( 0, 16 )
+size_flags_horizontal = 3
+
+[node name="dud2" type="Control" parent="Control/bgOverlay/MainFrame/HBC"]
+margin_left = 1008.0
+margin_right = 1024.0
+margin_bottom = 575.0
+rect_min_size = Vector2( 16, 0 )
+
+[connection signal="gui_input" from="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch/titlebarHitbox" to="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch/titlebarHitbox" method="_on_titlebar_gui_input"]
+[connection signal="pressed" from="Control/bgOverlay/TitleBar/HBoxContainer/MaimizeBtn" to="Control/bgOverlay/TitleBar/HBoxContainer/MaimizeBtn" method="onButtonPress"]
+[connection signal="pressed" from="Control/bgOverlay/TitleBar/HBoxContainer/CloseBtn" to="Control/bgOverlay/TitleBar/HBoxContainer/CloseBtn" method="closePopUp"]
+[connection signal="pressed" from="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger/modeSwithcer" to="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams" method="onToggleModePressed"]
+[connection signal="successfulText" from="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierKey" to="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams" method="changeIKT"]
+[connection signal="text_changed" from="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierKey" to="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierKey" method="textChanged"]
+[connection signal="successfulText" from="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierValue" to="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams" method="changeIVT"]
+[connection signal="text_changed" from="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierValue" to="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierValue" method="textChanged"]
+[connection signal="successfulText" from="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierKey" to="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams" method="changeIKT"]
+[connection signal="text_changed" from="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierKey" to="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierKey" method="textChanged"]
+[connection signal="successfulText" from="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierValue" to="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams" method="changeIVT"]
+[connection signal="text_changed" from="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierValue" to="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierValue" method="textChanged"]
+[connection signal="successfulText" from="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/loopsParams/HBoxContainer/TextEdit" to="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/loopsParams" method="loops"]
+[connection signal="text_changed" from="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/loopsParams/HBoxContainer/TextEdit" to="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/loopsParams/HBoxContainer/TextEdit" method="textChanged"]
+[connection signal="pressed" from="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/HBoxContainer5/Button" to="." method="genText"]

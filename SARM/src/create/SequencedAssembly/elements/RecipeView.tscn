@@ -1,20 +1,43 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=1]
-[ext_resource path="res://src/elements/recipeView.gd" type="Script" id=2]
-[ext_resource path="res://assets/bg.png" type="Texture" id=3]
+[ext_resource path="res://assets/bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=2]
+[ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=3]
 [ext_resource path="res://assets/header_bg.png" type="Texture" id=4]
-[ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=5]
-[ext_resource path="res://assets/gui_close.png" type="Texture" id=6]
+[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://src/create/SequencedAssembly/elements/recipeView.gd" type="Script" id=6]
+[ext_resource path="res://assets/closeBtnFrames.png" type="Texture" id=7]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 6 )
-region = Rect2( 5, 5, 16, 16 )
+[sub_resource type="InputEventKey" id=1]
+scancode = 16777217
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 25, 25 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 7 )
+region = Rect2( 50, 0, 25, 25 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 7 )
+region = Rect2( 25, 0, 25, 25 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 7 )
+region = Rect2( 50, 0, 25, 25 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+font_data = ExtResource( 5 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -48,16 +71,16 @@ size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="RecipeWindow/HBoxContainer"]
-margin_right = 14.0
+margin_right = 15.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
-texture = ExtResource( 5 )
+texture = ExtResource( 2 )
 draw_center = false
-region_rect = Rect2( 0, 0, 16, 12 )
+region_rect = Rect2( 0, 0, 16, 10 )
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
-patch_margin_bottom = 4
+patch_margin_bottom = 2
 
 [node name="TextureRect" type="TextureRect" parent="RecipeWindow/HBoxContainer/NinePatchRect"]
 show_behind_parent = true
@@ -70,48 +93,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="closeBTN" type="NinePatchRect" parent="RecipeWindow/HBoxContainer"]
-margin_left = 14.0
+[node name="CloseBtn" type="TextureButton" parent="RecipeWindow/HBoxContainer"]
+margin_left = 15.0
 margin_right = 40.0
 margin_bottom = 26.0
-rect_min_size = Vector2( 26, 25 )
-texture = ExtResource( 5 )
-draw_center = false
-region_rect = Rect2( 2, 0, 14, 12 )
-patch_margin_left = 2
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
-axis_stretch_horizontal = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="bgtxtre" type="TextureRect" parent="RecipeWindow/HBoxContainer/closeBTN"]
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="btn" type="TextureButton" parent="RecipeWindow/HBoxContainer/closeBTN"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -10.0
-margin_top = -8.0
-margin_right = 8.0
-margin_bottom = 8.0
-texture_normal = SubResource( 1 )
-texture_pressed = SubResource( 1 )
-texture_hover = SubResource( 1 )
-texture_disabled = SubResource( 1 )
-texture_focused = SubResource( 1 )
+rect_min_size = Vector2( 25, 0 )
+hint_tooltip = "Close"
+focus_mode = 0
+enabled_focus_mode = 0
+shortcut = SubResource( 2 )
+texture_normal = SubResource( 3 )
+texture_pressed = SubResource( 4 )
+texture_hover = SubResource( 5 )
+texture_disabled = SubResource( 6 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -125,22 +119,15 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
-[node name="dud2" type="Control" parent="RecipeWindow/HBoxContainer2"]
-margin_right = 4.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 4, 0 )
-size_flags_vertical = 3
-
 [node name="RecipeBoundry" type="NinePatchRect" parent="RecipeWindow/HBoxContainer2"]
-margin_left = 4.0
-margin_right = 36.0
+margin_right = 40.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 1 )
-region_rect = Rect2( 0, 2, 12, 10 )
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 12, 12 )
 patch_margin_left = 4
-patch_margin_top = 2
+patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 __meta__ = {
@@ -151,7 +138,7 @@ __meta__ = {
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 3 )
+texture = ExtResource( 1 )
 expand = true
 stretch_mode = 2
 __meta__ = {
@@ -175,21 +162,24 @@ rect_min_size = Vector2( 16, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer"]
 margin_left = 16.0
-margin_right = 16.0
+margin_right = 24.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
 [node name="dud" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer"]
+margin_right = 8.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 0, 16 )
 
 [node name="recipe" type="TextEdit" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer"]
 margin_top = 16.0
+margin_right = 8.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = SubResource( 7 )
 readonly = true
 show_line_numbers = true
 draw_tabs = true
@@ -197,20 +187,14 @@ highlight_all_occurrences = true
 
 [node name="dud2" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer"]
 margin_top = 16.0
+margin_right = 8.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 0, 16 )
 
 [node name="dud2" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer"]
-margin_left = 16.0
-margin_right = 32.0
+margin_left = 24.0
+margin_right = 40.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 16, 0 )
 
-[node name="dud" type="Control" parent="RecipeWindow/HBoxContainer2"]
-margin_left = 36.0
-margin_right = 40.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 4, 0 )
-size_flags_vertical = 3
-
-[connection signal="button_up" from="RecipeWindow/HBoxContainer/closeBTN/btn" to="." method="close"]
+[connection signal="pressed" from="RecipeWindow/HBoxContainer/CloseBtn" to="." method="close"]

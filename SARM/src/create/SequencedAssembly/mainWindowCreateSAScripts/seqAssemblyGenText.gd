@@ -4,6 +4,11 @@ export(PackedScene) var recipeTextScene
 
 var recipe = ""
 
+#var testArray = [
+#	{"item": "create:precission_mechanism", "chance": 120.0},
+#	{"item": "create:golden_sheet", "chance": 8.0},
+#	]
+
 var startItem = ""
 var transitItem = ""
 var resultingItem = ""
@@ -24,6 +29,10 @@ var endingRecipeText = ""
 
 var startingItemTagMode = "item"
 
+onready var nodeInstance_SIP = get_node("Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams") #Staring item params node
+onready var nodeInstance_TIP = get_node("Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams") #Transit item params node
+onready var nodeInstance_LP = get_node("Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/loopsParams") #Transit item params node
+
 func genText():
 	var bufferText = ""
 	bufferText = startingText()
@@ -36,6 +45,7 @@ func genText():
 	recipe = outputText
 	outputText = ""
 	showRecipeWindow(recipe)
+	
 
 func startingText			():
 	startText = ""
@@ -74,21 +84,20 @@ func addSequenceText		(one:String, two:String, three:String, four:String, five:S
 	seqText += "\n	],\n"
 	return seqText
 func getStartingItemText	():
-	if $Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams.tagMode == false:
+	if nodeInstance_SIP.tagMode == false:
 		startingItemTagMode = "item"
 	else:
 		startingItemTagMode = "tag"
-	startItem = $Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams.identifierKeyText + ": " + $Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams.identifierValueText
-
+	startItem = nodeInstance_SIP.identifierKeyText + ": " + nodeInstance_SIP.identifierValueText
 func getTarnsitItemText		():
-	transitItem = "\"" + $Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams.identifierKeyText + ": " + $Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams.identifierValueText + "\""
+	transitItem = "\"" + nodeInstance_TIP.identifierKeyText + ": " + nodeInstance_TIP.identifierValueText + "\""
 
 func getResultingItem		():
 	pass
 
 func endingText				(resultItem:String,loops:int):
 	endingRecipeText = ""
-	loops = int($Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams.loops)
+	loops = int(nodeInstance_LP.loops)
 	endingRecipeText = "	\"results\": [\n		\"item\": \"" + str(resultItem) + "\"\n	],\n	\"loops\": " + str(loops) + "\n}"
 	return endingRecipeText
 func addToOutputText		(text:String)-> void:
@@ -98,4 +107,5 @@ func showRecipeWindow		(text:String)-> void:
 	recipeTextSceneNew.recipe = text
 	get_tree().get_current_scene().add_child(recipeTextSceneNew)
 
-
+#func _ready():
+#	print("[\n		" + str(testArray[0]) + ",\n		" + str(testArray[1]) + "\n	],\n")

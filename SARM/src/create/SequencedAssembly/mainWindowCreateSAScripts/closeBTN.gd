@@ -1,4 +1,4 @@
-extends NinePatchRect
+extends TextureButton
 
 export(PackedScene) var closePopUp
 

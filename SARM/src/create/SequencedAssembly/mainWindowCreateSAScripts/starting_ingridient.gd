@@ -7,9 +7,9 @@ var identifierValueText = ""
 func onToggleModePressed():
 	tagMode = !tagMode
 	if tagMode == true:
-		$idLine/identifierLabel.text = "TAG:IDENTIFIER"
+		$idLine/identifierLabel.text = "[TAG:IDENTIFIER]"
 	else:
-		$idLine/identifierLabel.text = "MODID:IDENTIFIER"
+		$idLine/identifierLabel.text = "[MODID:IDENTIFIER]"
 
 func changeIKT(text: String) -> void:
 	identifierKeyText = text

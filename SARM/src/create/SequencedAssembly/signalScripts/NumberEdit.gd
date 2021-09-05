@@ -6,6 +6,9 @@ var previous_text = ""
 
 signal successfulText(text)
 
+func _ready():
+	emit_signal("successfulText", "1")
+
 func textChanged():
 	if text.length() > 0:
 		if text[text.length()-1].is_valid_integer():
@@ -35,6 +38,6 @@ func textChanged():
 			newWarn.mode = 1
 			get_tree().get_current_scene().add_child(newWarn)
 	else:
-		previous_text = ""
-		emit_signal("successfulText", "")
+		previous_text = "1"
+		emit_signal("successfulText", "1")
 

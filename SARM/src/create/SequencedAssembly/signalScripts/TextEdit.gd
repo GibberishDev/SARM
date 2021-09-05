@@ -20,5 +20,6 @@ func textChanged():
 			newWarn.mode = 0
 			get_tree().get_current_scene().add_child(newWarn)
 	else:
+		previous_text = ""
 		emit_signal("successfulText", "")
 

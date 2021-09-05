@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gui_maximise.png-fc296d6668f9bd0bc415f85baebb0d1e.stex"
+path="res://.import/closeBtnFrames.png-98db358241604cdb2fe74f7a80428c9e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gui_maximise.png"
-dest_files=[ "res://.import/gui_maximise.png-fc296d6668f9bd0bc415f85baebb0d1e.stex" ]
+source_file="res://assets/closeBtnFrames.png"
+dest_files=[ "res://.import/closeBtnFrames.png-98db358241604cdb2fe74f7a80428c9e.stex" ]
 
 [params]
 

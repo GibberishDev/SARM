@@ -1,86 +1,21 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://src/mainWindowScripts/seqAssemblyGenText.gd" type="Script" id=1]
-[ext_resource path="res://assets/toggle_button.png" type="Texture" id=2]
-[ext_resource path="res://src/mainWindowScripts/starting_ingridient.gd" type="Script" id=3]
-[ext_resource path="res://src/signalScripts/TextEdit.gd" type="Script" id=4]
-[ext_resource path="res://assets/loading_anim.png" type="Texture" id=5]
-[ext_resource path="res://assets/bg.png" type="Texture" id=6]
-[ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=7]
-[ext_resource path="res://assets/header_bg.png" type="Texture" id=8]
-[ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=9]
-[ext_resource path="res://src/mainWindowScripts/titlebarHitbox.gd" type="Script" id=10]
-[ext_resource path="res://assets/gui_close.png" type="Texture" id=11]
-[ext_resource path="res://assets/gui_maximise.png" type="Texture" id=12]
-[ext_resource path="res://src/mainWindowScripts/changeSize.gd" type="Script" id=13]
-[ext_resource path="res://src/elements/closePopUp.tscn" type="PackedScene" id=14]
-[ext_resource path="res://src/mainWindowScripts/closeBTN.gd" type="Script" id=15]
-[ext_resource path="res://src/elements/RecipeView.tscn" type="PackedScene" id=16]
-[ext_resource path="res://src/elements/warningPopUp.tscn" type="PackedScene" id=17]
-[ext_resource path="res://src/mainWindowScripts/transit_item.gd" type="Script" id=18]
-[ext_resource path="res://src/signalScripts/NumberEdit.gd" type="Script" id=19]
-[ext_resource path="res://src/mainWindowScripts/loops.gd" type="Script" id=20]
+[ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=1]
+[ext_resource path="res://assets/header_bg.png" type="Texture" id=2]
+[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateMCScripts/titlebarHitbox.gd" type="Script" id=3]
+[ext_resource path="res://assets/bg.png" type="Texture" id=4]
+[ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=5]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 64, 16 )
+[node name="Root" type="Node"]
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 5 )
-region = Rect2( 64, 0, 64, 16 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 5 )
-region = Rect2( 128, 0, 64, 16 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 16, 64, 16 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 5 )
-region = Rect2( 64, 16, 64, 16 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 5 )
-region = Rect2( 128, 16, 64, 16 )
-
-[sub_resource type="SpriteFrames" id=7]
-animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 2 ), SubResource( 1 ), SubResource( 1 ), SubResource( 2 ), SubResource( 2 ), SubResource( 1 ), SubResource( 1 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 5 ), SubResource( 4 ), SubResource( 3 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 12 )
-region = Rect2( 3, 3, 20, 20 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 11 )
-region = Rect2( 5, 5, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 2 )
-region = Rect2( -1, 0, 33, 16 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 33, 16 )
-
-[node name="MainWindow" type="Node"]
-script = ExtResource( 1 )
-recipeTextScene = ExtResource( 16 )
-
-[node name="Control" type="Control" parent="."]
+[node name="Interface" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bgOverlay" type="VBoxContainer" parent="Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = 0
@@ -88,564 +23,79 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="Control/bgOverlay"]
+[node name="TitleBar" type="Control" parent="Interface/VBoxContainer"]
 margin_right = 1024.0
-margin_bottom = 25.0
-rect_min_size = Vector2( 0, 25 )
-__meta__ = {
-"_edit_group_": true
-}
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/bgOverlay/Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Interface/VBoxContainer/TitleBar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -1.0
-custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="header_ninePatch" type="NinePatchRect" parent="Control/bgOverlay/Control/HBoxContainer"]
-margin_right = 972.0
-margin_bottom = 25.0
-rect_min_size = Vector2( 0, 25 )
+[node name="TitleBarPlane" type="NinePatchRect" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
-texture = ExtResource( 7 )
+size_flags_vertical = 3
+texture = ExtResource( 1 )
 draw_center = false
 region_rect = Rect2( 0, 0, 16, 10 )
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 2
-axis_stretch_horizontal = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="header_ninePatch" type="TextureRect" parent="Control/bgOverlay/Control/HBoxContainer/header_ninePatch"]
+[node name="BG" type="TextureRect" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane"]
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -1.0
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 expand = true
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Control/bgOverlay/Control/HBoxContainer/header_ninePatch"]
-position = Vector2( 37, 13 )
-frames = SubResource( 7 )
-frame = 8
-playing = true
-
-[node name="titlebarHitbox" type="Control" parent="Control/bgOverlay/Control/HBoxContainer/header_ninePatch"]
-anchor_right = 1.0
-margin_bottom = 26.0
-rect_min_size = Vector2( 0, 26 )
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="changeSize" type="NinePatchRect" parent="Control/bgOverlay/Control/HBoxContainer"]
-margin_left = 972.0
-margin_right = 998.0
-margin_bottom = 25.0
-rect_min_size = Vector2( 26, 25 )
-texture = ExtResource( 7 )
-draw_center = false
-region_rect = Rect2( 2, 0, 14, 10 )
-patch_margin_left = 2
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 2
-axis_stretch_horizontal = 1
-script = ExtResource( 13 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="bgtxtre" type="TextureRect" parent="Control/bgOverlay/Control/HBoxContainer/changeSize"]
-show_behind_parent = true
+[node name="HitBox" type="Control" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 8 )
-expand = true
-stretch_mode = 2
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="btn" type="TextureButton" parent="Control/bgOverlay/Control/HBoxContainer/changeSize"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 2.0
-margin_right = -2.0
-texture_normal = SubResource( 11 )
-texture_pressed = SubResource( 11 )
-texture_hover = SubResource( 11 )
-texture_disabled = SubResource( 11 )
-texture_focused = SubResource( 11 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="closeBTN" type="NinePatchRect" parent="Control/bgOverlay/Control/HBoxContainer"]
-margin_left = 998.0
-margin_right = 1024.0
-margin_bottom = 25.0
-rect_min_size = Vector2( 26, 25 )
-texture = ExtResource( 7 )
-draw_center = false
-region_rect = Rect2( 2, 0, 14, 10 )
-patch_margin_left = 2
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 2
-axis_stretch_horizontal = 1
-script = ExtResource( 15 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-closePopUp = ExtResource( 14 )
-
-[node name="bgtxtre" type="TextureRect" parent="Control/bgOverlay/Control/HBoxContainer/closeBTN"]
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 8 )
-expand = true
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="btn" type="TextureButton" parent="Control/bgOverlay/Control/HBoxContainer/closeBTN"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 3.0
-margin_top = 5.0
-margin_right = -5.0
-margin_bottom = -3.0
-texture_normal = SubResource( 10 )
-texture_pressed = SubResource( 10 )
-texture_hover = SubResource( 10 )
-texture_disabled = SubResource( 10 )
-texture_focused = SubResource( 10 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Control2" type="Control" parent="Control/bgOverlay"]
-margin_top = 25.0
+[node name="MainFrame" type="Control" parent="Interface/VBoxContainer"]
+margin_top = 26.0
 margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/MainFrame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bg" type="TextureRect" parent="Control/bgOverlay/Control2"]
+[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/MainFrame/MainWindowOutline"]
+show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 6 )
+texture = ExtResource( 4 )
 expand = true
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bg_ninPatch" type="NinePatchRect" parent="Control/bgOverlay/Control2/bg"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 9 )
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/bgOverlay/Control2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="mainContainer" type="Control" parent="Control/bgOverlay/Control2/HBoxContainer"]
-margin_right = 1024.0
-margin_bottom = 575.0
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="dud" type="Control" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer"]
-margin_right = 16.0
-margin_bottom = 575.0
-rect_min_size = Vector2( 16, 0 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer"]
-margin_left = 20.0
-margin_right = 1004.0
-margin_bottom = 575.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="dud" type="Control" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer"]
-margin_right = 984.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 0, 16 )
-size_flags_horizontal = 3
-
-[node name="mainMenu" type="VBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer"]
-margin_top = 20.0
-margin_right = 984.0
-margin_bottom = 555.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 7
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="startingItem" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu"]
-margin_right = 984.0
-margin_bottom = 56.0
-size_flags_horizontal = 3
-size_flags_vertical = 0
-
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem"]
-margin_right = 128.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 128, 0 )
-size_flags_vertical = 0
-text = "Starting Ingridient:"
-
-[node name="startingItemParams" type="VBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem"]
-margin_left = 132.0
-margin_right = 984.0
-margin_bottom = 56.0
-size_flags_horizontal = 3
-size_flags_vertical = 0
-custom_constants/separation = 0
-script = ExtResource( 3 )
-
-[node name="dudLine" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams"]
-margin_right = 852.0
-margin_bottom = 14.0
-
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/dudLine"]
-margin_bottom = 14.0
-
-[node name="tagModeChanger" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams"]
-margin_top = 14.0
-margin_right = 852.0
-margin_bottom = 38.0
-
-[node name="itemLabel" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger"]
-margin_top = 5.0
-margin_right = 30.0
-margin_bottom = 19.0
-text = "item"
-
-[node name="modeSwithcer" type="CheckButton" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger"]
-margin_left = 34.0
-margin_right = 79.0
-margin_bottom = 24.0
-focus_mode = 0
-custom_icons/off = SubResource( 8 )
-custom_icons/on = SubResource( 9 )
-enabled_focus_mode = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tagLabel" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger"]
-margin_left = 83.0
-margin_top = 5.0
-margin_right = 102.0
-margin_bottom = 19.0
-text = "tag"
-
-[node name="idLine" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams"]
-margin_top = 38.0
-margin_right = 852.0
-margin_bottom = 56.0
-rect_min_size = Vector2( 0, 18 )
-size_flags_horizontal = 3
-
-[node name="identifierLabel" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
-margin_top = 2.0
-margin_right = 256.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 256, 0 )
-size_flags_vertical = 6
-text = "[MODID]:[IDENTIFIER]"
-
-[node name="identifierKey" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
-margin_left = 260.0
-margin_right = 550.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-caret_blink = true
-script = ExtResource( 4 )
-warnPopUp = ExtResource( 17 )
-
-[node name="colon" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
-margin_left = 554.0
-margin_top = 2.0
-margin_right = 558.0
-margin_bottom = 16.0
-size_flags_vertical = 6
-text = ":"
-
-[node name="identifierValue" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
-margin_left = 562.0
-margin_right = 852.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-caret_blink = true
-script = ExtResource( 4 )
-warnPopUp = ExtResource( 17 )
-
-[node name="TransitItem" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu"]
-margin_top = 63.0
-margin_right = 984.0
-margin_bottom = 99.0
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem"]
-margin_right = 128.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 128, 0 )
-size_flags_vertical = 0
-text = "Transitional item:"
-
-[node name="TransitItemParams" type="VBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem"]
-margin_left = 132.0
-margin_right = 984.0
-margin_bottom = 36.0
-size_flags_horizontal = 3
-custom_constants/separation = 0
-script = ExtResource( 18 )
-
-[node name="dud" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams"]
-margin_right = 852.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 0, 18 )
-size_flags_horizontal = 3
-size_flags_vertical = 0
-
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/dud"]
-margin_top = 2.0
-margin_right = 852.0
-margin_bottom = 16.0
-size_flags_horizontal = 3
-size_flags_vertical = 6
-
-[node name="idLine" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams"]
-margin_top = 18.0
-margin_right = 852.0
-margin_bottom = 36.0
-rect_min_size = Vector2( 0, 18 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="identifierLabel" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
-margin_top = 2.0
-margin_right = 256.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 256, 0 )
-size_flags_vertical = 6
-text = "[MODID]:[IDENTIFIER]"
-
-[node name="identifierKey" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
-margin_left = 260.0
-margin_right = 550.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-caret_blink = true
-script = ExtResource( 4 )
-warnPopUp = ExtResource( 17 )
-
-[node name="colon" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
-margin_left = 554.0
-margin_top = 2.0
-margin_right = 558.0
-margin_bottom = 16.0
-size_flags_vertical = 6
-text = ":"
-
-[node name="identifierValue" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
-margin_left = 562.0
-margin_right = 852.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-caret_blink = true
-script = ExtResource( 4 )
-warnPopUp = ExtResource( 17 )
-
-[node name="loopsParams" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu"]
-margin_top = 106.0
-margin_right = 984.0
-margin_bottom = 124.0
-rect_min_size = Vector2( 0, 18 )
-size_flags_horizontal = 3
-script = ExtResource( 20 )
-
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams"]
-margin_top = 2.0
-margin_right = 128.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 128, 0 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams"]
-margin_left = 132.0
-margin_right = 984.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams/HBoxContainer"]
-margin_right = 256.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 256, 0 )
-size_flags_vertical = 1
-text = "Number of loops"
-valign = 1
-
-[node name="TextEdit" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams/HBoxContainer"]
-margin_left = 260.0
-margin_right = 324.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 64, 0 )
-size_flags_vertical = 3
-caret_blink = true
-script = ExtResource( 19 )
-warnPopUp = ExtResource( 17 )
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu"]
-margin_top = 131.0
-margin_right = 984.0
-margin_bottom = 149.0
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer4"]
-margin_right = 128.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 128, 0 )
-size_flags_vertical = 3
-text = "Result item:"
-valign = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer4"]
-margin_left = 132.0
-margin_right = 984.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 0, 18 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer4/HBoxContainer"]
-margin_right = 256.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 256, 0 )
-size_flags_vertical = 3
-text = "[MODID]:[IDENTIFIER]"
-
-[node name="TextEdit" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer4/HBoxContainer"]
-margin_left = 260.0
-margin_right = 550.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-caret_blink = true
-
-[node name="Label2" type="Label" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer4/HBoxContainer"]
-margin_left = 554.0
-margin_top = 2.0
-margin_right = 558.0
-margin_bottom = 16.0
-size_flags_vertical = 6
-text = ":"
-
-[node name="TextEdit2" type="TextEdit" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer4/HBoxContainer"]
-margin_left = 562.0
-margin_right = 852.0
-margin_bottom = 18.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-caret_blink = true
-
-[node name="HBoxContainer5" type="HBoxContainer" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu"]
-margin_top = 156.0
-margin_right = 984.0
-margin_bottom = 206.0
-rect_min_size = Vector2( 0, 50 )
-size_flags_horizontal = 3
-custom_constants/separation = 0
-
-[node name="dud" type="Control" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer5"]
-margin_right = 856.0
-margin_bottom = 50.0
-size_flags_horizontal = 3
-
-[node name="Button" type="Button" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer5"]
-margin_left = 856.0
-margin_right = 984.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 128, 0 )
-size_flags_vertical = 3
-text = "Show recipe"
-
-[node name="dud2" type="Control" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer"]
-margin_top = 559.0
-margin_right = 984.0
-margin_bottom = 575.0
-rect_min_size = Vector2( 0, 16 )
-size_flags_horizontal = 3
-
-[node name="dud2" type="Control" parent="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer"]
-margin_left = 1008.0
-margin_right = 1024.0
-margin_bottom = 575.0
-rect_min_size = Vector2( 16, 0 )
-
-[connection signal="gui_input" from="Control/bgOverlay/Control/HBoxContainer/header_ninePatch/titlebarHitbox" to="Control/bgOverlay/Control/HBoxContainer/header_ninePatch/titlebarHitbox" method="_on_titlebar_gui_input"]
-[connection signal="button_up" from="Control/bgOverlay/Control/HBoxContainer/changeSize/btn" to="Control/bgOverlay/Control/HBoxContainer/changeSize" method="onButtonPress"]
-[connection signal="button_up" from="Control/bgOverlay/Control/HBoxContainer/closeBTN/btn" to="Control/bgOverlay/Control/HBoxContainer/closeBTN" method="closePopUp"]
-[connection signal="pressed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger/modeSwithcer" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams" method="onToggleModePressed"]
-[connection signal="successfulText" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierKey" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams" method="changeIKT"]
-[connection signal="text_changed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierKey" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierKey" method="textChanged"]
-[connection signal="successfulText" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierValue" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams" method="changeIVT"]
-[connection signal="text_changed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierValue" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine/identifierValue" method="textChanged"]
-[connection signal="successfulText" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierKey" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams" method="changeIKT"]
-[connection signal="text_changed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierKey" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierKey" method="textChanged"]
-[connection signal="successfulText" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierValue" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams" method="changeIVT"]
-[connection signal="text_changed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierValue" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine/identifierValue" method="textChanged"]
-[connection signal="successfulText" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams/HBoxContainer/TextEdit" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams" method="loops"]
-[connection signal="text_changed" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams/HBoxContainer/TextEdit" to="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/loopsParams/HBoxContainer/TextEdit" method="textChanged"]
-[connection signal="button_up" from="Control/bgOverlay/Control2/HBoxContainer/mainContainer/HBoxContainer/VBoxContainer/mainMenu/HBoxContainer5/Button" to="." method="genText"]
+[connection signal="gui_input" from="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" to="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" method="HitBoxInput"]

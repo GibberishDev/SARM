@@ -1,4 +1,4 @@
-extends NinePatchRect
+extends TextureButton
 
 var maximized = bool(false)
 var last_pos = Vector2()

@@ -39,7 +39,7 @@ size = 20
 font_data = ExtResource( 5 )
 
 [node name="Control" type="Control"]
-margin_right = 208.0
+margin_right = 256.0
 margin_bottom = 100.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -47,7 +47,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-mode = 1
+mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -58,13 +58,13 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 208.0
+margin_right = 256.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/HBoxContainer"]
-margin_right = 183.0
+margin_right = 231.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -99,8 +99,8 @@ __meta__ = {
 }
 
 [node name="CloseBtn" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
-margin_left = 183.0
-margin_right = 208.0
+margin_left = 231.0
+margin_right = 256.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 25, 25 )
 hint_tooltip = "Close"
@@ -118,7 +118,7 @@ __meta__ = {
 
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer"]
 margin_top = 25.0
-margin_right = 208.0
+margin_right = 256.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -158,21 +158,21 @@ rect_min_size = Vector2( 8, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/NinePatchRect/HBoxContainer2"]
 margin_left = 8.0
-margin_right = 200.0
+margin_right = 248.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
 [node name="dud" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
-margin_right = 192.0
+margin_right = 240.0
 margin_bottom = 8.0
 rect_min_size = Vector2( 0, 8 )
 size_flags_horizontal = 3
 
 [node name="TextEdit" type="TextEdit" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
 margin_top = 8.0
-margin_right = 192.0
+margin_right = 240.0
 margin_bottom = 67.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -183,14 +183,14 @@ readonly = true
 
 [node name="dud2" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
 margin_top = 67.0
-margin_right = 192.0
+margin_right = 240.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 0, 8 )
 size_flags_horizontal = 3
 
 [node name="dud2" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2"]
-margin_left = 200.0
-margin_right = 208.0
+margin_left = 248.0
+margin_right = 256.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 8, 0 )
 

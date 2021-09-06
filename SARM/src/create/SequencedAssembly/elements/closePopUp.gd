@@ -1,4 +1,7 @@
 extends Control
+
+var mode = int(0)
+
 func _ready():
 	randomize()
 	if randi() % 100 == 1:
@@ -9,4 +12,7 @@ func _ready():
 func No():
 	queue_free()
 func Yes():
-	get_tree().quit()
+	if mode == 0:
+		get_tree().quit()
+	if mode == 1:
+		get_tree().change_scene("res://src/MainWindow.tscn")

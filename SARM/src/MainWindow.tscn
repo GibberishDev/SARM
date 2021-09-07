@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=1]
 [ext_resource path="res://assets/header_bg.png" type="Texture" id=2]
@@ -12,26 +12,51 @@
 [ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/closeBTN.gd" type="Script" id=10]
 [ext_resource path="res://assets/closeBtnFrames.png" type="Texture" id=11]
 [ext_resource path="res://src/MainWindow.gd" type="Script" id=12]
+[ext_resource path="res://assets/ScrollBarTheme.tres" type="Theme" id=13]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 26, 28 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 25, 25 )
+region = Rect2( 52, 0, 26, 28 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 11 )
-region = Rect2( 50, 0, 25, 25 )
+region = Rect2( 26, 0, 26, 28 )
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 11 )
-region = Rect2( 25, 0, 25, 25 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 11 )
-region = Rect2( 50, 0, 25, 25 )
-
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=5]
 size = 20
 font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 1 )
+region_rect = Rect2( 2, 0, 12, 12 )
+margin_left = 2.0
+margin_right = 2.0
+margin_top = 4.0
+margin_bottom = 4.0
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 16, 2 )
+margin_left = 2.0
+margin_right = 2.0
+margin_top = 2.0
+margin_bottom = 2.0
+
+[sub_resource type="Theme" id=13]
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 12 )
+VScrollBar/styles/grabber_highlight = SubResource( 12 )
+VScrollBar/styles/grabber_pressed = SubResource( 12 )
+VScrollBar/styles/scroll = SubResource( 10 )
+VScrollBar/styles/scroll_focus = SubResource( 10 )
 
 [node name="Root" type="Node"]
 script = ExtResource( 12 )
@@ -53,8 +78,8 @@ __meta__ = {
 
 [node name="TitleBar" type="Control" parent="Interface/VBoxContainer"]
 margin_right = 1024.0
-margin_bottom = 26.0
-rect_min_size = Vector2( 0, 26 )
+margin_bottom = 28.0
+rect_min_size = Vector2( 0, 28 )
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Interface/VBoxContainer/TitleBar"]
@@ -66,17 +91,18 @@ __meta__ = {
 }
 
 [node name="TitleBarPlane" type="NinePatchRect" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
-margin_right = 999.0
-margin_bottom = 26.0
+margin_right = 998.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 0, 28 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 1 )
 draw_center = false
-region_rect = Rect2( 0, 0, 16, 10 )
+region_rect = Rect2( 0, 0, 16, 12 )
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
-patch_margin_bottom = 2
+patch_margin_bottom = 4
 
 [node name="BG" type="TextureRect" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane"]
 show_behind_parent = true
@@ -92,23 +118,24 @@ __meta__ = {
 [node name="HitBox" type="Control" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = 2.0
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CloseBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
-margin_left = 999.0
+margin_left = 998.0
 margin_right = 1024.0
-margin_bottom = 26.0
-rect_min_size = Vector2( 25, 0 )
+margin_bottom = 28.0
+rect_min_size = Vector2( 26, 28 )
 hint_tooltip = "Close SARM"
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 2 )
-texture_pressed = SubResource( 3 )
-texture_hover = SubResource( 4 )
-texture_disabled = SubResource( 5 )
+texture_normal = SubResource( 1 )
+texture_pressed = SubResource( 2 )
+texture_hover = SubResource( 3 )
+texture_disabled = SubResource( 2 )
 expand = true
 script = ExtResource( 10 )
 __meta__ = {
@@ -117,19 +144,19 @@ __meta__ = {
 closePopUp = ExtResource( 9 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Interface/VBoxContainer"]
-margin_top = 26.0
+margin_top = 28.0
 margin_right = 1024.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-scroll_horizontal_enabled = false
+theme = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Control" type="Control" parent="Interface/VBoxContainer/ScrollContainer"]
-margin_right = 1012.0
+margin_right = 998.0
 margin_bottom = 768.0
 rect_min_size = Vector2( 0, 768 )
 size_flags_horizontal = 3
@@ -145,7 +172,7 @@ __meta__ = {
 }
 
 [node name="createSection" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer"]
-margin_right = 1012.0
+margin_right = 998.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 0, 192 )
 size_flags_horizontal = 3
@@ -157,9 +184,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 12, 10 )
+region_rect = Rect2( 0, 2, 12, 8 )
 patch_margin_left = 4
-patch_margin_top = 4
+patch_margin_top = 2
 patch_margin_right = 4
 patch_margin_bottom = 2
 __meta__ = {
@@ -186,30 +213,31 @@ __meta__ = {
 }
 
 [node name="dud" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
-margin_right = 1012.0
+margin_right = 998.0
 margin_bottom = 8.0
 rect_min_size = Vector2( 0, 8 )
 
 [node name="Label" type="Label" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
 margin_top = 8.0
-margin_right = 1012.0
+margin_right = 998.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 0, 26 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 5 )
 text = "  Create mod recipes:"
 valign = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
 margin_top = 34.0
-margin_right = 1012.0
+margin_right = 998.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = SubResource( 13 )
 
 [node name="Control" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer"]
-margin_right = 1012.0
+margin_right = 564.0
 margin_bottom = 150.0
-size_flags_horizontal = 3
+rect_min_size = Vector2( 564, 0 )
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control"]
@@ -240,22 +268,28 @@ margin_right = 292.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 16, 0 )
 
-[node name="Control2" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 8 )]
+[node name="CommingSoon" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 8 )]
 margin_left = 292.0
 margin_top = 15.0
 margin_right = 548.0
 margin_bottom = 135.0
 size_flags_vertical = 4
 
+[node name="dud3" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
+margin_left = 548.0
+margin_right = 564.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 16, 0 )
+
 [node name="dud2" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
 margin_top = 184.0
-margin_right = 1012.0
+margin_right = 998.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 0, 8 )
 
 [node name="end" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer"]
 margin_top = 192.0
-margin_right = 1012.0
+margin_right = 998.0
 margin_bottom = 384.0
 rect_min_size = Vector2( 0, 192 )
 size_flags_horizontal = 3
@@ -290,7 +324,7 @@ __meta__ = {
 
 [node name="end2" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer"]
 margin_top = 384.0
-margin_right = 1012.0
+margin_right = 998.0
 margin_bottom = 576.0
 rect_min_size = Vector2( 0, 192 )
 size_flags_horizontal = 3
@@ -325,7 +359,7 @@ __meta__ = {
 
 [node name="end3" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer"]
 margin_top = 576.0
-margin_right = 1012.0
+margin_right = 998.0
 margin_bottom = 768.0
 rect_min_size = Vector2( 0, 192 )
 size_flags_horizontal = 3

@@ -1,0 +1,41 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://assets/scrollbarbg.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = SubResource( 3 )
+region_rect = Rect2( 2, 4, 14, 8 )
+margin_left = 4.0
+margin_right = 6.0
+margin_top = 6.0
+margin_bottom = 6.0
+axis_stretch_vertical = 1
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 2, 2, 28, 12 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = SubResource( 4 )
+region_rect = Rect2( 2, 2, 26, 10 )
+margin_left = 2.0
+margin_right = 4.0
+margin_top = 2.0
+margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[resource]
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 1 )
+VScrollBar/styles/grabber_highlight = SubResource( 1 )
+VScrollBar/styles/grabber_pressed = SubResource( 1 )
+VScrollBar/styles/scroll = SubResource( 2 )
+VScrollBar/styles/scroll_focus = SubResource( 2 )

@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/conveyor_start.png" type="Texture" id=1]
+[ext_resource path="res://assets/conveyor_end.png" type="Texture" id=2]
+[ext_resource path="res://assets/conveyor_middle.png" type="Texture" id=3]
+[ext_resource path="res://src/create/SequencedAssembly/elements/SequencePreview.gd" type="Script" id=4]
+[ext_resource path="res://assets/conveyor_singular.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="conveyorSprites" type="Node2D" parent="."]
+position = Vector2( 0, 256 )
+
+[node name="1" type="AnimatedSprite" parent="conveyorSprites"]
+position = Vector2( 64, 64 )
+frames = SubResource( 1 )
+
+[node name="2" type="AnimatedSprite" parent="conveyorSprites"]
+position = Vector2( 192, 64 )
+frames = SubResource( 1 )
+frame = 1
+
+[node name="3" type="AnimatedSprite" parent="conveyorSprites"]
+position = Vector2( 320, 64 )
+frames = SubResource( 1 )
+frame = 1
+
+[node name="4" type="AnimatedSprite" parent="conveyorSprites"]
+position = Vector2( 448, 64 )
+frames = SubResource( 1 )
+frame = 1
+
+[node name="5" type="AnimatedSprite" parent="conveyorSprites"]
+position = Vector2( 576, 64 )
+frames = SubResource( 1 )
+frame = 1
+
+[node name="6" type="AnimatedSprite" parent="conveyorSprites"]
+position = Vector2( 704, 64 )
+frames = SubResource( 1 )
+frame = 1
+
+[node name="7" type="AnimatedSprite" parent="conveyorSprites"]
+position = Vector2( 832, 64 )
+frames = SubResource( 1 )
+frame = 1
+
+[node name="8" type="AnimatedSprite" parent="conveyorSprites"]
+position = Vector2( 960, 64 )
+frames = SubResource( 1 )
+frame = 2
+
+[node name="machinesSprites" type="Node2D" parent="."]

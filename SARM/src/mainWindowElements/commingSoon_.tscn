@@ -43,30 +43,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 88, 640 ), Vector2( 88, 128 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("Control2/Sprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -8, -8 ), Vector2( -136, -136 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Control2/Sprite:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.533333, 0.555555 ), Vector2( 0.666667, 0.77037 ) ]
-}
 
 [sub_resource type="Animation" id=4]
 length = 0.05
@@ -94,30 +70,6 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 88, 128 ), Vector2( 88, 640 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Control2/Sprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -136, -136 ), Vector2( -8, -8 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Control2/Sprite:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.666667, 0.77037 ), Vector2( 0.533333, 0.555555 ) ]
 }
 
 [node name="CS" type="Control"]
@@ -172,9 +124,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 margin_left = 88.0
-margin_top = 637.898
+margin_top = 640.0
 margin_right = 952.0
-margin_bottom = 960.898
+margin_bottom = 963.0
 custom_fonts/font = SubResource( 2 )
 text = "Comming
 Soon!"

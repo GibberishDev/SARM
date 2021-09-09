@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/conveyor_start.png" type="Texture" id=1]
 [ext_resource path="res://assets/conveyor_end.png" type="Texture" id=2]
@@ -9,8 +9,10 @@
 [ext_resource path="res://assets/spout.png" type="Texture" id=7]
 [ext_resource path="res://assets/deployer.png" type="Texture" id=8]
 [ext_resource path="res://assets/press.png" type="Texture" id=9]
+[ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=10]
+[ext_resource path="res://assets/bg_tint.png" type="Texture" id=11]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ) ],
 "loop": true,
@@ -18,7 +20,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 9 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ) ],
 "loop": true,
@@ -26,90 +28,168 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node2D" type="Node2D"]
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 984, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="visualizerContainer" type="Control" parent="HBoxContainer"]
+margin_bottom = 600.0
+size_flags_vertical = 3
+
+[node name="ColorRect" type="TextureRect" parent="HBoxContainer/visualizerContainer"]
+self_modulate = Color( 1, 1, 1, 0.294118 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/visualizerContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 10, 12 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 2
+patch_margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="visualizerContainerOptions" type="Control" parent="HBoxContainer"]
+margin_left = 4.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect2" type="TextureRect" parent="HBoxContainer/visualizerContainerOptions"]
+self_modulate = Color( 1, 1, 1, 0.294118 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.0
+margin_right = -4.0
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="HBoxContainer/visualizerContainerOptions"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.0
+margin_right = -4.0
+texture = ExtResource( 10 )
+region_rect = Rect2( 2, 0, 10, 12 )
+patch_margin_left = 2
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="visualization" type="Node2D" parent="."]
 script = ExtResource( 4 )
 
-[node name="conveyorSprites" type="Node2D" parent="."]
-position = Vector2( 0, 256 )
+[node name="conveyorSprites" type="Node2D" parent="visualization"]
 
-[node name="1" type="AnimatedSprite" parent="conveyorSprites"]
-position = Vector2( 64, 64 )
-frames = SubResource( 2 )
+[node name="1" type="AnimatedSprite" parent="visualization/conveyorSprites"]
+position = Vector2( 64, 96 )
+frames = SubResource( 1 )
 
-[node name="2" type="AnimatedSprite" parent="conveyorSprites"]
-position = Vector2( 192, 64 )
-frames = SubResource( 2 )
+[node name="2" type="AnimatedSprite" parent="visualization/conveyorSprites"]
+position = Vector2( 192, 96 )
+frames = SubResource( 1 )
 frame = 1
 
-[node name="3" type="AnimatedSprite" parent="conveyorSprites"]
-position = Vector2( 320, 64 )
-frames = SubResource( 2 )
+[node name="3" type="AnimatedSprite" parent="visualization/conveyorSprites"]
+position = Vector2( 320, 96 )
+frames = SubResource( 1 )
 frame = 1
 
-[node name="4" type="AnimatedSprite" parent="conveyorSprites"]
-position = Vector2( 448, 64 )
-frames = SubResource( 2 )
+[node name="4" type="AnimatedSprite" parent="visualization/conveyorSprites"]
+position = Vector2( 448, 96 )
+frames = SubResource( 1 )
 frame = 1
 
-[node name="5" type="AnimatedSprite" parent="conveyorSprites"]
-position = Vector2( 576, 64 )
-frames = SubResource( 2 )
+[node name="5" type="AnimatedSprite" parent="visualization/conveyorSprites"]
+position = Vector2( 576, 96 )
+frames = SubResource( 1 )
 frame = 1
 
-[node name="6" type="AnimatedSprite" parent="conveyorSprites"]
-position = Vector2( 704, 64 )
-frames = SubResource( 2 )
+[node name="6" type="AnimatedSprite" parent="visualization/conveyorSprites"]
+position = Vector2( 704, 96 )
+frames = SubResource( 1 )
 frame = 1
 
-[node name="7" type="AnimatedSprite" parent="conveyorSprites"]
-position = Vector2( 832, 64 )
-frames = SubResource( 2 )
+[node name="7" type="AnimatedSprite" parent="visualization/conveyorSprites"]
+position = Vector2( 832, 96 )
+frames = SubResource( 1 )
 frame = 1
 
-[node name="8" type="AnimatedSprite" parent="conveyorSprites"]
-position = Vector2( 960, 64 )
-frames = SubResource( 2 )
+[node name="8" type="AnimatedSprite" parent="visualization/conveyorSprites"]
+position = Vector2( 960, 96 )
+frames = SubResource( 1 )
 frame = 2
 
-[node name="machines" type="Node2D" parent="."]
-position = Vector2( 0, 256 )
+[node name="machines" type="Node2D" parent="visualization"]
 
-[node name="1" type="AnimatedSprite" parent="machines"]
-position = Vector2( 0, -192 )
-frames = SubResource( 1 )
+[node name="1" type="AnimatedSprite" parent="visualization/machines"]
+position = Vector2( 0, -160 )
+frames = SubResource( 2 )
 offset = Vector2( 64, 64 )
 
-[node name="2" type="AnimatedSprite" parent="machines"]
-position = Vector2( 128, -192 )
-frames = SubResource( 1 )
+[node name="2" type="AnimatedSprite" parent="visualization/machines"]
+position = Vector2( 128, -160 )
+frames = SubResource( 2 )
 offset = Vector2( 64, 64 )
 
-[node name="3" type="AnimatedSprite" parent="machines"]
-position = Vector2( 256, -192 )
-frames = SubResource( 1 )
+[node name="3" type="AnimatedSprite" parent="visualization/machines"]
+position = Vector2( 256, -160 )
+frames = SubResource( 2 )
 offset = Vector2( 64, 64 )
 
-[node name="4" type="AnimatedSprite" parent="machines"]
-position = Vector2( 384, -192 )
-frames = SubResource( 1 )
+[node name="4" type="AnimatedSprite" parent="visualization/machines"]
+position = Vector2( 384, -160 )
+frames = SubResource( 2 )
 offset = Vector2( 64, 64 )
 
-[node name="5" type="AnimatedSprite" parent="machines"]
-position = Vector2( 512, -192 )
-frames = SubResource( 1 )
+[node name="5" type="AnimatedSprite" parent="visualization/machines"]
+position = Vector2( 512, -160 )
+frames = SubResource( 2 )
 offset = Vector2( 64, 64 )
 
-[node name="6" type="AnimatedSprite" parent="machines"]
-position = Vector2( 640, -192 )
-frames = SubResource( 1 )
+[node name="6" type="AnimatedSprite" parent="visualization/machines"]
+position = Vector2( 640, -160 )
+frames = SubResource( 2 )
 offset = Vector2( 64, 64 )
 
-[node name="7" type="AnimatedSprite" parent="machines"]
-position = Vector2( 768, -192 )
-frames = SubResource( 1 )
+[node name="7" type="AnimatedSprite" parent="visualization/machines"]
+position = Vector2( 768, -160 )
+frames = SubResource( 2 )
 offset = Vector2( 64, 64 )
 
-[node name="8" type="AnimatedSprite" parent="machines"]
-position = Vector2( 896, -192 )
-frames = SubResource( 1 )
+[node name="8" type="AnimatedSprite" parent="visualization/machines"]
+position = Vector2( 896, -160 )
+frames = SubResource( 2 )
 offset = Vector2( 64, 64 )
+
+[connection signal="resized" from="." to="visualization" method="_on_Control_resized"]

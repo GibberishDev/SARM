@@ -15,7 +15,9 @@ var resultingItem = ""
 export var numberLoops = int(1)
 var outputText = ""
 var startText = ""
-const createSAStartingText = "{\n	\"credit\": \"Made using SARM tool by GibberishDev\",\n	\"type\": \"create:sequenced_assembly\",\n"
+const createSAStartingText = """{
+	\"credit\": \"Made using SARM tool by GibberishDev\",
+	\"type\": \"create:sequenced_assembly\","""
 var seqOne = "		{Sequence One}"
 var seqTwo = "		{Sequence Two}"
 var seqThree = "		{Etc.}"
@@ -56,6 +58,10 @@ func startingText			():
 	startText += "	\"transitionalItem\": {" + str(transitItem) + "},\n"
 	startText += "	\"sequence\": [\n"
 	return startText
+	
+
+
+
 func addSequenceText		(one:String, two:String, three:String, four:String, five:String, six:String, seven:String, eight:String):
 	seqText = ""
 	if one != "":
@@ -98,7 +104,12 @@ func getResultingItem		():
 func endingText				(resultItem:String,loops:int):
 	endingRecipeText = ""
 	loops = int(nodeInstance_LP.loops)
-	endingRecipeText = "	\"results\": [\n		\"item\": \"" + str(resultItem) + "\"\n	],\n	\"loops\": " + str(loops) + "\n}"
+	endingRecipeText = """
+	\"results\": [
+		\"item\": \"""" + str(resultItem) + """\"
+	],
+	\"loops\": """ + str(loops) + """
+}"""
 	return endingRecipeText
 func addToOutputText		(text:String)-> void:
 	outputText += text

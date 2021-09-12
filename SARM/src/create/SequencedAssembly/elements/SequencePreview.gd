@@ -2,6 +2,10 @@ extends Node2D
 
 var sequenceText = ["", "", "", "", "", "", "", ""]
 
+var pathToButtons = "Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/SequenceParams/VBoxContainer/SequenceVisualizer/Node2D/HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/"
+var pathToSeqButton = "/HBoxContainer/Control/sequenceBtn"
+var pathToControls = "/HBoxContainer/Control/HBoxContainer"
+
 var pressSequenceTemplate = """
 		{
 			\"type\":\"create:pressing\",
@@ -22,7 +26,7 @@ var spoutSequenceTemplate = """
 			\"results\":[{TIR}],
 		}"""
 
-var SequenceTypes = [1, 1, 2, 0, 3, 0, 0, 1] #0 - press recipe, 1 - saw recipe, 2 - spout recipe, 3 - deployer recipe
+var SequenceTypes = [0, 0, 1, 1, 2, 2, 3, 3] #0 - press recipe, 1 - saw recipe, 2 - spout recipe, 3 - deployer recipe
 var ConveyorState = [false, false, false, false, false, false, false, false, false, false]
 
 func _ready():
@@ -87,15 +91,40 @@ func genSequenceText():
 			3:
 				sequenceText[i] = sawSequenceTemplate
 
-func updateSize():
+func _on_Control_resized():
 	var max_size_x = get_node("..").rect_size.x
 	var max_size_y = get_node("..").rect_size.y
 	var pref_size_x = 0.7 * max_size_x
 	var scale_modifier =  pref_size_x / 1024
-	$"../HBoxContainer/visualizerContainer".rect_min_size.x = 0.75 * max_size_x
 	scale = Vector2(scale_modifier, scale_modifier)
 	position.x = max_size_x * 0.025
 	position.y = max_size_y * 0.5
 
-func _on_Control_resized():
-	updateSize()
+func toggleBtn_2():
+	get_tree().get_current_scene().get_node(pathToButtons + str(2) + pathToSeqButton).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(2) + pathToSeqButton).visible
+	get_tree().get_current_scene().get_node(pathToButtons + str(2) + pathToControls).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(2) + pathToControls).visible
+	get_tree().get_current_scene().get_node(pathToButtons + str(3) + pathToControls).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(3) + pathToControls).visible
+func toggleBtn_3():
+	get_tree().get_current_scene().get_node(pathToButtons + str(3) + pathToSeqButton).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(3) + pathToSeqButton).visible
+	get_tree().get_current_scene().get_node(pathToButtons + str(3) + pathToControls).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(3) + pathToControls).visible
+	get_tree().get_current_scene().get_node(pathToButtons + str(4) + pathToControls).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(4) + pathToControls).visible
+func toggleBtn_4():
+	get_tree().get_current_scene().get_node(pathToButtons + str(4) + pathToSeqButton).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(4) + pathToSeqButton).visible
+	get_tree().get_current_scene().get_node(pathToButtons + str(4) + pathToControls).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(4) + pathToControls).visible
+	get_tree().get_current_scene().get_node(pathToButtons + str(5) + pathToControls).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(5) + pathToControls).visible
+func toggleBtn_5():
+	get_tree().get_current_scene().get_node(pathToButtons + str(5) + pathToSeqButton).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(5) + pathToSeqButton).visible
+	get_tree().get_current_scene().get_node(pathToButtons + str(5) + pathToControls).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(5) + pathToControls).visible
+	get_tree().get_current_scene().get_node(pathToButtons + str(6) + pathToControls).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(6) + pathToControls).visible
+func toggleBtn_6():
+	get_tree().get_current_scene().get_node(pathToButtons + str(6) + pathToSeqButton).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(6) + pathToSeqButton).visible
+	get_tree().get_current_scene().get_node(pathToButtons + str(6) + pathToControls).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(6) + pathToControls).visible
+	get_tree().get_current_scene().get_node(pathToButtons + str(7) + pathToControls).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(7) + pathToControls).visible
+func toggleBtn_7():
+	get_tree().get_current_scene().get_node(pathToButtons + str(7) + pathToSeqButton).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(7) + pathToSeqButton).visible
+	get_tree().get_current_scene().get_node(pathToButtons + str(7) + pathToControls).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(7) + pathToControls).visible
+	get_tree().get_current_scene().get_node(pathToButtons + str(8) + pathToControls).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(8) + pathToControls).visible
+func toggleBtn_8():
+	get_tree().get_current_scene().get_node(pathToButtons + str(8) + pathToSeqButton).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(8) + pathToSeqButton).visible
+	get_tree().get_current_scene().get_node(pathToButtons + str(8) + pathToControls).visible = !get_tree().get_current_scene().get_node(pathToButtons + str(8) + pathToControls).visible
+	get_tree().get_current_scene().get_node(pathToButtons + "removeBtn/HBoxContainer").visible = !get_tree().get_current_scene().get_node(pathToButtons + "removeBtn/HBoxContainer").visible

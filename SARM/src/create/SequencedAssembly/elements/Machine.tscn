@@ -1,12 +1,48 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=1]
 [ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=2]
 [ext_resource path="res://assets/bg.png" type="Texture" id=3]
+[ext_resource path="res://src/create/SequencedAssembly/elements/Machine.gd" type="Script" id=4]
+[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/toggle_button.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 6 )
+region = Rect2( -1, 0, 33, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 33, 16 )
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+width = 256
+
+[sub_resource type="DynamicFont" id=8]
+size = 20
+font_data = ExtResource( 5 )
 
 [node name="Machine" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -52,6 +88,9 @@ margin_right = 938.0
 margin_bottom = 500.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/Control"]
 anchor_right = 1.0
@@ -110,6 +149,491 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dud" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer"]
+margin_right = 8.0
+margin_bottom = 474.0
+rect_min_size = Vector2( 8, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer"]
+margin_left = 8.0
+margin_right = 845.0
+margin_bottom = 474.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="dud" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
+margin_right = 837.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 0, 4 )
+
+[node name="mode_picker" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
+margin_top = 8.0
+margin_right = 837.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 16 )
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/mode_picker"]
+margin_right = 29.0
+margin_bottom = 20.0
+text = "Press recipe"
+items = [ "Press recipe", null, false, 0, null, "Saw recipe", null, false, 1, null, "Spout recipe", null, false, 2, null, "Deployer recipe", null, false, 3, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dud2" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 837.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 4 )
+
+[node name="PressRecipe" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 837.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/PressRecipe"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "Well, it is press recipe.
+Press goes bonk!
+I guess..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SawRecipe" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
+margin_top = 136.0
+margin_right = 837.0
+margin_bottom = 233.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer"]
+margin_right = 837.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer/Control/HBoxContainer"]
+margin_right = 320.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 320, 0 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 2 )
+text = "Processing time in ticks:"
+align = 1
+valign = 1
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer/Control/HBoxContainer"]
+margin_left = 324.0
+margin_right = 837.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 128, 18 )
+size_flags_horizontal = 3
+
+[node name="dud4" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer"]
+margin_top = 20.0
+margin_right = 837.0
+margin_bottom = 97.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpoutRecipe" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
+margin_top = 237.0
+margin_right = 837.0
+margin_bottom = 333.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer"]
+margin_right = 837.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer"]
+margin_right = 837.0
+margin_bottom = 82.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer"]
+margin_top = 31.0
+margin_right = 64.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 64, 20 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 2 )
+text = "Fluid:"
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer"]
+margin_left = 64.0
+margin_right = 837.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="tagModeChanger" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 773.0
+margin_bottom = 24.0
+
+[node name="itemLabel" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/tagModeChanger"]
+margin_top = 2.0
+margin_right = 36.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 3 )
+text = "item"
+
+[node name="modeSwithcer" type="CheckButton" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/tagModeChanger"]
+margin_left = 40.0
+margin_right = 85.0
+margin_bottom = 24.0
+focus_mode = 0
+custom_icons/off = SubResource( 4 )
+custom_icons/on = SubResource( 5 )
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tagLabel" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/tagModeChanger"]
+margin_left = 89.0
+margin_top = 2.0
+margin_right = 121.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 3 )
+text = "tag"
+
+[node name="separator" type="TextureRect" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 773.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 7 )
+expand = true
+
+[node name="Control" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 773.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
+margin_right = 256.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 256, 20 )
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 8 )
+text = "[MODID]:[IDENTIFIER]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
+margin_left = 260.0
+margin_right = 773.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="separator2" type="TextureRect" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 57.0
+margin_right = 773.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 7 )
+expand = true
+
+[node name="Control2" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 62.0
+margin_right = 773.0
+margin_bottom = 82.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2/HBoxContainer"]
+margin_right = 256.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 256, 20 )
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 8 )
+text = "Amount:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2/HBoxContainer"]
+margin_left = 260.0
+margin_right = 773.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dud4" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer"]
+margin_top = 48.0
+margin_right = 837.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeployerRecipe" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
+margin_top = 337.0
+margin_right = 837.0
+margin_bottom = 434.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer"]
+margin_right = 837.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer"]
+margin_right = 837.0
+margin_bottom = 58.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer"]
+margin_top = 19.0
+margin_right = 64.0
+margin_bottom = 39.0
+rect_min_size = Vector2( 64, 20 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 2 )
+text = "Item:"
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer"]
+margin_left = 64.0
+margin_right = 837.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="tagModeChanger" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 773.0
+margin_bottom = 24.0
+
+[node name="itemLabel" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/tagModeChanger"]
+margin_top = 2.0
+margin_right = 36.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 3 )
+text = "item"
+
+[node name="modeSwithcer" type="CheckButton" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/tagModeChanger"]
+margin_left = 40.0
+margin_right = 85.0
+margin_bottom = 24.0
+focus_mode = 0
+custom_icons/off = SubResource( 4 )
+custom_icons/on = SubResource( 5 )
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tagLabel" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/tagModeChanger"]
+margin_left = 89.0
+margin_top = 2.0
+margin_right = 121.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 3 )
+text = "tag"
+
+[node name="separator" type="TextureRect" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 773.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 7 )
+expand = true
+
+[node name="Control" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 773.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
+margin_right = 256.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 256, 20 )
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 8 )
+text = "[MODID]:[IDENTIFIER]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
+margin_left = 260.0
+margin_right = 773.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="separator2" type="TextureRect" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 57.0
+margin_right = 773.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 7 )
+expand = true
+
+[node name="dud4" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer"]
+margin_top = 48.0
+margin_right = 837.0
+margin_bottom = 97.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dud3" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
+margin_top = 438.0
+margin_right = 837.0
+margin_bottom = 442.0
+rect_min_size = Vector2( 0, 4 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
+margin_top = 446.0
+margin_right = 837.0
+margin_bottom = 466.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 416.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Accept"
+
+[node name="Button2" type="Button" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 420.0
+margin_right = 837.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Cancel"
+
+[node name="dud4" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
+margin_top = 470.0
+margin_right = 837.0
+margin_bottom = 474.0
+rect_min_size = Vector2( 0, 4 )
+
+[node name="dud2" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer"]
+margin_left = 845.0
+margin_right = 853.0
+margin_bottom = 474.0
+rect_min_size = Vector2( 8, 0 )
+
 [node name="dud2" type="Control" parent="VBoxContainer/Control"]
 margin_left = 938.0
 margin_right = 1024.0
@@ -125,3 +649,5 @@ margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
+
+[connection signal="item_selected" from="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/mode_picker/OptionButton" to="." method="ChangeRecipeType"]

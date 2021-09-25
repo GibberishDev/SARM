@@ -18,15 +18,15 @@ var startText = ""
 const createSAStartingText = """{
 	\"credit\": \"Made using SARM tool by GibberishDev\",
 	\"type\": \"create:sequenced_assembly\",\n"""
-var seqOne = "		{Sequence One}"
-var seqTwo = "		{Sequence Two}"
-var seqThree = "		{Etc.}"
-var seqFour = "		"
-var seqFive = "		"
-var seqSix = "		"
-var seqSeven = "		"
-var seqEight = "		"
-var seqText = "		"
+var seqOne = ""
+var seqTwo = ""
+var seqThree = ""
+var seqFour = ""
+var seqFive = ""
+var seqSix = ""
+var seqSeven = ""
+var seqEight = ""
+var seqText = ""
 var endingRecipeText = ""
 
 var startingItemTagMode = "item"
@@ -53,7 +53,7 @@ func startingText			():
 	startText = ""
 	startText += createSAStartingText
 	getStartingItemText()
-	startText += "	\"ingridient\": {\"" + startingItemTagMode + "\": \"" + startItem +"\"},\n"
+	startText += "	\"ingredient\": {\"" + startingItemTagMode + "\": \"" + startItem +"\"},\n"
 	getTarnsitItemText()
 	startText += "	\"transitionalItem\": {" + str(transitItem) + "},\n"
 	startText += "	\"sequence\": [\n"
@@ -104,8 +104,7 @@ func getResultingItem		():
 func endingText				(resultItem:String,loops:int):
 	endingRecipeText = ""
 	loops = int(nodeInstance_LP.loops)
-	endingRecipeText = """
-	\"results\": [
+	endingRecipeText = """	\"results\": [
 		\"item\": \"""" + str(resultItem) + """\"
 	],
 	\"loops\": """ + str(loops) + """

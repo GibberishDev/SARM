@@ -1,0 +1,22 @@
+# Made in Blockbench 3.9.3
+newmtl m_0
+map_Kd axis.png 
+newmtl m_1
+map_Kd axis_top.png 
+newmtl m_6
+map_Kd piston_bottom.png 
+newmtl m_7
+map_Kd piston_inner.png 
+newmtl m_18
+map_Kd deployer.png 
+newmtl m_andesite_casing_short
+map_Kd andesite_casing_short.png 
+newmtl m_gearbox_top
+map_Kd gearbox_top.png 
+newmtl m_gearbox
+map_Kd gearbox.png 
+newmtl m_mechanical_press_pole
+map_Kd mechanical_press_pole.png 
+newmtl m_mechanical_press_head
+map_Kd mechanical_press_head.png 
+newmtl none

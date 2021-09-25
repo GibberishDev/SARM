@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/create/SequencedAssembly/elements/BeltState.gd" type="Script" id=1]
+[ext_resource path="res://assets/models/CreateSA/models/belt_side/model.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://assets/models/CreateSA/models/saw/model.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://assets/models/CreateSA/models/belt_middle/model.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://assets/models/CreateSA/models/deployer/model.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://assets/models/CreateSA/models/press/model.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://assets/models/CreateSA/models/spout/model.obj" type="ArrayMesh" id=7]
+
+[node name="BeltState" type="Spatial"]
+script = ExtResource( 1 )
+belt_side = ExtResource( 2 )
+belt_middle = ExtResource( 4 )
+saw = ExtResource( 3 )
+press = ExtResource( 6 )
+spout = ExtResource( 7 )
+deployer = ExtResource( 5 )
+
+[node name="BeltPart" type="MeshInstance" parent="."]
+cast_shadow = 2
+use_in_baked_light = true
+
+[node name="MachinePart" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )

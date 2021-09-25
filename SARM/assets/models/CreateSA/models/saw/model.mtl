@@ -1,0 +1,16 @@
+# Made in Blockbench 3.9.3
+newmtl m_8
+map_Kd gearbox.png 
+newmtl m_gearbox_top
+map_Kd gearbox_top.png 
+newmtl m_andesite_casing_short
+map_Kd andesite_casing_short.png 
+newmtl m_mechanical_saw_top
+map_Kd mechanical_saw_top.png 
+newmtl m_stonecutter_saw
+map_Kd static_saw.png 
+newmtl m_4_1
+map_Kd axis_top.png 
+newmtl m_4_0
+map_Kd axis.png 
+newmtl none

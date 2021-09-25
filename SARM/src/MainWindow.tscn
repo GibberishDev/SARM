@@ -275,6 +275,11 @@ margin_right = 548.0
 margin_bottom = 135.0
 size_flags_vertical = 4
 
+[node name="Label" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer/CommingSoon/ViewportContainer/Viewport/CS" index="2"]
+rect_scale = Vector2( 0.52, 1 )
+text = "Mechanical Crafters
+Comming Soon!"
+
 [node name="dud3" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
 margin_left = 548.0
 margin_right = 564.0
@@ -394,3 +399,6 @@ __meta__ = {
 
 [connection signal="gui_input" from="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" to="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" method="HitBoxInput"]
 [connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" method="closePopUp"]
+
+[editable path="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer/CommingSoon"]
+[editable path="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer/CommingSoon/ViewportContainer/Viewport/CS"]

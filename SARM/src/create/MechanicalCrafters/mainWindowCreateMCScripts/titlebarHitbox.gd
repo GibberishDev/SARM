@@ -8,7 +8,6 @@ func HitBoxInput(event):
 		folowing = !folowing
 		origin_pos = get_local_mouse_position()
 
-func _process(delta):
-	
+func _process(_delta):
 	if folowing:
 		OS.window_position = OS.window_position + get_global_mouse_position() - origin_pos

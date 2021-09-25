@@ -1,0 +1,6 @@
+# Made in Blockbench 3.9.3
+newmtl m_0
+map_Kd belt.png 
+newmtl m_4
+map_Kd brass_casing_belt.png 
+newmtl none

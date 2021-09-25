@@ -1,26 +1,19 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://assets/conveyor_start.png" type="Texture" id=1]
-[ext_resource path="res://assets/conveyor_end.png" type="Texture" id=2]
-[ext_resource path="res://assets/conveyor_middle.png" type="Texture" id=3]
 [ext_resource path="res://src/create/SequencedAssembly/elements/SequencePreview.gd" type="Script" id=4]
-[ext_resource path="res://assets/conveyor_singular.png" type="Texture" id=5]
-[ext_resource path="res://assets/saw.png" type="Texture" id=6]
-[ext_resource path="res://assets/spout.png" type="Texture" id=7]
-[ext_resource path="res://assets/deployer.png" type="Texture" id=8]
-[ext_resource path="res://assets/press.png" type="Texture" id=9]
 [ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=10]
 [ext_resource path="res://assets/bg_tint.png" type="Texture" id=11]
 [ext_resource path="res://assets/sequence_buttons.png" type="Texture" id=12]
 [ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=13]
 [ext_resource path="res://assets/scrollbarbg.png" type="Texture" id=14]
 [ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=15]
+[ext_resource path="res://src/create/SequencedAssembly/elements/conveyors_node.tscn" type="PackedScene" id=16]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 14 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="StyleBoxTexture" id=19]
+[sub_resource type="StyleBoxTexture" id=2]
 texture = SubResource( 1 )
 region_rect = Rect2( 2, 2, 14, 10 )
 margin_left = 4.0
@@ -43,94 +36,79 @@ margin_bottom = 4.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[sub_resource type="Theme" id=13]
+[sub_resource type="Theme" id=5]
 VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
 VScrollBar/icons/increment_highlight = null
-VScrollBar/styles/grabber = SubResource( 19 )
-VScrollBar/styles/grabber_highlight = SubResource( 19 )
-VScrollBar/styles/grabber_pressed = SubResource( 19 )
+VScrollBar/styles/grabber = SubResource( 2 )
+VScrollBar/styles/grabber_highlight = SubResource( 2 )
+VScrollBar/styles/grabber_pressed = SubResource( 2 )
 VScrollBar/styles/scroll = SubResource( 4 )
 VScrollBar/styles/scroll_focus = SubResource( 4 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 12 )
 
-[sub_resource type="StyleBoxTexture" id=15]
-texture = SubResource( 14 )
+[sub_resource type="StyleBoxTexture" id=7]
+texture = SubResource( 6 )
 region_rect = Rect2( 15, 29, 12, 12 )
 margin_left = 4.0
 margin_right = 4.0
 margin_top = 4.0
 margin_bottom = 4.0
 
-[sub_resource type="StyleBoxTexture" id=16]
-texture = SubResource( 14 )
+[sub_resource type="StyleBoxTexture" id=8]
+texture = SubResource( 6 )
 region_rect = Rect2( 29, 29, 12, 12 )
 margin_left = 4.0
 margin_right = 4.0
 margin_top = 4.0
 margin_bottom = 4.0
 
-[sub_resource type="StyleBoxTexture" id=17]
-texture = SubResource( 14 )
+[sub_resource type="StyleBoxTexture" id=9]
+texture = SubResource( 6 )
 region_rect = Rect2( 1, 29, 12, 12 )
 margin_left = 4.0
 margin_right = 4.0
 margin_top = 4.0
 margin_bottom = 4.0
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=10]
 size = 30
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 15 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 12 )
 region = Rect2( 1, 15, 12, 12 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 12 )
 region = Rect2( 29, 15, 12, 12 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 12 )
 region = Rect2( 15, 15, 12, 12 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 12 )
 region = Rect2( 1, 1, 12, 12 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 12 )
 region = Rect2( 29, 1, 12, 12 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 12 )
 region = Rect2( 15, 1, 12, 12 )
-
-[sub_resource type="SpriteFrames" id=11]
-animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=12]
-animations = [ {
-"frames": [ ExtResource( 9 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 984, 0 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -174,6 +152,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ViewportContainer" type="ViewportContainer" parent="HBoxContainer/visualizerContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="HBoxContainer/visualizerContainer/ViewportContainer"]
+size = Vector2( 1, 1 )
+transparent_bg = true
+render_target_update_mode = 3
+shadow_atlas_size = 10
+
+[node name="VisualisationNode" parent="HBoxContainer/visualizerContainer/ViewportContainer/Viewport" instance=ExtResource( 16 )]
+
 [node name="visualizerContainerOptions" type="Control" parent="HBoxContainer"]
 margin_left = 768.0
 margin_right = 1024.0
@@ -198,7 +191,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 13 )
+theme = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -287,10 +280,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/disabled = SubResource( 16 )
-custom_styles/normal = SubResource( 17 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -299,7 +292,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/1/HBoxContainer/Control/Control2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 10 )
 text = "Machine 1"
 align = 1
 valign = 1
@@ -378,10 +371,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/disabled = SubResource( 16 )
-custom_styles/normal = SubResource( 17 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -390,7 +383,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/2/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 10 )
 text = "Machine 2"
 align = 1
 valign = 1
@@ -441,11 +434,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 5 )
-texture_pressed = SubResource( 6 )
-texture_hover = SubResource( 7 )
-texture_disabled = SubResource( 6 )
-texture_focused = SubResource( 7 )
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 12 )
+texture_hover = SubResource( 13 )
+texture_disabled = SubResource( 12 )
+texture_focused = SubResource( 13 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -526,10 +519,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/disabled = SubResource( 16 )
-custom_styles/normal = SubResource( 17 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -538,7 +531,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/3/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 10 )
 text = "Machine 3"
 align = 1
 valign = 1
@@ -590,11 +583,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 5 )
-texture_pressed = SubResource( 6 )
-texture_hover = SubResource( 7 )
-texture_disabled = SubResource( 6 )
-texture_focused = SubResource( 7 )
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 12 )
+texture_hover = SubResource( 13 )
+texture_disabled = SubResource( 12 )
+texture_focused = SubResource( 13 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -642,11 +635,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 8 )
-texture_pressed = SubResource( 9 )
-texture_hover = SubResource( 10 )
-texture_disabled = SubResource( 9 )
-texture_focused = SubResource( 10 )
+texture_normal = SubResource( 14 )
+texture_pressed = SubResource( 15 )
+texture_hover = SubResource( 16 )
+texture_disabled = SubResource( 15 )
+texture_focused = SubResource( 16 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -730,10 +723,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/disabled = SubResource( 16 )
-custom_styles/normal = SubResource( 17 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -742,7 +735,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/4/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 10 )
 text = "Machine 4"
 align = 1
 valign = 1
@@ -794,11 +787,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 5 )
-texture_pressed = SubResource( 6 )
-texture_hover = SubResource( 7 )
-texture_disabled = SubResource( 6 )
-texture_focused = SubResource( 7 )
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 12 )
+texture_hover = SubResource( 13 )
+texture_disabled = SubResource( 12 )
+texture_focused = SubResource( 13 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -846,11 +839,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 8 )
-texture_pressed = SubResource( 9 )
-texture_hover = SubResource( 10 )
-texture_disabled = SubResource( 9 )
-texture_focused = SubResource( 10 )
+texture_normal = SubResource( 14 )
+texture_pressed = SubResource( 15 )
+texture_hover = SubResource( 16 )
+texture_disabled = SubResource( 15 )
+texture_focused = SubResource( 16 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -934,10 +927,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/disabled = SubResource( 16 )
-custom_styles/normal = SubResource( 17 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -946,7 +939,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/5/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 10 )
 text = "Machine 5"
 align = 1
 valign = 1
@@ -998,11 +991,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 5 )
-texture_pressed = SubResource( 6 )
-texture_hover = SubResource( 7 )
-texture_disabled = SubResource( 6 )
-texture_focused = SubResource( 7 )
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 12 )
+texture_hover = SubResource( 13 )
+texture_disabled = SubResource( 12 )
+texture_focused = SubResource( 13 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1050,11 +1043,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 8 )
-texture_pressed = SubResource( 9 )
-texture_hover = SubResource( 10 )
-texture_disabled = SubResource( 9 )
-texture_focused = SubResource( 10 )
+texture_normal = SubResource( 14 )
+texture_pressed = SubResource( 15 )
+texture_hover = SubResource( 16 )
+texture_disabled = SubResource( 15 )
+texture_focused = SubResource( 16 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1138,10 +1131,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/disabled = SubResource( 16 )
-custom_styles/normal = SubResource( 17 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1150,7 +1143,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/6/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 10 )
 text = "Machine 6"
 align = 1
 valign = 1
@@ -1202,11 +1195,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 5 )
-texture_pressed = SubResource( 6 )
-texture_hover = SubResource( 7 )
-texture_disabled = SubResource( 6 )
-texture_focused = SubResource( 7 )
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 12 )
+texture_hover = SubResource( 13 )
+texture_disabled = SubResource( 12 )
+texture_focused = SubResource( 13 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1254,11 +1247,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 8 )
-texture_pressed = SubResource( 9 )
-texture_hover = SubResource( 10 )
-texture_disabled = SubResource( 9 )
-texture_focused = SubResource( 10 )
+texture_normal = SubResource( 14 )
+texture_pressed = SubResource( 15 )
+texture_hover = SubResource( 16 )
+texture_disabled = SubResource( 15 )
+texture_focused = SubResource( 16 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1342,10 +1335,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/disabled = SubResource( 16 )
-custom_styles/normal = SubResource( 17 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1354,7 +1347,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 10 )
 text = "Machine 7"
 align = 1
 valign = 1
@@ -1406,11 +1399,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 5 )
-texture_pressed = SubResource( 6 )
-texture_hover = SubResource( 7 )
-texture_disabled = SubResource( 6 )
-texture_focused = SubResource( 7 )
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 12 )
+texture_hover = SubResource( 13 )
+texture_disabled = SubResource( 12 )
+texture_focused = SubResource( 13 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1458,11 +1451,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 8 )
-texture_pressed = SubResource( 9 )
-texture_hover = SubResource( 10 )
-texture_disabled = SubResource( 9 )
-texture_focused = SubResource( 10 )
+texture_normal = SubResource( 14 )
+texture_pressed = SubResource( 15 )
+texture_hover = SubResource( 16 )
+texture_disabled = SubResource( 15 )
+texture_focused = SubResource( 16 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1546,10 +1539,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 15 )
-custom_styles/pressed = SubResource( 16 )
-custom_styles/disabled = SubResource( 16 )
-custom_styles/normal = SubResource( 17 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1558,7 +1551,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 10 )
 text = "Machine 8"
 align = 1
 valign = 1
@@ -1610,11 +1603,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 5 )
-texture_pressed = SubResource( 6 )
-texture_hover = SubResource( 7 )
-texture_disabled = SubResource( 6 )
-texture_focused = SubResource( 7 )
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 12 )
+texture_hover = SubResource( 13 )
+texture_disabled = SubResource( 12 )
+texture_focused = SubResource( 13 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1662,11 +1655,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 8 )
-texture_pressed = SubResource( 9 )
-texture_hover = SubResource( 10 )
-texture_disabled = SubResource( 9 )
-texture_focused = SubResource( 10 )
+texture_normal = SubResource( 14 )
+texture_pressed = SubResource( 15 )
+texture_hover = SubResource( 16 )
+texture_disabled = SubResource( 15 )
+texture_focused = SubResource( 16 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1748,11 +1741,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 8 )
-texture_pressed = SubResource( 9 )
-texture_hover = SubResource( 10 )
-texture_disabled = SubResource( 9 )
-texture_focused = SubResource( 10 )
+texture_normal = SubResource( 14 )
+texture_pressed = SubResource( 15 )
+texture_hover = SubResource( 16 )
+texture_disabled = SubResource( 15 )
+texture_focused = SubResource( 16 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1779,104 +1772,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="visualization" type="Node2D" parent="."]
-script = ExtResource( 4 )
-
-[node name="conveyorSprites" type="Node2D" parent="visualization"]
-
-[node name="1" type="AnimatedSprite" parent="visualization/conveyorSprites"]
-position = Vector2( 64, 96 )
-frames = SubResource( 11 )
-
-[node name="2" type="AnimatedSprite" parent="visualization/conveyorSprites"]
-position = Vector2( 192, 96 )
-frames = SubResource( 11 )
-frame = 1
-
-[node name="3" type="AnimatedSprite" parent="visualization/conveyorSprites"]
-position = Vector2( 320, 96 )
-frames = SubResource( 11 )
-frame = 1
-
-[node name="4" type="AnimatedSprite" parent="visualization/conveyorSprites"]
-position = Vector2( 448, 96 )
-frames = SubResource( 11 )
-frame = 1
-
-[node name="5" type="AnimatedSprite" parent="visualization/conveyorSprites"]
-position = Vector2( 576, 96 )
-frames = SubResource( 11 )
-frame = 1
-
-[node name="6" type="AnimatedSprite" parent="visualization/conveyorSprites"]
-position = Vector2( 704, 96 )
-frames = SubResource( 11 )
-frame = 1
-
-[node name="7" type="AnimatedSprite" parent="visualization/conveyorSprites"]
-position = Vector2( 832, 96 )
-frames = SubResource( 11 )
-frame = 1
-
-[node name="8" type="AnimatedSprite" parent="visualization/conveyorSprites"]
-position = Vector2( 960, 96 )
-frames = SubResource( 11 )
-frame = 2
-
-[node name="machines" type="Node2D" parent="visualization"]
-
-[node name="1" type="AnimatedSprite" parent="visualization/machines"]
-position = Vector2( 0, -160 )
-frames = SubResource( 12 )
-offset = Vector2( 64, 64 )
-
-[node name="2" type="AnimatedSprite" parent="visualization/machines"]
-position = Vector2( 128, -160 )
-frames = SubResource( 12 )
-offset = Vector2( 64, 64 )
-
-[node name="3" type="AnimatedSprite" parent="visualization/machines"]
-position = Vector2( 256, -160 )
-frames = SubResource( 12 )
-offset = Vector2( 64, 64 )
-
-[node name="4" type="AnimatedSprite" parent="visualization/machines"]
-position = Vector2( 384, -160 )
-frames = SubResource( 12 )
-offset = Vector2( 64, 64 )
-
-[node name="5" type="AnimatedSprite" parent="visualization/machines"]
-position = Vector2( 512, -160 )
-frames = SubResource( 12 )
-offset = Vector2( 64, 64 )
-
-[node name="6" type="AnimatedSprite" parent="visualization/machines"]
-position = Vector2( 640, -160 )
-frames = SubResource( 12 )
-offset = Vector2( 64, 64 )
-
-[node name="7" type="AnimatedSprite" parent="visualization/machines"]
-position = Vector2( 768, -160 )
-frames = SubResource( 12 )
-offset = Vector2( 64, 64 )
-
-[node name="8" type="AnimatedSprite" parent="visualization/machines"]
-position = Vector2( 896, -160 )
-frames = SubResource( 12 )
-offset = Vector2( 64, 64 )
-
-[connection signal="resized" from="." to="visualization" method="_on_Control_resized"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/2/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="visualization" method="toggleBtn_2"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/3/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="visualization" method="toggleBtn_3"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/3/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="visualization" method="toggleBtn_2"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/4/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="visualization" method="toggleBtn_4"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/4/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="visualization" method="toggleBtn_3"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/5/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="visualization" method="toggleBtn_5"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/5/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="visualization" method="toggleBtn_4"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/6/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="visualization" method="toggleBtn_6"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/6/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="visualization" method="toggleBtn_5"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="visualization" method="toggleBtn_7"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="visualization" method="toggleBtn_6"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="visualization" method="toggleBtn_8"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="visualization" method="toggleBtn_7"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/removeBtn/HBoxContainer/remove/TextureButton2" to="visualization" method="toggleBtn_8"]
+[connection signal="resized" from="." to="." method="_on_Control_resized"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/2/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="." method="toggleBtn_2"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/3/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="." method="toggleBtn_3"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/3/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="." method="toggleBtn_2"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/4/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="." method="toggleBtn_4"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/4/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="." method="toggleBtn_3"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/5/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="." method="toggleBtn_5"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/5/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="." method="toggleBtn_4"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/6/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="." method="toggleBtn_6"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/6/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="." method="toggleBtn_5"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="." method="toggleBtn_7"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="." method="toggleBtn_6"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="." method="toggleBtn_8"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="." method="toggleBtn_7"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/removeBtn/HBoxContainer/remove/TextureButton2" to="." method="toggleBtn_8"]

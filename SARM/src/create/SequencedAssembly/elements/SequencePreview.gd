@@ -27,7 +27,7 @@ var spoutSequenceTemplate = """
 			\"results\":[{TIR}],
 		}"""
 
-var SequenceTypes = [0, 1, 2, 3, 0, 1, 2, 3] #0 - press recipe, 1 - saw recipe, 2 - spout recipe, 3 - deployer recipe
+var SequenceTypes = [3, 3, 3, 2, 0, 3] #0 - press recipe, 1 - saw recipe, 2 - spout recipe, 3 - deployer recipe
 
 func _ready():
 	updateSequenceSprites()

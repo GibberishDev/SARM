@@ -117,5 +117,5 @@ func showRecipeWindow		(text:String)-> void:
 	recipeTextSceneNew.recipe = text
 	get_tree().get_current_scene().add_child(recipeTextSceneNew)
 
-#func _ready():
-#	print("[\n		" + str(testArray[0]) + ",\n		" + str(testArray[1]) + "\n	],\n")
+func openSequenceRecipeEditor():
+	$Control/Machine.TransitionalItem = transitItem

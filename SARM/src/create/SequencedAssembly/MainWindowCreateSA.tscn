@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://src/create/SequencedAssembly/elements/closePopUp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/create/SequencedAssembly/elements/RecipeView.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://assets/closeBtnFrames.png" type="Texture" id=21]
 [ext_resource path="res://src/create/SequencedAssembly/signalScripts/TagEdit.gd" type="Script" id=22]
 [ext_resource path="res://src/create/SequencedAssembly/elements/SequencePreview.tscn" type="PackedScene" id=23]
+[ext_resource path="res://src/create/SequencedAssembly/elements/Machine.tscn" type="PackedScene" id=24]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 8 )
@@ -176,7 +177,7 @@ __meta__ = {
 position = Vector2( 44, 14 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 7 )
-frame = 12
+frame = 17
 playing = true
 
 [node name="titlebarHitbox" type="Control" parent="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch"]
@@ -681,6 +682,9 @@ margin_left = 1008.0
 margin_right = 1024.0
 margin_bottom = 574.0
 rect_min_size = Vector2( 16, 0 )
+
+[node name="Machine" parent="Control" instance=ExtResource( 24 )]
+visible = false
 
 [connection signal="gui_input" from="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch/titlebarHitbox" to="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch/titlebarHitbox" method="_on_titlebar_gui_input"]
 [connection signal="pressed" from="Control/bgOverlay/TitleBar/HBoxContainer/MaximizeBtn" to="Control/bgOverlay/TitleBar/HBoxContainer/MaximizeBtn" method="onButtonPress"]

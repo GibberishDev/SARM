@@ -7,26 +7,6 @@ var viewport = "Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/SequenceP
 var pathToSeqButton = "/HBoxContainer/Control/sequenceBtn"
 var pathToControls = "/HBoxContainer/Control/HBoxContainer"
 
-var pressSequenceTemplate = """
-		{
-			\"type\":\"create:pressing\",
-			\"ingredients\":[{TIR}],
-			\"results\":[{TIR}]
-		}"""
-var sawSequenceTemplate = """
-		{
-			\"type\":\"create:cutting\",
-			\"ingredients\":[{TIR}],
-			\"results\":[{TIR}],
-			\"processingTime\": TIME
-		}"""
-var spoutSequenceTemplate = """
-		{
-			\"type\":\"create:filling\",
-			\"ingredients\":[{TIR},{\"fluid\":\"FLUID\",\"amount\":AMOUNT}],
-			\"results\":[{TIR}],
-		}"""
-
 var SequenceTypes = [3, 3, 3, 2, 0, 3] #0 - press recipe, 1 - saw recipe, 2 - spout recipe, 3 - deployer recipe
 
 func _ready():
@@ -34,24 +14,6 @@ func _ready():
 
 func updateSequenceSprites():
 	$HBoxContainer/visualizerContainer/ViewportContainer/Viewport/VisualisationNode.ChangeModels(SequenceTypes)
-
-	genSequenceText()
-	print(sequenceText)
-
-
-func genSequenceText():
-	for i in range(8):
-		sequenceText[i] = ""
-	for i in SequenceTypes.size():
-		match SequenceTypes[i]:
-			0:
-				sequenceText[i] = pressSequenceTemplate
-			1:
-				sequenceText[i] = sawSequenceTemplate
-			2:
-				sequenceText[i] = spoutSequenceTemplate
-			3:
-				sequenceText[i] = sawSequenceTemplate
 
 func _on_Control_resized():
 	var max_size = rect_size

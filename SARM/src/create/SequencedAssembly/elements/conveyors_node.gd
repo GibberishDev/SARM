@@ -27,7 +27,6 @@ func ChangeModels(key:Array):
 			get_node("conveyors/BeltState" + str(i)).visible = true
 			get_node("conveyors/BeltState" + str(i)).machine_state = 3
 			conveyors[i + 1] = true
-	print(conveyors)
 	for i in range(1, 9): #Conveyor texture changer
 		match conveyors[i]:
 			true:

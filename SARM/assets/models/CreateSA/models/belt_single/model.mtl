@@ -1,0 +1,14 @@
+# Made in Blockbench 3.9.3
+newmtl m_0
+map_Kd belt.png 
+newmtl m_1
+map_Kd belt_offset.png 
+newmtl m_4
+map_Kd brass_casing_belt.png 
+newmtl m_8
+map_Kd gearbox.png 
+newmtl m_8_0
+map_Kd axis.png 
+newmtl m_8_1
+map_Kd axis_top.png 
+newmtl none

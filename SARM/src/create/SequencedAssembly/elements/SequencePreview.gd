@@ -7,7 +7,7 @@ var viewport = "Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/SequenceP
 var pathToSeqButton = "/HBoxContainer/Control/sequenceBtn"
 var pathToControls = "/HBoxContainer/Control/HBoxContainer"
 
-var SequenceTypes = [3, 3, 3, 2, 0, 3] #0 - press recipe, 1 - saw recipe, 2 - spout recipe, 3 - deployer recipe
+var SequenceTypes = [1, 0] #0 - press recipe, 1 - saw recipe, 2 - spout recipe, 3 - deployer recipe
 
 func _ready():
 	updateSequenceSprites()

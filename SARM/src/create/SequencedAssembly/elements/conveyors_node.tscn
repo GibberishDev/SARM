@@ -12,7 +12,7 @@ ambient_light_energy = 0.5
 script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 1.75, 3.5 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 1.75, 0 )
 environment = SubResource( 1 )
 current = true
 

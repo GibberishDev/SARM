@@ -2,10 +2,9 @@ extends Spatial
 
 var conveyors
 
-func _ready():
-	ChangeModels([0, 1, 2, 3, 0, 1, 2, 3])
-
 func ChangeModels(key:Array):
+	$Camera.translation.z = key.size()*0.5 - 0.5
+	$SpotLight.translation.z = key.size()*0.5 - 0.5
 	conveyors  = [false, false, false, false, false, false, false, false, false, false]
 	for i in range(8): #conveyor reset
 		get_node("conveyors/BeltState" + str(i)).visible = false
@@ -16,7 +15,7 @@ func ChangeModels(key:Array):
 			conveyors[i + 1] = true
 		if key[i] == 1:
 			get_node("conveyors/BeltState" + str(i)).visible = true
-			get_node("conveyors/BeltState" + str(i)).belt_state = 3
+			get_node("conveyors/BeltState" + str(i)).belt_state = 4
 			get_node("conveyors/BeltState" + str(i)).machine_state = 0
 			conveyors[i + 1] = false
 		elif key[i] == 2:
@@ -27,6 +26,7 @@ func ChangeModels(key:Array):
 			get_node("conveyors/BeltState" + str(i)).visible = true
 			get_node("conveyors/BeltState" + str(i)).machine_state = 3
 			conveyors[i + 1] = true
+	print(conveyors)
 	for i in range(1, 9): #Conveyor texture changer
 		match conveyors[i]:
 			true:
@@ -42,9 +42,9 @@ func ChangeModels(key:Array):
 							true:
 								get_node("conveyors/BeltState" + str(i - 1)).belt_state = 0
 							false:
-								pass
-	update_models()
-
-func update_models():
+								get_node("conveyors/BeltState" + str(i - 1)).belt_state = 3
+			false:
+				pass
 	for i in range(8):
 		get_node("conveyors/BeltState" + str(i)).update()
+

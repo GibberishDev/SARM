@@ -103,7 +103,7 @@ func getResultingItem		():
 
 func endingText				(resultItem:String,loops:int):
 	endingRecipeText = ""
-	loops = int(nodeInstance_LP.loops)
+	loops = int(nodeInstance_LP.loopsInt)
 	endingRecipeText = """	\"results\": [
 		\"item\": \"""" + str(resultItem) + """\"
 	],

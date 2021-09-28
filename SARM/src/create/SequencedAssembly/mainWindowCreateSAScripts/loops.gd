@@ -1,4 +1,4 @@
 extends HBoxContainer
-var loops = ""
+var loopsInt = ""
 func loops(text: String) -> void:
-	loops = text
+	loopsInt = text

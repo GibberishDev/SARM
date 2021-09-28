@@ -2,9 +2,11 @@ extends Spatial
 
 var conveyors
 
+var zCenter = float(0.0)
+var SpotlightWaveUp = bool()
+
 func ChangeModels(key:Array):
-	$Camera.translation.z = key.size()*0.5 - 0.5
-	$SpotLight.translation.z = key.size()*0.5 - 0.5
+	zCenter = key.size()*0.5 - 0.5
 	conveyors  = [false, false, false, false, false, false, false, false, false, false]
 	for i in range(8): #conveyor reset
 		get_node("conveyors/BeltState" + str(i)).visible = false
@@ -26,7 +28,6 @@ func ChangeModels(key:Array):
 			get_node("conveyors/BeltState" + str(i)).visible = true
 			get_node("conveyors/BeltState" + str(i)).machine_state = 3
 			conveyors[i + 1] = true
-	print(conveyors)
 	for i in range(1, 9): #Conveyor texture changer
 		match conveyors[i]:
 			true:
@@ -48,3 +49,17 @@ func ChangeModels(key:Array):
 	for i in range(8):
 		get_node("conveyors/BeltState" + str(i)).update()
 
+func _physics_process(delta):
+	if $Camera.translation.z != zCenter:
+		$Camera.translation = $Camera.translation.move_toward(Vector3($Camera.translation.x, $Camera.translation.y, zCenter), delta*8)
+		$SpotLight.translation = $SpotLight.translation.move_toward(Vector3($SpotLight.translation.x, $SpotLight.translation.y, zCenter), delta*8)
+	
+	if $SpotLight.translation.y == 5:
+		SpotlightWaveUp = true
+	elif $SpotLight.translation.y == 7:
+		SpotlightWaveUp = false
+	
+	if SpotlightWaveUp:
+		$SpotLight.translation = $SpotLight.translation.move_toward(Vector3($SpotLight.translation.x, 7, $SpotLight.translation.z), delta/10)
+	else:
+		$SpotLight.translation = $SpotLight.translation.move_toward(Vector3($SpotLight.translation.x, 5, $SpotLight.translation.z), delta/10)

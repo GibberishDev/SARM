@@ -177,7 +177,7 @@ __meta__ = {
 position = Vector2( 44, 14 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 7 )
-frame = 17
+frame = 5
 playing = true
 
 [node name="titlebarHitbox" type="Control" parent="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch"]
@@ -226,7 +226,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 closeMode = 1
-closePopUp = ExtResource( 1 )
+closePopUpScene = ExtResource( 1 )
 
 [node name="MainFrame" type="Control" parent="Control/bgOverlay"]
 margin_top = 26.0

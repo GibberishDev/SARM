@@ -141,12 +141,18 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-closePopUp = ExtResource( 9 )
+closePopUpScene = ExtResource( 9 )
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Interface/VBoxContainer"]
+[node name="Control" type="Control" parent="Interface/VBoxContainer"]
 margin_top = 28.0
 margin_right = 1024.0
 margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Interface/VBoxContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -155,14 +161,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="Interface/VBoxContainer/ScrollContainer"]
+[node name="Control" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer"]
 margin_right = 998.0
 margin_bottom = 768.0
 rect_min_size = Vector2( 0, 768 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Interface/VBoxContainer/ScrollContainer/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/VBoxContainer/Control/ScrollContainer/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 167.0
@@ -171,7 +177,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="createSection" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer"]
+[node name="createSection" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer"]
 margin_right = 998.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 0, 192 )
@@ -180,7 +186,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection"]
+[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 5 )
@@ -193,7 +199,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/MainWindowOutline"]
+[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/MainWindowOutline"]
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -204,7 +210,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = 0
@@ -212,12 +218,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="dud" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
+[node name="dud" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
 margin_right = 998.0
 margin_bottom = 8.0
 rect_min_size = Vector2( 0, 8 )
 
-[node name="Label" type="Label" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
+[node name="Label" type="Label" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
 margin_top = 8.0
 margin_right = 998.0
 margin_bottom = 34.0
@@ -226,7 +232,7 @@ custom_fonts/font = SubResource( 4 )
 text = "  Create mod recipes:"
 valign = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
 margin_top = 34.0
 margin_right = 998.0
 margin_bottom = 184.0
@@ -234,13 +240,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 7 )
 
-[node name="Control" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer"]
+[node name="Control" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer"]
 margin_right = 564.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 564, 0 )
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -250,49 +256,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="dud" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
+[node name="dud" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
 margin_right = 20.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 20, 0 )
 
-[node name="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 20.0
 margin_top = 15.0
 margin_right = 276.0
 margin_bottom = 135.0
 size_flags_vertical = 4
 
-[node name="dud2" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
+[node name="dud2" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
 margin_left = 276.0
 margin_right = 292.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 16, 0 )
 
-[node name="CommingSoon" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 8 )]
+[node name="CommingSoon" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 8 )]
 margin_left = 292.0
 margin_top = 15.0
 margin_right = 548.0
 margin_bottom = 135.0
 size_flags_vertical = 4
 
-[node name="Label" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer/CommingSoon/ViewportContainer/Viewport/CS" index="2"]
+[node name="Label" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer/CommingSoon/ViewportContainer/Viewport/CS" index="2"]
 rect_scale = Vector2( 0.52, 1 )
 text = "Mechanical Crafters
 Comming Soon!"
 
-[node name="dud3" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
+[node name="dud3" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
 margin_left = 548.0
 margin_right = 564.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 16, 0 )
 
-[node name="dud2" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
+[node name="dud2" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
 margin_top = 184.0
 margin_right = 998.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 0, 8 )
 
-[node name="end" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer"]
+[node name="end" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer"]
 margin_top = 192.0
 margin_right = 998.0
 margin_bottom = 384.0
@@ -302,7 +308,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/end"]
+[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/end"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 5 )
@@ -315,7 +321,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/end/MainWindowOutline"]
+[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/end/MainWindowOutline"]
 self_modulate = Color( 0, 0, 0, 1 )
 show_behind_parent = true
 anchor_right = 1.0
@@ -327,7 +333,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="end2" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer"]
+[node name="end2" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer"]
 margin_top = 384.0
 margin_right = 998.0
 margin_bottom = 576.0
@@ -337,7 +343,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/end2"]
+[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/end2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 5 )
@@ -350,7 +356,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/end2/MainWindowOutline"]
+[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/end2/MainWindowOutline"]
 self_modulate = Color( 0, 0, 0, 1 )
 show_behind_parent = true
 anchor_right = 1.0
@@ -362,7 +368,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="end3" type="Control" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer"]
+[node name="end3" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer"]
 margin_top = 576.0
 margin_right = 998.0
 margin_bottom = 768.0
@@ -372,7 +378,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/end3"]
+[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/end3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 5 )
@@ -385,7 +391,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/end3/MainWindowOutline"]
+[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/end3/MainWindowOutline"]
 self_modulate = Color( 0, 0, 0, 1 )
 show_behind_parent = true
 anchor_right = 1.0
@@ -400,5 +406,5 @@ __meta__ = {
 [connection signal="gui_input" from="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" to="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" method="HitBoxInput"]
 [connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" method="closePopUp"]
 
-[editable path="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer/CommingSoon"]
-[editable path="Interface/VBoxContainer/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer/CommingSoon/ViewportContainer/Viewport/CS"]
+[editable path="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer/CommingSoon"]
+[editable path="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer/CommingSoon/ViewportContainer/Viewport/CS"]

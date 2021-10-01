@@ -46,7 +46,7 @@ transform = Transform( 0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.
 light_energy = 0.5
 
 [node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( 0.965926, 1.13133e-08, -0.258819, 0.258819, -4.2222e-08, 0.965926, 0, -1, -4.37114e-08, -1, 5, 3.5 )
+transform = Transform( 0.965926, 1.13133e-08, -0.258819, 0.258819, -4.2222e-08, 0.965926, 0, -1, -4.37114e-08, -1, 5, 0 )
 light_energy = 10.0
 shadow_enabled = true
 shadow_contact = 3.0

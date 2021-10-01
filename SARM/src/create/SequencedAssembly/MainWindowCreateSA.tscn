@@ -177,7 +177,7 @@ __meta__ = {
 position = Vector2( 44, 14 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 7 )
-frame = 5
+frame = 7
 playing = true
 
 [node name="titlebarHitbox" type="Control" parent="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch"]

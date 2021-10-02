@@ -9,7 +9,7 @@ var pathToControls = "/HBoxContainer/Control/HBoxContainer"
 
 var SequenceTypes = [0, -1, -1, -1, -1, -1] #0 - press recipe, 1 - saw recipe, 2 - spout recipe, 3 - deployer recipe, -1 - null
 
-export(PackedScene) var MachineRecipe
+export(PackedScene) var MachineWindow
 
 #SequenceMechsDictionary, type: 0 - press, 1 - saw, 2 - spout, 3 - deployer
 var SMD = {
@@ -21,8 +21,23 @@ var SMD = {
 	"6": {"active": false, "type": 0, "data": null}
 }
 
+func recieveMachineData(machineId: int, type: int, data: Dictionary):
+	SMD[str(machineId)].type = type
+	SMD[str(machineId)].data = data
 
-
+func addMAchineEditorWindow(machineId: int):
+	var new_machine_window = MachineWindow.instance()
+	add_child(new_machine_window)
+	match SMD[str(machineId)].type:
+		0:
+			new_machine_window.recipe_type = 0
+			new_machine_window.machine_number = machineId
+			new_machine_window.saw_processing_time = 200
+			new_machine_window.spout_fluid_identifier = ":"
+			new_machine_window.spout_fluid_amount = 250
+			new_machine_window.deployer_addition_item = ""
+			new_machine_window.deployer_addition_item_default = ":"
+			new_machine_window.changeRecipeEditor(0, 20, ":", 250, ":")
 
 func _ready():
 	updateSequenceSprites()

@@ -19,6 +19,18 @@ font_data = ExtResource( 5 )
 size = 20
 font_data = ExtResource( 5 )
 
+[sub_resource type="DynamicFont" id=8]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+width = 256
+
 [sub_resource type="DynamicFont" id=3]
 size = 20
 font_data = ExtResource( 5 )
@@ -30,18 +42,6 @@ region = Rect2( -1, 0, 33, 16 )
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 6 )
 region = Rect2( 32, 0, 33, 16 )
-
-[sub_resource type="Gradient" id=6]
-offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
-colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
-
-[sub_resource type="GradientTexture" id=7]
-gradient = SubResource( 6 )
-width = 256
-
-[sub_resource type="DynamicFont" id=8]
-size = 20
-font_data = ExtResource( 5 )
 
 [node name="Machine" type="Control"]
 anchor_right = 1.0
@@ -259,7 +259,7 @@ text = "Processing time in ticks:"
 align = 1
 valign = 1
 
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer/Control/HBoxContainer"]
+[node name="processingTime" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer/Control/HBoxContainer"]
 margin_left = 324.0
 margin_right = 837.0
 margin_bottom = 24.0
@@ -307,7 +307,7 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer"]
 margin_right = 837.0
-margin_bottom = 90.0
+margin_bottom = 57.0
 custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -315,7 +315,7 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer"]
 margin_right = 64.0
-margin_bottom = 90.0
+margin_bottom = 57.0
 rect_min_size = Vector2( 64, 20 )
 size_flags_vertical = 7
 custom_fonts/font = SubResource( 2 )
@@ -325,55 +325,13 @@ valign = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer"]
 margin_left = 64.0
 margin_right = 837.0
-margin_bottom = 90.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="tagModeChanger" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_right = 773.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 24 )
-
-[node name="itemLabel" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/tagModeChanger"]
-margin_top = 2.0
-margin_right = 36.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 3 )
-text = "item"
-
-[node name="modeSwithcer" type="CheckButton" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/tagModeChanger"]
-margin_left = 40.0
-margin_right = 85.0
-margin_bottom = 24.0
-focus_mode = 0
-custom_icons/off = SubResource( 4 )
-custom_icons/on = SubResource( 5 )
-enabled_focus_mode = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tagLabel" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/tagModeChanger"]
-margin_left = 89.0
-margin_top = 2.0
-margin_right = 121.0
-margin_bottom = 22.0
-custom_fonts/font = SubResource( 3 )
-text = "tag"
-
-[node name="separator" type="TextureRect" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 28.0
-margin_right = 773.0
-margin_bottom = 29.0
-rect_min_size = Vector2( 0, 1 )
-size_flags_horizontal = 5
-texture = SubResource( 7 )
-expand = true
-
 [node name="Control" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 33.0
 margin_right = 773.0
-margin_bottom = 57.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control"]
@@ -383,7 +341,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
+[node name="identifier_label" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
 margin_right = 256.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 256, 20 )
@@ -431,18 +389,18 @@ __meta__ = {
 warnPopUp = ExtResource( 7 )
 
 [node name="separator2" type="TextureRect" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 61.0
+margin_top = 28.0
 margin_right = 773.0
-margin_bottom = 62.0
+margin_bottom = 29.0
 rect_min_size = Vector2( 0, 1 )
 size_flags_horizontal = 5
 texture = SubResource( 7 )
 expand = true
 
 [node name="Control2" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_top = 66.0
+margin_top = 33.0
 margin_right = 773.0
-margin_bottom = 90.0
+margin_bottom = 57.0
 rect_min_size = Vector2( 0, 24 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2"]
@@ -463,7 +421,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2/HBoxContainer"]
+[node name="amount" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2/HBoxContainer"]
 margin_left = 260.0
 margin_right = 773.0
 margin_bottom = 24.0
@@ -591,7 +549,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
+[node name="deployer_identifier_label" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
 margin_right = 256.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 256, 20 )
@@ -700,7 +658,10 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
 
 [connection signal="item_selected" from="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/mode_picker/OptionButton" to="." method="changeRecipeType"]
-[connection signal="text_changed" from="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer/Control/HBoxContainer/TextEdit" to="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer/Control/HBoxContainer/TextEdit" method="textChanged"]
+[connection signal="text_changed" from="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer/Control/HBoxContainer/processingTime" to="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer/Control/HBoxContainer/processingTime" method="textChanged"]
 [connection signal="text_changed" from="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/modid" to="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/modid" method="textChanged"]
 [connection signal="text_changed" from="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/identifier" to="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/identifier" method="textChanged"]
-[connection signal="text_changed" from="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2/HBoxContainer/TextEdit" to="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2/HBoxContainer/TextEdit" method="textChanged"]
+[connection signal="text_changed" from="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2/HBoxContainer/amount" to="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2/HBoxContainer/amount" method="textChanged"]
+[connection signal="toggled" from="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/tagModeChanger/modeSwithcer" to="." method="deployerModeSwitcher"]
+[connection signal="pressed" from="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/HBoxContainer/accept" to="." method="sendText"]
+[connection signal="pressed" from="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/HBoxContainer/cancel" to="." method="close"]

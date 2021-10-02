@@ -21,40 +21,42 @@ var deployer_addition_item_default = ":"
 
 signal RecipeText(MachineNumber, Text)
 
+var path_shortener = "VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/"
+
 func changeRecipeEditor(type: int, SPT: int, SFI: String, SFA: int, DAI: String) -> void:
 	match type:
 		0:
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/PressRecipe.visible = true
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe.visible = false
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe.visible = false
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe.visible = false
+			get_node(path_shortener + "PressRecipe").visible = true
+			get_node(path_shortener + "SawRecipe").visible = false
+			get_node(path_shortener + "SpoutRecipe").visible = false
+			get_node(path_shortener + "DeployerRecipe").visible = false
 		1:
 			saw_processing_time = SPT
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer/Control/HBoxContainer/TextEdit.text = str(SPT)
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/PressRecipe.visible = false
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe.visible = true
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe.visible = false
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe.visible = false
+			get_node(path_shortener + "SawRecipe/VBoxContainer/Control/HBoxContainer/TextEdit").text = str(SPT)
+			get_node(path_shortener + "PressRecipe").visible = false
+			get_node(path_shortener + "SawRecipe").visible = true
+			get_node(path_shortener + "SpoutRecipe").visible = false
+			get_node(path_shortener + "DeployerRecipe").visible = false
 		2:
 			spout_fluid_identifier = SFI
 			spout_fluid_amount = SFA
 			var Spout_data = SFI.split(":", true, 1)
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/modid.text = Spout_data[0]
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/identifier.text = Spout_data[1]
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2/HBoxContainer/TextEdit.text = str(SFA)
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/PressRecipe.visible = false
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe.visible = false
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe.visible = true
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe.visible = false
+			get_node(path_shortener + "SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/modid").text = Spout_data[0]
+			get_node(path_shortener + "SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/identifier").text = Spout_data[1]
+			get_node(path_shortener + "SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2/HBoxContainer/TextEdit").text = str(SFA)
+			get_node(path_shortener + "PressRecipe").visible = false
+			get_node(path_shortener + "SawRecipe").visible = false
+			get_node(path_shortener + "SpoutRecipe").visible = true
+			get_node(path_shortener + "DeployerRecipe").visible = false
 		3:
 			deployer_addition_item = DAI
 			var Deployer_data = DAI.split(":", true, 1)
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/modid.text = Deployer_data[0]
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/identifier.text = Deployer_data[1]
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/PressRecipe.visible = false
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe.visible = false
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe.visible = false
-			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe.visible = true
+			get_node(path_shortener + "DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/modid").text = Deployer_data[0]
+			get_node(path_shortener + "DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/identifier").text = Deployer_data[1]
+			get_node(path_shortener + "PressRecipe").visible = false
+			get_node(path_shortener + "SawRecipe").visible = false
+			get_node(path_shortener + "SpoutRecipe").visible = false
+			get_node(path_shortener + "DeployerRecipe").visible = true
 
 func changeRecipeType(index: int):
 	recipe_type = index

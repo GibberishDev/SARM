@@ -7,7 +7,7 @@ var viewport = "Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/SequenceP
 var pathToSeqButton = "/HBoxContainer/Control/sequenceBtn"
 var pathToControls = "/HBoxContainer/Control/HBoxContainer"
 
-var SequenceTypes = [0, -1, -1, -1, -1, -1, -1, -1] #0 - press recipe, 1 - saw recipe, 2 - spout recipe, 3 - deployer recipe, -1 - null
+var SequenceTypes = [0, -1, -1, -1, -1, -1] #0 - press recipe, 1 - saw recipe, 2 - spout recipe, 3 - deployer recipe, -1 - null
 
 export(PackedScene) var MachineRecipe
 
@@ -18,9 +18,7 @@ var SMD = {
 	"3": {"active": false, "type": 0, "data": null},
 	"4": {"active": false, "type": 0, "data": null},
 	"5": {"active": false, "type": 0, "data": null},
-	"6": {"active": false, "type": 0, "data": null},
-	"7": {"active": false, "type": 0, "data": null},
-	"8": {"active": false, "type": 0, "data": null}
+	"6": {"active": false, "type": 0, "data": null}
 }
 
 
@@ -32,7 +30,7 @@ func _ready():
 	
 
 func updateSequenceSprites() -> void:
-	for i in range(1, 9):
+	for i in range(1, 7):
 		if SMD[str(i)].active == true:
 			SequenceTypes[i-1] = SMD[str(i)].type
 		else:
@@ -72,20 +70,8 @@ func toggleBtn_5() -> void:
 func toggleBtn_6() -> void:
 	get_node(pathToButtons + str(6) + pathToSeqButton).visible = !get_node(pathToButtons + str(6) + pathToSeqButton).visible
 	get_node(pathToButtons + str(6) + pathToControls).visible = !get_node(pathToButtons + str(6) + pathToControls).visible
-	get_node(pathToButtons + str(7) + pathToControls).visible = !get_node(pathToButtons + str(7) + pathToControls).visible
-	SMD["6"].active = !SMD["6"].active
-	updateSequenceSprites()
-func toggleBtn_7() -> void:
-	get_node(pathToButtons + str(7) + pathToSeqButton).visible = !get_node(pathToButtons + str(7) + pathToSeqButton).visible
-	get_node(pathToButtons + str(7) + pathToControls).visible = !get_node(pathToButtons + str(7) + pathToControls).visible
-	get_node(pathToButtons + str(8) + pathToControls).visible = !get_node(pathToButtons + str(8) + pathToControls).visible
-	SMD["7"].active = !SMD["7"].active
-	updateSequenceSprites()
-func toggleBtn_8() -> void:
-	get_node(pathToButtons + str(8) + pathToSeqButton).visible = !get_node(pathToButtons + str(8) + pathToSeqButton).visible
-	get_node(pathToButtons + str(8) + pathToControls).visible = !get_node(pathToButtons + str(8) + pathToControls).visible
 	get_node(pathToButtons + "removeBtn/HBoxContainer").visible = !get_node(pathToButtons + "removeBtn/HBoxContainer").visible
-	SMD["8"].active = !SMD["8"].active
+	SMD["6"].active = !SMD["6"].active
 	updateSequenceSprites()
 
 func sendSeq() -> void:

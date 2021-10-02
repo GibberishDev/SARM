@@ -24,8 +24,6 @@ var seqThree = ""
 var seqFour = ""
 var seqFive = ""
 var seqSix = ""
-var seqSeven = ""
-var seqEight = ""
 var seqText = ""
 var endingRecipeText = ""
 
@@ -39,7 +37,7 @@ func genText():
 	var bufferText = ""
 	bufferText = startingText()
 	addToOutputText(bufferText)
-	bufferText = addSequenceText(seqOne, seqTwo, seqThree, seqFour, seqFive, seqSix, seqSeven, seqEight)
+	bufferText = addSequenceText(seqOne, seqTwo, seqThree, seqFour, seqFive, seqSix)
 	addToOutputText(bufferText)
 	bufferText = endingText(resultingItem, numberLoops)
 	addToOutputText(bufferText)
@@ -62,7 +60,7 @@ func startingText			():
 
 
 
-func addSequenceText		(one:String, two:String, three:String, four:String, five:String, six:String, seven:String, eight:String):
+func addSequenceText		(one:String, two:String, three:String, four:String, five:String, six:String):
 	seqText = ""
 	if one != "":
 		seqText += one
@@ -81,12 +79,6 @@ func addSequenceText		(one:String, two:String, three:String, four:String, five:S
 	if six != "":
 		seqText += ",\n"
 		seqText += six
-	if seven != "":
-		seqText += ",\n"
-		seqText += seven
-	if eight != "":
-		seqText += ",\n"
-		seqText += eight
 	seqText += "\n	],\n"
 	return seqText
 func getStartingItemText	():

@@ -216,14 +216,14 @@ __meta__ = {
 
 [node name="dud" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
 margin_right = 256.0
-margin_bottom = 16.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 0, 8 )
 size_flags_vertical = 3
 
 [node name="1" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 16.0
+margin_top = 33.0
 margin_right = 256.0
-margin_bottom = 64.0
+margin_bottom = 81.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 __meta__ = {
@@ -308,16 +308,16 @@ rect_min_size = Vector2( 16, 48 )
 size_flags_stretch_ratio = 0.25
 
 [node name="dud2" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 64.0
+margin_top = 81.0
 margin_right = 256.0
-margin_bottom = 81.0
+margin_bottom = 114.0
 rect_min_size = Vector2( 0, 2 )
 size_flags_vertical = 3
 
 [node name="2" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 81.0
+margin_top = 114.0
 margin_right = 256.0
-margin_bottom = 129.0
+margin_bottom = 162.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 
@@ -456,16 +456,16 @@ rect_min_size = Vector2( 16, 48 )
 size_flags_stretch_ratio = 0.25
 
 [node name="dud3" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 129.0
+margin_top = 162.0
 margin_right = 256.0
-margin_bottom = 146.0
+margin_bottom = 195.0
 rect_min_size = Vector2( 0, 2 )
 size_flags_vertical = 3
 
 [node name="3" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 146.0
+margin_top = 195.0
 margin_right = 256.0
-margin_bottom = 194.0
+margin_bottom = 243.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 
@@ -660,16 +660,16 @@ __meta__ = {
 }
 
 [node name="dud4" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 194.0
+margin_top = 243.0
 margin_right = 256.0
-margin_bottom = 211.0
+margin_bottom = 276.0
 rect_min_size = Vector2( 0, 2 )
 size_flags_vertical = 3
 
 [node name="4" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 211.0
+margin_top = 276.0
 margin_right = 256.0
-margin_bottom = 259.0
+margin_bottom = 324.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 
@@ -864,16 +864,16 @@ __meta__ = {
 }
 
 [node name="dud5" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 259.0
+margin_top = 324.0
 margin_right = 256.0
-margin_bottom = 275.0
+margin_bottom = 357.0
 rect_min_size = Vector2( 0, 2 )
 size_flags_vertical = 3
 
 [node name="5" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 275.0
+margin_top = 357.0
 margin_right = 256.0
-margin_bottom = 323.0
+margin_bottom = 405.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 
@@ -1068,16 +1068,16 @@ __meta__ = {
 }
 
 [node name="dud6" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 323.0
+margin_top = 405.0
 margin_right = 256.0
-margin_bottom = 340.0
+margin_bottom = 438.0
 rect_min_size = Vector2( 0, 2 )
 size_flags_vertical = 3
 
 [node name="6" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 340.0
+margin_top = 438.0
 margin_right = 256.0
-margin_bottom = 388.0
+margin_bottom = 486.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 
@@ -1272,424 +1272,16 @@ __meta__ = {
 }
 
 [node name="dud7" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 388.0
+margin_top = 486.0
 margin_right = 256.0
-margin_bottom = 405.0
-rect_min_size = Vector2( 0, 2 )
-size_flags_vertical = 3
-
-[node name="7" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 405.0
-margin_right = 256.0
-margin_bottom = 453.0
-rect_min_size = Vector2( 0, 48 )
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
-custom_constants/separation = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="dud" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer"]
-margin_right = 16.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 16, 48 )
-size_flags_stretch_ratio = 0.25
-
-[node name="Control" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer"]
-margin_left = 16.0
-margin_right = 240.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 64, 0 )
-size_flags_horizontal = 3
-
-[node name="sequenceBtn" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 64, 0 )
-size_flags_horizontal = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/sequenceBtn"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 13 )
-draw_center = false
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton" type="Button" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/sequenceBtn"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 4.0
-margin_right = -4.0
-margin_bottom = -4.0
-focus_mode = 0
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-enabled_focus_mode = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/sequenceBtn"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 10 )
-text = "Machine 7"
-align = 1
-valign = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="add" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/HBoxContainer"]
-margin_right = 110.0
-margin_bottom = 48.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/HBoxContainer/add"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -24.0
-margin_top = -24.0
-margin_right = 24.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 48, 48 )
-texture = ExtResource( 13 )
-draw_center = false
-region_rect = Rect2( 0, 0, 16, 12 )
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/HBoxContainer/add"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 0, 40 )
-focus_mode = 0
-enabled_focus_mode = 0
-texture_normal = SubResource( 11 )
-texture_pressed = SubResource( 12 )
-texture_hover = SubResource( 13 )
-texture_disabled = SubResource( 12 )
-texture_focused = SubResource( 13 )
-expand = true
-stretch_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="remove" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/HBoxContainer"]
-margin_left = 114.0
-margin_right = 224.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 48, 48 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="NinePatchRect2" type="NinePatchRect" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/HBoxContainer/remove"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -24.0
-margin_top = -24.0
-margin_right = 24.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 48, 48 )
-texture = ExtResource( 13 )
-draw_center = false
-region_rect = Rect2( 0, 0, 16, 12 )
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton2" type="TextureButton" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/HBoxContainer/remove"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 0, 40 )
-focus_mode = 0
-enabled_focus_mode = 0
-texture_normal = SubResource( 14 )
-texture_pressed = SubResource( 15 )
-texture_hover = SubResource( 16 )
-texture_disabled = SubResource( 15 )
-texture_focused = SubResource( 16 )
-expand = true
-stretch_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="dud2" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer"]
-margin_left = 240.0
-margin_right = 256.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 16, 48 )
-size_flags_stretch_ratio = 0.25
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="dud8" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 453.0
-margin_right = 256.0
-margin_bottom = 470.0
-rect_min_size = Vector2( 0, 2 )
-size_flags_vertical = 3
-
-[node name="8" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 470.0
-margin_right = 256.0
-margin_bottom = 518.0
-rect_min_size = Vector2( 0, 48 )
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
-custom_constants/separation = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="dud" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer"]
-margin_right = 16.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 16, 48 )
-size_flags_stretch_ratio = 0.25
-
-[node name="Control" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer"]
-margin_left = 16.0
-margin_right = 240.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 64, 0 )
-size_flags_horizontal = 3
-
-[node name="sequenceBtn" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 64, 0 )
-size_flags_horizontal = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/sequenceBtn"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 13 )
-draw_center = false
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton" type="Button" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/sequenceBtn"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 4.0
-margin_right = -4.0
-margin_bottom = -4.0
-focus_mode = 0
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
-enabled_focus_mode = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/sequenceBtn"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 10 )
-text = "Machine 8"
-align = 1
-valign = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="add" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/HBoxContainer"]
-margin_right = 110.0
-margin_bottom = 48.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/HBoxContainer/add"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -24.0
-margin_top = -24.0
-margin_right = 24.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 48, 48 )
-texture = ExtResource( 13 )
-draw_center = false
-region_rect = Rect2( 0, 0, 16, 12 )
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/HBoxContainer/add"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 0, 40 )
-focus_mode = 0
-enabled_focus_mode = 0
-texture_normal = SubResource( 11 )
-texture_pressed = SubResource( 12 )
-texture_hover = SubResource( 13 )
-texture_disabled = SubResource( 12 )
-texture_focused = SubResource( 13 )
-expand = true
-stretch_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="remove" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/HBoxContainer"]
-margin_left = 114.0
-margin_right = 224.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 48, 48 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="NinePatchRect2" type="NinePatchRect" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/HBoxContainer/remove"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -24.0
-margin_top = -24.0
-margin_right = 24.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 48, 48 )
-texture = ExtResource( 13 )
-draw_center = false
-region_rect = Rect2( 0, 0, 16, 12 )
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureButton2" type="TextureButton" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/HBoxContainer/remove"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
-rect_min_size = Vector2( 0, 40 )
-focus_mode = 0
-enabled_focus_mode = 0
-texture_normal = SubResource( 14 )
-texture_pressed = SubResource( 15 )
-texture_hover = SubResource( 16 )
-texture_disabled = SubResource( 15 )
-texture_focused = SubResource( 16 )
-expand = true
-stretch_mode = 4
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="dud2" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer"]
-margin_left = 240.0
-margin_right = 256.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 16, 48 )
-size_flags_stretch_ratio = 0.25
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="dud9" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 518.0
-margin_right = 256.0
-margin_bottom = 535.0
+margin_bottom = 519.0
 rect_min_size = Vector2( 0, 2 )
 size_flags_vertical = 3
 
 [node name="removeBtn" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 535.0
+margin_top = 519.0
 margin_right = 256.0
-margin_bottom = 583.0
+margin_bottom = 567.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 __meta__ = {
@@ -1755,8 +1347,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="dud10" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 583.0
+[node name="dud8" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
+margin_top = 567.0
 margin_right = 256.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 0, 8 )
@@ -1785,8 +1377,4 @@ __meta__ = {
 [connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/5/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="." method="toggleBtn_4"]
 [connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/6/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="." method="toggleBtn_6"]
 [connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/6/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="." method="toggleBtn_5"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="." method="toggleBtn_7"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/7/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="." method="toggleBtn_6"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="." method="toggleBtn_8"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/8/HBoxContainer/Control/HBoxContainer/remove/TextureButton2" to="." method="toggleBtn_7"]
-[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/removeBtn/HBoxContainer/remove/TextureButton2" to="." method="toggleBtn_8"]
+[connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/removeBtn/HBoxContainer/remove/TextureButton2" to="." method="toggleBtn_6"]

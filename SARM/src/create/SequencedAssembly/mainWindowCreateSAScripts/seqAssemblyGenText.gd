@@ -39,7 +39,7 @@ func genText():
 	addToOutputText(bufferText)
 	bufferText = addSequenceText(seqOne, seqTwo, seqThree, seqFour, seqFive, seqSix)
 	addToOutputText(bufferText)
-	bufferText = endingText(resultingItem, numberLoops)
+	bufferText = endingText(getResultingItem(), numberLoops)
 	addToOutputText(bufferText)
 	bufferText = ""
 	recipe = outputText
@@ -91,13 +91,19 @@ func getTarnsitItemText		():
 	transitItem = "\"" + nodeInstance_TIP.identifierKeyText + ": " + nodeInstance_TIP.identifierValueText + "\""
 
 func getResultingItem		():
-	pass
+	var resultItemsText = ""
+	var arr = $Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/resultItem.items
+	if arr.size() != 0:
+		for i in range(arr.size() - 1):
+			resultItemsText += arr[i] + ",\n"
+		resultItemsText += arr[arr.size() - 1]
+	return resultItemsText
 
 func endingText				(resultItem:String,loops:int):
 	endingRecipeText = ""
 	loops = int(nodeInstance_LP.loopsInt)
 	endingRecipeText = """	\"results\": [
-		\"item\": \"""" + str(resultItem) + """\"
+""" + resultItem + """
 	],
 	\"loops\": """ + str(loops) + """
 }"""

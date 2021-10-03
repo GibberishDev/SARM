@@ -31,12 +31,12 @@ font_data = ExtResource( 5 )
 size = 20
 font_data = ExtResource( 5 )
 
-[sub_resource type="Gradient" id=4]
+[sub_resource type="Gradient" id=11]
 offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
 colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
 
 [sub_resource type="GradientTexture" id=5]
-gradient = SubResource( 4 )
+gradient = SubResource( 11 )
 width = 256
 
 [sub_resource type="DynamicFont" id=6]

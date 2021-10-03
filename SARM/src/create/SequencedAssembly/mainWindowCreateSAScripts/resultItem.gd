@@ -22,5 +22,5 @@ func parseDicts():
 	items = []
 	for i in range(itemsDicts.size()):
 		var item = ""
-		item = "		{\"item\": \"" + itemsDicts[i].item + "\", \"chance\": " + itemsDicts[i].chance + "\"}"
+		item = "		{\"item\": \"" + itemsDicts[i].item + "\", \"chance\": " + itemsDicts[i].chance + "}"
 		items.append(item)

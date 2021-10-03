@@ -53,7 +53,7 @@ func startingText			():
 	getStartingItemText()
 	startText += "	\"ingredient\": {\"" + startingItemTagMode + "\": \"" + startItem +"\"},\n"
 	getTarnsitItemText()
-	startText += "	\"transitionalItem\": {" + str(transitItem) + "},\n"
+	startText += "	\"transitionalItem\": {\"item\": " + str(transitItem) + "},\n"
 	startText += "	\"sequence\": [\n"
 	return startText
 	

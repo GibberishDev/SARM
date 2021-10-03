@@ -15,6 +15,7 @@ run/main_scene="res://src/MainWindow.tscn"
 boot_splash/image="res://icon.png"
 boot_splash/use_filter=false
 config/icon="res://icon.png"
+config/windows_native_icon="res://ReleaseIcon.ico"
 
 [display]
 

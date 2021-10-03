@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=1]
 [ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://src/create/SequencedAssembly/signalScripts/TextEdit.gd" type="Script" id=9]
 [ext_resource path="res://src/create/SequencedAssembly/signalScripts/TagEdit.gd" type="Script" id=10]
 
+[sub_resource type="DynamicFont" id=10]
+size = 20
+font_data = ExtResource( 5 )
+
 [sub_resource type="DynamicFont" id=1]
 size = 30
 font_data = ExtResource( 5 )
@@ -19,27 +23,31 @@ font_data = ExtResource( 5 )
 size = 20
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 size = 20
 font_data = ExtResource( 5 )
-
-[sub_resource type="Gradient" id=6]
-offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
-colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
-
-[sub_resource type="GradientTexture" id=7]
-gradient = SubResource( 6 )
-width = 256
 
 [sub_resource type="DynamicFont" id=3]
 size = 20
 font_data = ExtResource( 5 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+width = 256
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 6 )
 region = Rect2( -1, 0, 33, 16 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 6 )
 region = Rect2( 32, 0, 33, 16 )
 
@@ -162,31 +170,32 @@ __meta__ = {
 }
 
 [node name="dud" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer"]
-margin_right = 8.0
+margin_right = 16.0
 margin_bottom = 474.0
-rect_min_size = Vector2( 8, 0 )
+rect_min_size = Vector2( 16, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer"]
-margin_left = 8.0
-margin_right = 845.0
+margin_left = 16.0
+margin_right = 837.0
 margin_bottom = 474.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="dud" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
-margin_right = 837.0
-margin_bottom = 4.0
-rect_min_size = Vector2( 0, 4 )
+margin_right = 821.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 0, 8 )
 
 [node name="mode_picker" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
-margin_top = 8.0
-margin_right = 837.0
-margin_bottom = 24.0
+margin_top = 12.0
+margin_right = 821.0
+margin_bottom = 28.0
 rect_min_size = Vector2( 0, 16 )
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/mode_picker"]
 margin_right = 29.0
 margin_bottom = 20.0
+custom_fonts/font = SubResource( 10 )
 text = "Press recipe"
 items = [ "Press recipe", null, false, 0, null, "Saw recipe", null, false, 1, null, "Spout recipe", null, false, 2, null, "Deployer recipe", null, false, 3, null ]
 selected = 0
@@ -195,15 +204,15 @@ __meta__ = {
 }
 
 [node name="dud2" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
-margin_top = 28.0
-margin_right = 837.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 0, 4 )
+margin_top = 32.0
+margin_right = 821.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 16 )
 
 [node name="PressRecipe" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
-margin_top = 36.0
-margin_right = 837.0
-margin_bottom = 132.0
+margin_top = 52.0
+margin_right = 821.0
+margin_bottom = 144.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -221,9 +230,9 @@ __meta__ = {
 }
 
 [node name="SawRecipe" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
-margin_top = 136.0
-margin_right = 837.0
-margin_bottom = 233.0
+margin_top = 148.0
+margin_right = 821.0
+margin_bottom = 241.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -236,7 +245,7 @@ __meta__ = {
 }
 
 [node name="Control" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer"]
-margin_right = 837.0
+margin_right = 821.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
 size_flags_horizontal = 3
@@ -261,26 +270,27 @@ valign = 1
 
 [node name="processingTime" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer/Control/HBoxContainer"]
 margin_left = 324.0
-margin_right = 837.0
+margin_right = 821.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 128, 18 )
 size_flags_horizontal = 3
+custom_fonts/font = SubResource( 9 )
 script = ExtResource( 8 )
 warnPopUp = ExtResource( 7 )
 
 [node name="dud4" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SawRecipe/VBoxContainer"]
 margin_top = 24.0
-margin_right = 837.0
-margin_bottom = 97.0
+margin_right = 821.0
+margin_bottom = 93.0
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SpoutRecipe" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
-margin_top = 237.0
-margin_right = 837.0
-margin_bottom = 333.0
+margin_top = 245.0
+margin_right = 821.0
+margin_bottom = 337.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -293,8 +303,8 @@ __meta__ = {
 }
 
 [node name="Control" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer"]
-margin_right = 837.0
-margin_bottom = 48.0
+margin_right = 821.0
+margin_bottom = 46.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -306,7 +316,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer"]
-margin_right = 837.0
+margin_right = 821.0
 margin_bottom = 57.0
 custom_constants/separation = 0
 __meta__ = {
@@ -324,13 +334,13 @@ valign = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer"]
 margin_left = 64.0
-margin_right = 837.0
+margin_right = 821.0
 margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Control" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_right = 773.0
+margin_right = 757.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
 
@@ -346,7 +356,7 @@ margin_right = 256.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 256, 20 )
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 3 )
 text = "[MODID]:[IDENTIFIER]"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -354,10 +364,11 @@ __meta__ = {
 
 [node name="modid" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
 margin_left = 260.0
-margin_right = 510.0
+margin_right = 502.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = SubResource( 9 )
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -365,23 +376,24 @@ __meta__ = {
 warnPopUp = ExtResource( 7 )
 
 [node name="Label2" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
-margin_left = 514.0
-margin_right = 518.0
+margin_left = 506.0
+margin_right = 510.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 20 )
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 3 )
 text = ":"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="identifier" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
-margin_left = 522.0
-margin_right = 773.0
+margin_left = 514.0
+margin_right = 757.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = SubResource( 9 )
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -390,16 +402,16 @@ warnPopUp = ExtResource( 7 )
 
 [node name="separator2" type="TextureRect" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 28.0
-margin_right = 773.0
+margin_right = 757.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 0, 1 )
 size_flags_horizontal = 5
-texture = SubResource( 7 )
+texture = SubResource( 5 )
 expand = true
 
 [node name="Control2" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 33.0
-margin_right = 773.0
+margin_right = 757.0
 margin_bottom = 57.0
 rect_min_size = Vector2( 0, 24 )
 
@@ -415,7 +427,7 @@ margin_right = 256.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 256, 20 )
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 3 )
 text = "Amount:"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -423,10 +435,11 @@ __meta__ = {
 
 [node name="amount" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2/HBoxContainer"]
 margin_left = 260.0
-margin_right = 773.0
+margin_right = 757.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = SubResource( 9 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -434,17 +447,17 @@ __meta__ = {
 warnPopUp = ExtResource( 7 )
 
 [node name="dud4" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer"]
-margin_top = 48.0
-margin_right = 837.0
-margin_bottom = 96.0
+margin_top = 46.0
+margin_right = 821.0
+margin_bottom = 92.0
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="DeployerRecipe" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
-margin_top = 337.0
-margin_right = 837.0
+margin_top = 341.0
+margin_right = 821.0
 margin_bottom = 434.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -458,8 +471,8 @@ __meta__ = {
 }
 
 [node name="Control" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer"]
-margin_right = 837.0
-margin_bottom = 48.0
+margin_right = 821.0
+margin_bottom = 46.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -471,7 +484,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer"]
-margin_right = 837.0
+margin_right = 821.0
 margin_bottom = 57.0
 custom_constants/separation = 0
 __meta__ = {
@@ -490,13 +503,13 @@ valign = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer"]
 margin_left = 64.0
-margin_right = 837.0
+margin_right = 821.0
 margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="tagModeChanger" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_right = 773.0
+margin_right = 757.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
 
@@ -504,7 +517,7 @@ rect_min_size = Vector2( 0, 24 )
 margin_top = 2.0
 margin_right = 36.0
 margin_bottom = 22.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 6 )
 text = "item"
 
 [node name="modeSwithcer" type="CheckButton" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/tagModeChanger"]
@@ -512,8 +525,8 @@ margin_left = 40.0
 margin_right = 85.0
 margin_bottom = 24.0
 focus_mode = 0
-custom_icons/off = SubResource( 4 )
-custom_icons/on = SubResource( 5 )
+custom_icons/off = SubResource( 7 )
+custom_icons/on = SubResource( 8 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -524,21 +537,21 @@ margin_left = 89.0
 margin_top = 2.0
 margin_right = 121.0
 margin_bottom = 22.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 6 )
 text = "tag"
 
 [node name="separator" type="TextureRect" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 28.0
-margin_right = 773.0
+margin_right = 757.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 0, 1 )
 size_flags_horizontal = 5
-texture = SubResource( 7 )
+texture = SubResource( 5 )
 expand = true
 
 [node name="Control" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 33.0
-margin_right = 773.0
+margin_right = 757.0
 margin_bottom = 57.0
 rect_min_size = Vector2( 0, 24 )
 
@@ -554,7 +567,7 @@ margin_right = 256.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 256, 20 )
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 3 )
 text = "[MODID]:[IDENTIFIER]"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -562,40 +575,42 @@ __meta__ = {
 
 [node name="modid" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
 margin_left = 260.0
-margin_right = 510.0
+margin_right = 502.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label2" type="Label" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
-margin_left = 514.0
-margin_right = 518.0
+margin_left = 506.0
+margin_right = 510.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 20 )
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 3 )
 text = ":"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="identifier" type="TextEdit" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer"]
-margin_left = 522.0
-margin_right = 773.0
+margin_left = 514.0
+margin_right = 757.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_fonts/font = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="dud4" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer"]
-margin_top = 48.0
-margin_right = 837.0
-margin_bottom = 97.0
+margin_top = 46.0
+margin_right = 821.0
+margin_bottom = 93.0
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -603,13 +618,13 @@ __meta__ = {
 
 [node name="dud3" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
 margin_top = 438.0
-margin_right = 837.0
+margin_right = 821.0
 margin_bottom = 442.0
 rect_min_size = Vector2( 0, 4 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
 margin_top = 446.0
-margin_right = 837.0
+margin_right = 821.0
 margin_bottom = 466.0
 size_flags_horizontal = 3
 __meta__ = {
@@ -617,29 +632,29 @@ __meta__ = {
 }
 
 [node name="accept" type="Button" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/HBoxContainer"]
-margin_right = 416.0
+margin_right = 408.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "Accept"
 
 [node name="cancel" type="Button" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 420.0
-margin_right = 837.0
+margin_left = 412.0
+margin_right = 821.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 text = "Cancel"
 
 [node name="dud4" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer"]
 margin_top = 470.0
-margin_right = 837.0
+margin_right = 821.0
 margin_bottom = 474.0
 rect_min_size = Vector2( 0, 4 )
 
 [node name="dud2" type="Control" parent="VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer"]
-margin_left = 845.0
+margin_left = 837.0
 margin_right = 853.0
 margin_bottom = 474.0
-rect_min_size = Vector2( 8, 0 )
+rect_min_size = Vector2( 16, 0 )
 
 [node name="dud2" type="Control" parent="VBoxContainer/Control"]
 margin_left = 938.0

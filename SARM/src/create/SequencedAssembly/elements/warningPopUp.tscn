@@ -40,7 +40,7 @@ font_data = ExtResource( 5 )
 
 [node name="Control" type="Control"]
 margin_right = 256.0
-margin_bottom = 100.0
+margin_bottom = 128.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource( 6 )
@@ -119,7 +119,7 @@ __meta__ = {
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer"]
 margin_top = 25.0
 margin_right = 256.0
-margin_bottom = 100.0
+margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
@@ -153,13 +153,13 @@ __meta__ = {
 
 [node name="dud" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2"]
 margin_right = 8.0
-margin_bottom = 75.0
+margin_bottom = 103.0
 rect_min_size = Vector2( 8, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/NinePatchRect/HBoxContainer2"]
 margin_left = 8.0
 margin_right = 248.0
-margin_bottom = 75.0
+margin_bottom = 103.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
@@ -173,7 +173,7 @@ size_flags_horizontal = 3
 [node name="TextEdit" type="TextEdit" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
 margin_top = 8.0
 margin_right = 240.0
-margin_bottom = 67.0
+margin_bottom = 95.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 8 )
@@ -182,16 +182,16 @@ a-z and _"
 readonly = true
 
 [node name="dud2" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
-margin_top = 67.0
+margin_top = 95.0
 margin_right = 240.0
-margin_bottom = 75.0
+margin_bottom = 103.0
 rect_min_size = Vector2( 0, 8 )
 size_flags_horizontal = 3
 
 [node name="dud2" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2"]
 margin_left = 248.0
 margin_right = 256.0
-margin_bottom = 75.0
+margin_bottom = 103.0
 rect_min_size = Vector2( 8, 0 )
 
 [node name="Timer" type="Timer" parent="."]

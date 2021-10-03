@@ -106,8 +106,16 @@ func addToOutputText		(text:String)-> void:
 	outputText += text
 func showRecipeWindow		(text:String)-> void:
 	var recipeTextSceneNew = recipeTextScene.instance()
-	recipeTextSceneNew.recipe = text
+	recipeTextSceneNew.recipe = text.replace("TRPH", transitItem)
 	get_tree().get_current_scene().add_child(recipeTextSceneNew)
 
 func openSequenceRecipeEditor():
 	$Control/Machine.TransitionalItem = transitItem
+
+func recieveRecipeArray(array: Array):
+	seqOne = array[0]
+	seqTwo = array[1]
+	seqThree = array[2]
+	seqFour = array[3]
+	seqFive = array[4]
+	seqSix = array[5]

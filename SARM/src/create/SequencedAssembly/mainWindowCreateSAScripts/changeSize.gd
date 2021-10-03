@@ -9,6 +9,7 @@ func onButtonPress():
 		last_pos = OS.window_position
 		OS.window_fullscreen = true
 	else:
+		OS.window_fullscreen = false
 		OS.window_position = last_pos
 		OS.window_size = Vector2(1024, 600)
 		titlebar.immovable = false

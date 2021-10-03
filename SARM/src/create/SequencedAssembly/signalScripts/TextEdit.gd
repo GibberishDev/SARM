@@ -3,7 +3,7 @@ extends TextEdit
 export(PackedScene) var warnPopUp
 
 var previous_text = ""
-var allowedID = "abcdefghijklmnopqrstuvwxyz_"
+var allowedID = "abcdefghijklmnopqrstuvwxyz_0123456789"
 
 signal successfulText(text)
 

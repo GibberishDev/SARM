@@ -177,7 +177,7 @@ __meta__ = {
 position = Vector2( 44, 14 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 7 )
-frame = 9
+frame = 19
 playing = true
 
 [node name="titlebarHitbox" type="Control" parent="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch"]
@@ -563,9 +563,9 @@ valign = 1
 
 [node name="TextEdit" type="TextEdit" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/loopsParams/HBoxContainer"]
 margin_left = 456.0
-margin_right = 520.0
+margin_right = 648.0
 margin_bottom = 26.0
-rect_min_size = Vector2( 64, 26 )
+rect_min_size = Vector2( 192, 26 )
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 17 )
 caret_blink = true

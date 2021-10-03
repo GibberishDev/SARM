@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=1]
 [ext_resource path="res://assets/header_bg.png" type="Texture" id=2]
@@ -13,24 +13,57 @@
 [ext_resource path="res://assets/closeBtnFrames.png" type="Texture" id=11]
 [ext_resource path="res://src/MainWindow.gd" type="Script" id=12]
 [ext_resource path="res://assets/ScrollBarTheme.tres" type="Theme" id=13]
+[ext_resource path="res://assets/loading_anim.png" type="Texture" id=14]
 
 [sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 0, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 0, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 16, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 14 )
+region = Rect2( 64, 16, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 14 )
+region = Rect2( 128, 16, 64, 16 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 2 ), SubResource( 1 ), SubResource( 1 ), SubResource( 2 ), SubResource( 2 ), SubResource( 1 ), SubResource( 1 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 5 ), SubResource( 4 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 26, 28 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 11 )
 region = Rect2( 52, 0, 26, 28 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 11 )
 region = Rect2( 26, 0, 26, 28 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=12]
 size = 20
 font_data = ExtResource( 6 )
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=13]
 texture = ExtResource( 1 )
 region_rect = Rect2( 2, 0, 12, 12 )
 margin_left = 2.0
@@ -39,7 +72,7 @@ margin_top = 4.0
 margin_bottom = 4.0
 axis_stretch_vertical = 1
 
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=14]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 16, 2 )
 margin_left = 2.0
@@ -52,11 +85,11 @@ VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
 VScrollBar/icons/increment_highlight = null
-VScrollBar/styles/grabber = SubResource( 5 )
-VScrollBar/styles/grabber_highlight = SubResource( 5 )
-VScrollBar/styles/grabber_pressed = SubResource( 5 )
-VScrollBar/styles/scroll = SubResource( 6 )
-VScrollBar/styles/scroll_focus = SubResource( 6 )
+VScrollBar/styles/grabber = SubResource( 13 )
+VScrollBar/styles/grabber_highlight = SubResource( 13 )
+VScrollBar/styles/grabber_pressed = SubResource( 13 )
+VScrollBar/styles/scroll = SubResource( 14 )
+VScrollBar/styles/scroll_focus = SubResource( 14 )
 
 [node name="Root" type="Node"]
 script = ExtResource( 12 )
@@ -115,6 +148,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane"]
+position = Vector2( 44, 14 )
+scale = Vector2( 1.25, 1.25 )
+frames = SubResource( 8 )
+frame = 18
+playing = true
+
 [node name="HitBox" type="Control" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -132,10 +172,10 @@ rect_min_size = Vector2( 26, 28 )
 hint_tooltip = "Close SARM"
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 1 )
-texture_pressed = SubResource( 2 )
-texture_hover = SubResource( 3 )
-texture_disabled = SubResource( 2 )
+texture_normal = SubResource( 9 )
+texture_pressed = SubResource( 10 )
+texture_hover = SubResource( 11 )
+texture_disabled = SubResource( 10 )
 expand = true
 script = ExtResource( 10 )
 __meta__ = {
@@ -228,7 +268,7 @@ margin_top = 8.0
 margin_right = 998.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 0, 26 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 12 )
 text = "  Create mod recipes:"
 valign = 1
 

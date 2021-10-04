@@ -10,12 +10,15 @@ config_version=4
 
 [application]
 
-config/name="Sarm"
+config/name="S.A.R.M."
 run/main_scene="res://src/MainWindow.tscn"
 boot_splash/image="res://icon.png"
 boot_splash/use_filter=false
 config/icon="res://icon.png"
-config/windows_native_icon="res://ReleaseIcon.ico"
+config/windows_native_icon="res://ico.ico"
+config/icon.64="res://icon.png"
+config/windows_native_icon.64="res://ico.ico"
+config/name.64="S.A.R.M."
 
 [display]
 

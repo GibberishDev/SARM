@@ -76,6 +76,7 @@ func addMAchineEditorWindow(machineId: int):
 func _ready():
 	updateSequenceSprites()
 	ThisNode = self
+# warning-ignore:return_value_discarded
 	connect("SendRecipes", get_tree().get_current_scene(), "recieveRecipeArray")
 	sequenceText[0] = """		{
 			"type": "create:pressing",

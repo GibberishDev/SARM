@@ -4,11 +4,6 @@ export(PackedScene) var recipeTextScene
 
 var recipe = ""
 
-#var testArray = [
-#	{"item": "create:precission_mechanism", "chance": 120.0},
-#	{"item": "create:golden_sheet", "chance": 8.0},
-#	]
-
 var startItem = ""
 var transitItem = ""
 var resultingItem = ""
@@ -86,9 +81,9 @@ func getStartingItemText	():
 		startingItemTagMode = "item"
 	else:
 		startingItemTagMode = "tag"
-	startItem = nodeInstance_SIP.identifierKeyText + ": " + nodeInstance_SIP.identifierValueText
+	startItem = nodeInstance_SIP.identifierKeyText + ":" + nodeInstance_SIP.identifierValueText
 func getTarnsitItemText		():
-	transitItem = "\"" + nodeInstance_TIP.identifierKeyText + ": " + nodeInstance_TIP.identifierValueText + "\""
+	transitItem = "\"" + nodeInstance_TIP.identifierKeyText + ":" + nodeInstance_TIP.identifierValueText + "\""
 
 func getResultingItem		():
 	var resultItemsText = ""

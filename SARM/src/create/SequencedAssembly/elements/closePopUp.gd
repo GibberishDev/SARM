@@ -21,4 +21,5 @@ func Yes():
 	if mode == 0:
 		get_tree().quit()
 	if mode == 1:
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://src/MainWindow.tscn")

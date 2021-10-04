@@ -10,7 +10,7 @@ func openEditWindow():
 	window.connect("Results", self, "recieveArray")
 	if itemsDicts.size() != 0:
 		for i in range(itemsDicts.size()):
-			window.openTextFill(i, itemsDicts[i].item, itemsDicts[i].chance)
+			window.openTextFill(i, itemsDicts[i].item, itemsDicts[i].chance, str(itemsDicts[i].count))
 	get_tree().get_current_scene().add_child(window)
 	
 
@@ -22,5 +22,5 @@ func parseDicts():
 	items = []
 	for i in range(itemsDicts.size()):
 		var item = ""
-		item = "		{\"item\": \"" + itemsDicts[i].item + "\", \"chance\": " + itemsDicts[i].chance + "}"
+		item = "		{\"item\": \"" + itemsDicts[i].item + "\", \"chance\": " + itemsDicts[i].chance + ", \"count\": " + str(itemsDicts[i].count) + "}"
 		items.append(item)

@@ -1,36 +1,18 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/bg.png" type="Texture" id=1]
 [ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=2]
 [ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=3]
 [ext_resource path="res://assets/header_bg.png" type="Texture" id=4]
 [ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://src/create/SequencedAssembly/elements/warningSign.gd" type="Script" id=6]
-[ext_resource path="res://assets/closeBtnFrames.png" type="Texture" id=7]
+[ext_resource path="res://src/create/SequencedAssembly/elements/savePopup.gd" type="Script" id=6]
+[ext_resource path="res://src/create/SequencedAssembly/elements/warningPopUp.tscn" type="PackedScene" id=7]
 
-[sub_resource type="InputEventKey" id=2]
-scancode = 16777217
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 5 )
 
-[sub_resource type="ShortCut" id=3]
-shortcut = SubResource( 2 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 25, 25 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 7 )
-region = Rect2( 50, 0, 25, 25 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 7 )
-region = Rect2( 25, 0, 25, 25 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 7 )
-region = Rect2( 50, 0, 25, 25 )
-
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=2]
 size = 20
 font_data = ExtResource( 5 )
 
@@ -39,9 +21,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -128.0
+margin_left = -192.0
 margin_top = -64.0
-margin_right = 128.0
+margin_right = 76.0
 margin_bottom = 64.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -49,7 +31,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-mode = 2
+warn = ExtResource( 7 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -59,17 +41,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 256.0
-margin_bottom = 25.0
+[node name="NinePatchRect2" type="NinePatchRect" parent="VBoxContainer"]
+margin_right = 268.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 0, 24 )
 size_flags_horizontal = 3
-custom_constants/separation = 0
-
-[node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer/HBoxContainer"]
-margin_right = 231.0
-margin_bottom = 25.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
 texture = ExtResource( 2 )
 draw_center = false
 region_rect = Rect2( 0, 0, 16, 10 )
@@ -78,7 +54,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/NinePatchRect"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/NinePatchRect2"]
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -89,27 +65,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CloseBtn" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
-margin_left = 231.0
-margin_right = 256.0
-margin_bottom = 25.0
-rect_min_size = Vector2( 25, 25 )
-hint_tooltip = "Close"
-focus_mode = 0
-enabled_focus_mode = 0
-shortcut = SubResource( 3 )
-texture_normal = SubResource( 4 )
-texture_pressed = SubResource( 5 )
-texture_hover = SubResource( 6 )
-texture_disabled = SubResource( 7 )
-expand = true
+[node name="Label" type="Label" parent="VBoxContainer/NinePatchRect2"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 88.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 1 )
+text = " Warning!"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer"]
-margin_top = 25.0
-margin_right = 256.0
+margin_top = 24.0
+margin_right = 268.0
 margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -144,51 +113,70 @@ __meta__ = {
 
 [node name="dud" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2"]
 margin_right = 8.0
-margin_bottom = 103.0
+margin_bottom = 104.0
 rect_min_size = Vector2( 8, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/NinePatchRect/HBoxContainer2"]
 margin_left = 8.0
-margin_right = 248.0
-margin_bottom = 103.0
+margin_right = 260.0
+margin_bottom = 104.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
 [node name="dud" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
-margin_right = 240.0
+margin_right = 252.0
 margin_bottom = 8.0
 rect_min_size = Vector2( 0, 8 )
 size_flags_horizontal = 3
 
 [node name="TextEdit" type="TextEdit" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
 margin_top = 8.0
-margin_right = 240.0
-margin_bottom = 95.0
+margin_right = 252.0
+margin_bottom = 68.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 8 )
-text = "Allowed symbols:
-a-z and _"
+custom_fonts/font = SubResource( 2 )
+text = " Overwrite existing file?"
 readonly = true
 
 [node name="dud2" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
-margin_top = 95.0
-margin_right = 240.0
-margin_bottom = 103.0
+margin_top = 68.0
+margin_right = 252.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 0, 8 )
+size_flags_horizontal = 3
+
+[node name="Button" type="HBoxContainer" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
+margin_top = 76.0
+margin_right = 252.0
+margin_bottom = 96.0
+
+[node name="Button" type="Button" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer/Button"]
+margin_right = 124.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Yes"
+
+[node name="Button2" type="Button" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer/Button"]
+margin_left = 128.0
+margin_right = 252.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "No"
+
+[node name="dud3" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
+margin_top = 96.0
+margin_right = 252.0
+margin_bottom = 104.0
 rect_min_size = Vector2( 0, 8 )
 size_flags_horizontal = 3
 
 [node name="dud2" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2"]
-margin_left = 248.0
-margin_right = 256.0
-margin_bottom = 103.0
+margin_left = 260.0
+margin_right = 268.0
+margin_bottom = 104.0
 rect_min_size = Vector2( 8, 0 )
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-autostart = true
-
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/CloseBtn" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer/Button/Button" to="." method="save"]
+[connection signal="pressed" from="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer/Button/Button2" to="." method="decline"]

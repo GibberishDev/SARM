@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://src/create/SequencedAssembly/elements/closePopUp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/create/SequencedAssembly/elements/RecipeView.tscn" type="PackedScene" id=2]
@@ -26,6 +26,8 @@
 [ext_resource path="res://src/create/SequencedAssembly/elements/Machine.tscn" type="PackedScene" id=24]
 [ext_resource path="res://src/create/SequencedAssembly/elements/ResultItemsWindow.tscn" type="PackedScene" id=25]
 [ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/resultItem.gd" type="Script" id=26]
+[ext_resource path="res://assets/MinimizeBtnFrames.png" type="Texture" id=27]
+[ext_resource path="res://src/mainWindowScripts/MinimizeBtn.gd" type="Script" id=28]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 8 )
@@ -60,58 +62,70 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 27 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 27 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 27 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 25, 25 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 5 )
 region = Rect2( 50, 0, 25, 25 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 5 )
 region = Rect2( 25, 0, 25, 25 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 21 )
 region = Rect2( 0, 0, 26, 26 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 21 )
 region = Rect2( 52, 0, 26, 26 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 21 )
 region = Rect2( 24, 0, 28, 26 )
-
-[sub_resource type="DynamicFont" id=14]
-size = 20
-font_data = ExtResource( 11 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 4 )
-region = Rect2( -1, 0, 33, 16 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 4 )
-region = Rect2( 32, 0, 33, 16 )
 
 [sub_resource type="DynamicFont" id=17]
 size = 20
 font_data = ExtResource( 11 )
 
-[sub_resource type="Gradient" id=18]
-offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
-colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 4 )
+region = Rect2( -1, 0, 33, 16 )
 
-[sub_resource type="GradientTexture" id=19]
-gradient = SubResource( 18 )
-width = 256
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 4 )
+region = Rect2( 32, 0, 33, 16 )
 
-[sub_resource type="DynamicFont" id=21]
+[sub_resource type="DynamicFont" id=20]
 size = 20
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="Gradient" id=21]
+offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=22]
+gradient = SubResource( 21 )
+width = 256
+
+[sub_resource type="DynamicFont" id=23]
+size = 20
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=24]
 size = 20
 font_data = ExtResource( 11 )
 
@@ -151,7 +165,7 @@ __meta__ = {
 }
 
 [node name="header_ninePatch" type="NinePatchRect" parent="Control/bgOverlay/TitleBar/HBoxContainer"]
-margin_right = 972.0
+margin_right = 946.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 0, 26 )
 size_flags_horizontal = 3
@@ -195,6 +209,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MinimizeBtn" type="TextureButton" parent="Control/bgOverlay/TitleBar/HBoxContainer"]
+margin_left = 946.0
+margin_right = 972.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 26, 26 )
+hint_tooltip = "Close SARM"
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 8 )
+texture_pressed = SubResource( 9 )
+texture_hover = SubResource( 10 )
+texture_disabled = SubResource( 9 )
+expand = true
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MaximizeBtn" type="TextureButton" parent="Control/bgOverlay/TitleBar/HBoxContainer"]
 margin_left = 972.0
 margin_right = 998.0
@@ -202,11 +234,11 @@ margin_bottom = 26.0
 rect_min_size = Vector2( 26, 26 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 8 )
-texture_pressed = SubResource( 9 )
-texture_hover = SubResource( 10 )
-texture_disabled = SubResource( 9 )
-texture_focused = SubResource( 10 )
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 12 )
+texture_hover = SubResource( 13 )
+texture_disabled = SubResource( 12 )
+texture_focused = SubResource( 13 )
 expand = true
 script = ExtResource( 12 )
 __meta__ = {
@@ -222,10 +254,10 @@ hint_tooltip = "Exit to
 Main Menu"
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 11 )
-texture_pressed = SubResource( 12 )
-texture_hover = SubResource( 13 )
-texture_disabled = SubResource( 12 )
+texture_normal = SubResource( 14 )
+texture_pressed = SubResource( 15 )
+texture_hover = SubResource( 16 )
+texture_disabled = SubResource( 15 )
 expand = true
 script = ExtResource( 19 )
 __meta__ = {
@@ -318,7 +350,7 @@ margin_right = 196.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 196, 0 )
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "Starting Ingridient:"
 valign = 1
 
@@ -339,7 +371,7 @@ margin_bottom = 24.0
 margin_top = 2.0
 margin_right = 36.0
 margin_bottom = 22.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "item"
 
 [node name="modeSwithcer" type="CheckButton" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger"]
@@ -347,8 +379,8 @@ margin_left = 40.0
 margin_right = 85.0
 margin_bottom = 24.0
 focus_mode = 0
-custom_icons/off = SubResource( 15 )
-custom_icons/on = SubResource( 16 )
+custom_icons/off = SubResource( 18 )
+custom_icons/on = SubResource( 19 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -359,7 +391,7 @@ margin_left = 89.0
 margin_top = 2.0
 margin_right = 121.0
 margin_bottom = 22.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "tag"
 
 [node name="idLine" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams"]
@@ -375,7 +407,7 @@ margin_right = 256.0
 margin_bottom = 23.0
 rect_min_size = Vector2( 256, 0 )
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "[MODID]:[IDENTIFIER]"
 
 [node name="identifierKey" type="TextEdit" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
@@ -385,7 +417,7 @@ margin_bottom = 26.0
 rect_min_size = Vector2( 0, 26 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 20 )
 caret_blink = true
 script = ExtResource( 16 )
 warnPopUp = ExtResource( 3 )
@@ -396,7 +428,7 @@ margin_top = 3.0
 margin_right = 526.0
 margin_bottom = 23.0
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = ":"
 
 [node name="identifierValue" type="TextEdit" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/idLine"]
@@ -406,7 +438,7 @@ margin_bottom = 26.0
 rect_min_size = Vector2( 0, 26 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 20 )
 caret_blink = true
 script = ExtResource( 22 )
 warnPopUp = ExtResource( 3 )
@@ -417,7 +449,7 @@ margin_right = 984.0
 margin_bottom = 54.0
 rect_min_size = Vector2( 0, 1 )
 size_flags_horizontal = 5
-texture = SubResource( 19 )
+texture = SubResource( 22 )
 expand = true
 
 [node name="TransitItem" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
@@ -432,7 +464,7 @@ margin_right = 196.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 196, 0 )
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "Transitional item:"
 valign = 1
 
@@ -457,7 +489,7 @@ margin_right = 256.0
 margin_bottom = 23.0
 rect_min_size = Vector2( 256, 0 )
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "[MODID]:[IDENTIFIER]"
 
 [node name="identifierKey" type="TextEdit" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
@@ -467,7 +499,7 @@ margin_bottom = 26.0
 rect_min_size = Vector2( 0, 26 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 20 )
 caret_blink = true
 script = ExtResource( 16 )
 warnPopUp = ExtResource( 3 )
@@ -478,7 +510,7 @@ margin_top = 3.0
 margin_right = 526.0
 margin_bottom = 23.0
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = ":"
 
 [node name="identifierValue" type="TextEdit" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams/idLine"]
@@ -488,7 +520,7 @@ margin_bottom = 26.0
 rect_min_size = Vector2( 0, 26 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 20 )
 caret_blink = true
 script = ExtResource( 16 )
 warnPopUp = ExtResource( 3 )
@@ -499,7 +531,7 @@ margin_right = 984.0
 margin_bottom = 87.0
 rect_min_size = Vector2( 0, 1 )
 size_flags_horizontal = 5
-texture = SubResource( 19 )
+texture = SubResource( 22 )
 expand = true
 
 [node name="SequenceParams" type="Control" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
@@ -521,7 +553,7 @@ margin_right = 100.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 0, 26 )
 size_flags_horizontal = 0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "Sequence:"
 valign = 1
 
@@ -540,7 +572,7 @@ margin_right = 984.0
 margin_bottom = 415.0
 rect_min_size = Vector2( 0, 1 )
 size_flags_horizontal = 5
-texture = SubResource( 19 )
+texture = SubResource( 22 )
 expand = true
 
 [node name="resultItem" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
@@ -558,7 +590,7 @@ margin_right = 452.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 452, 0 )
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "Result item:"
 valign = 1
 
@@ -568,7 +600,7 @@ margin_right = 984.0
 margin_bottom = 26.0
 focus_mode = 0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 21 )
+custom_fonts/font = SubResource( 23 )
 enabled_focus_mode = 0
 text = "Edit result item pool"
 
@@ -578,7 +610,7 @@ margin_right = 984.0
 margin_bottom = 448.0
 rect_min_size = Vector2( 0, 1 )
 size_flags_horizontal = 5
-texture = SubResource( 19 )
+texture = SubResource( 22 )
 expand = true
 
 [node name="loopsParams" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
@@ -602,7 +634,7 @@ margin_right = 452.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 452, 0 )
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "Number of loops:"
 valign = 1
 
@@ -612,7 +644,7 @@ margin_right = 644.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 192, 26 )
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 20 )
 caret_blink = true
 script = ExtResource( 15 )
 warnPopUp = ExtResource( 3 )
@@ -623,7 +655,7 @@ margin_right = 984.0
 margin_bottom = 481.0
 rect_min_size = Vector2( 0, 1 )
 size_flags_horizontal = 5
-texture = SubResource( 19 )
+texture = SubResource( 22 )
 expand = true
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu"]
@@ -641,7 +673,7 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 196, 0 )
 focus_mode = 0
 size_flags_horizontal = 6
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 24 )
 enabled_focus_mode = 0
 text = "Show recipe"
 
@@ -662,6 +694,7 @@ rect_min_size = Vector2( 16, 0 )
 visible = false
 
 [connection signal="gui_input" from="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch/titlebarHitbox" to="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch/titlebarHitbox" method="_on_titlebar_gui_input"]
+[connection signal="pressed" from="Control/bgOverlay/TitleBar/HBoxContainer/MinimizeBtn" to="Control/bgOverlay/TitleBar/HBoxContainer/MinimizeBtn" method="onPress"]
 [connection signal="pressed" from="Control/bgOverlay/TitleBar/HBoxContainer/MaximizeBtn" to="Control/bgOverlay/TitleBar/HBoxContainer/MaximizeBtn" method="onButtonPress"]
 [connection signal="pressed" from="Control/bgOverlay/TitleBar/HBoxContainer/CloseBtn" to="Control/bgOverlay/TitleBar/HBoxContainer/CloseBtn" method="closePopUp"]
 [connection signal="pressed" from="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams/tagModeChanger/modeSwithcer" to="Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/startingItem/startingItemParams" method="onToggleModePressed"]

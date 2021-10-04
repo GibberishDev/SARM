@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=1]
 [ext_resource path="res://assets/header_bg.png" type="Texture" id=2]
@@ -14,6 +14,12 @@
 [ext_resource path="res://src/MainWindow.gd" type="Script" id=12]
 [ext_resource path="res://assets/ScrollBarTheme.tres" type="Theme" id=13]
 [ext_resource path="res://assets/loading_anim.png" type="Texture" id=14]
+[ext_resource path="res://src/mainWindowScripts/GithubBtn.gd" type="Script" id=15]
+[ext_resource path="res://assets/PatreonBtnFrames.png" type="Texture" id=16]
+[ext_resource path="res://src/mainWindowScripts/PatreonBtn.gd" type="Script" id=17]
+[ext_resource path="res://assets/GithubBtnFrames.png" type="Texture" id=18]
+[ext_resource path="res://src/mainWindowScripts/MinimizeBtn.gd" type="Script" id=19]
+[ext_resource path="res://assets/MinimizeBtnFrames.png" type="Texture" id=20]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 14 )
@@ -46,6 +52,45 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 18 )
+region = Rect2( 52, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 18 )
+region = Rect2( 26, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 52, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 26, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 20 )
+region = Rect2( 52, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 20 )
+region = Rect2( 26, 0, 26, 28 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 11 )
@@ -124,7 +169,7 @@ __meta__ = {
 }
 
 [node name="TitleBarPlane" type="NinePatchRect" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
-margin_right = 998.0
+margin_right = 920.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 0, 28 )
 size_flags_horizontal = 3
@@ -160,6 +205,60 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 2.0
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GithubBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
+margin_left = 920.0
+margin_right = 946.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 26, 28 )
+hint_tooltip = "Close SARM"
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 18 )
+texture_pressed = SubResource( 19 )
+texture_hover = SubResource( 20 )
+texture_disabled = SubResource( 19 )
+expand = true
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PatreonBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
+margin_left = 946.0
+margin_right = 972.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 26, 28 )
+hint_tooltip = "Close SARM"
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 15 )
+texture_pressed = SubResource( 16 )
+texture_hover = SubResource( 17 )
+texture_disabled = SubResource( 16 )
+expand = true
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MinimizeBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
+margin_left = 972.0
+margin_right = 998.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 26, 28 )
+hint_tooltip = "Close SARM"
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 21 )
+texture_pressed = SubResource( 22 )
+texture_hover = SubResource( 23 )
+texture_disabled = SubResource( 22 )
+expand = true
+script = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -263,13 +362,28 @@ margin_right = 998.0
 margin_bottom = 8.0
 rect_min_size = Vector2( 0, 8 )
 
-[node name="Label" type="Label" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
+[node name="Label" type="HBoxContainer" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
 margin_top = 8.0
 margin_right = 998.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="dud" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/Label"]
+margin_right = 20.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 20, 8 )
+
+[node name="Label" type="Label" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/Label"]
+margin_left = 20.0
+margin_right = 998.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
+size_flags_vertical = 1
 custom_fonts/font = SubResource( 11 )
-text = "  Create mod recipes:"
+text = "Create mod recipes:"
 valign = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
@@ -444,6 +558,9 @@ __meta__ = {
 }
 
 [connection signal="gui_input" from="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" to="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" method="HitBoxInput"]
+[connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/GithubBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/GithubBtn" method="onPress"]
+[connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/PatreonBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/PatreonBtn" method="onPress"]
+[connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" method="onPress"]
 [connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" method="closePopUp"]
 
 [editable path="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer/CommingSoon"]

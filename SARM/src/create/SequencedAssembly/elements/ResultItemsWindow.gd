@@ -26,6 +26,10 @@ func ComposeArray():
 				newDict["chance"] = get_node(pathToText + str(i) + "/TextEdit3").text + ".0"
 			else:
 				newDict["chance"] = "1.0"
+			if get_node(pathToText + str(i) + "/TextEdit4").text == "":
+				newDict["count"] = "1"
+			else:
+				newDict["count"] = get_node(pathToText + str(i) + "/TextEdit4").text
 			ItemArray.append(newDict)
 	emit_signal("Results", ItemArray)
 	queue_free()

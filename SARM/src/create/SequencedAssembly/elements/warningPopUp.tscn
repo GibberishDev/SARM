@@ -8,41 +8,35 @@
 [ext_resource path="res://src/create/SequencedAssembly/elements/warningSign.gd" type="Script" id=6]
 [ext_resource path="res://assets/closeBtnFrames.png" type="Texture" id=7]
 
-[sub_resource type="InputEventKey" id=2]
+[sub_resource type="InputEventKey" id=1]
 scancode = 16777217
 
-[sub_resource type="ShortCut" id=3]
-shortcut = SubResource( 2 )
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 25, 25 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 7 )
 region = Rect2( 50, 0, 25, 25 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 7 )
 region = Rect2( 25, 0, 25, 25 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 7 )
 region = Rect2( 50, 0, 25, 25 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 size = 20
 font_data = ExtResource( 5 )
 
 [node name="Control" type="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -128.0
-margin_top = -64.0
-margin_right = 128.0
-margin_bottom = 64.0
+margin_right = 256.0
+margin_bottom = 128.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource( 6 )
@@ -97,11 +91,11 @@ rect_min_size = Vector2( 25, 25 )
 hint_tooltip = "Close"
 focus_mode = 0
 enabled_focus_mode = 0
-shortcut = SubResource( 3 )
-texture_normal = SubResource( 4 )
-texture_pressed = SubResource( 5 )
-texture_hover = SubResource( 6 )
-texture_disabled = SubResource( 7 )
+shortcut = SubResource( 2 )
+texture_normal = SubResource( 3 )
+texture_pressed = SubResource( 4 )
+texture_hover = SubResource( 5 )
+texture_disabled = SubResource( 6 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -167,7 +161,7 @@ margin_right = 240.0
 margin_bottom = 95.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 text = "Allowed symbols:
 a-z and _"
 readonly = true

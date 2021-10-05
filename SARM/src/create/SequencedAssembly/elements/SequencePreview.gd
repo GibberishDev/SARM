@@ -129,8 +129,8 @@ func toggleBtn_3() -> void:
 	else:
 		sequenceText[2] = ""
 	SMD["3"].active = !SMD["3"].active
-	SMD["2"].type = 0
-	SMD["2"].data = null
+	SMD["3"].type = 0
+	SMD["3"].data = null
 	emit_signal("SendRecipes", sequenceText)
 	updateSequenceSprites()
 func toggleBtn_4() -> void:
@@ -146,8 +146,8 @@ func toggleBtn_4() -> void:
 	else:
 		sequenceText[3] = ""
 	SMD["4"].active = !SMD["4"].active
-	SMD["2"].type = 0
-	SMD["2"].data = null
+	SMD["4"].type = 0
+	SMD["4"].data = null
 	emit_signal("SendRecipes", sequenceText)
 	updateSequenceSprites()
 func toggleBtn_5() -> void:
@@ -163,8 +163,8 @@ func toggleBtn_5() -> void:
 	else:
 		sequenceText[4] = ""
 	SMD["5"].active = !SMD["5"].active
-	SMD["2"].type = 0
-	SMD["2"].data = null
+	SMD["5"].type = 0
+	SMD["5"].data = null
 	emit_signal("SendRecipes", sequenceText)
 	updateSequenceSprites()
 func toggleBtn_6() -> void:
@@ -180,8 +180,8 @@ func toggleBtn_6() -> void:
 	else:
 		sequenceText[5] = ""
 	SMD["6"].active = !SMD["6"].active
-	SMD["2"].type = 0
-	SMD["2"].data = null
+	SMD["6"].type = 0
+	SMD["6"].data = null
 	emit_signal("SendRecipes", sequenceText)
 	updateSequenceSprites()
 

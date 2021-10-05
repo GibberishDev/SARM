@@ -53,62 +53,59 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 18 )
-region = Rect2( 0, 0, 26, 28 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 18 )
-region = Rect2( 52, 0, 26, 28 )
-
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 18 )
-region = Rect2( 26, 0, 26, 28 )
-
-[sub_resource type="AtlasTexture" id=15]
-flags = 4
-atlas = ExtResource( 16 )
-region = Rect2( 0, 0, 26, 28 )
-
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 16 )
-region = Rect2( 52, 0, 26, 28 )
-
-[sub_resource type="AtlasTexture" id=17]
-flags = 4
-atlas = ExtResource( 16 )
-region = Rect2( 26, 0, 26, 28 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 20 )
-region = Rect2( 0, 0, 26, 28 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 20 )
-region = Rect2( 52, 0, 26, 28 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 20 )
-region = Rect2( 26, 0, 26, 28 )
-
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 18 )
 region = Rect2( 0, 0, 26, 28 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 18 )
 region = Rect2( 52, 0, 26, 28 )
 
 [sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 18 )
+region = Rect2( 26, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 16 )
+region = Rect2( 52, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 16 )
+region = Rect2( 26, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 20 )
+region = Rect2( 52, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 20 )
+region = Rect2( 26, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 11 )
+region = Rect2( 52, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 11 )
 region = Rect2( 26, 0, 26, 28 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=20]
 size = 20
 font_data = ExtResource( 6 )
 
-[sub_resource type="StyleBoxTexture" id=12]
+[sub_resource type="StyleBoxTexture" id=21]
 texture = ExtResource( 1 )
 region_rect = Rect2( 2, 0, 12, 12 )
 margin_left = 2.0
@@ -117,7 +114,7 @@ margin_top = 4.0
 margin_bottom = 4.0
 axis_stretch_vertical = 1
 
-[sub_resource type="StyleBoxTexture" id=13]
+[sub_resource type="StyleBoxTexture" id=22]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 16, 2 )
 margin_left = 2.0
@@ -125,16 +122,16 @@ margin_right = 2.0
 margin_top = 2.0
 margin_bottom = 2.0
 
-[sub_resource type="Theme" id=14]
+[sub_resource type="Theme" id=23]
 VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
 VScrollBar/icons/increment_highlight = null
-VScrollBar/styles/grabber = SubResource( 12 )
-VScrollBar/styles/grabber_highlight = SubResource( 12 )
-VScrollBar/styles/grabber_pressed = SubResource( 12 )
-VScrollBar/styles/scroll = SubResource( 13 )
-VScrollBar/styles/scroll_focus = SubResource( 13 )
+VScrollBar/styles/grabber = SubResource( 21 )
+VScrollBar/styles/grabber_highlight = SubResource( 21 )
+VScrollBar/styles/grabber_pressed = SubResource( 21 )
+VScrollBar/styles/scroll = SubResource( 22 )
+VScrollBar/styles/scroll_focus = SubResource( 22 )
 
 [node name="Root" type="Node"]
 script = ExtResource( 12 )
@@ -197,7 +194,7 @@ __meta__ = {
 position = Vector2( 44, 14 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 7 )
-frame = 4
+frame = 6
 playing = true
 
 [node name="HitBox" type="Control" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane"]
@@ -217,10 +214,10 @@ rect_min_size = Vector2( 26, 28 )
 hint_tooltip = "Close SARM"
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 18 )
-texture_pressed = SubResource( 19 )
-texture_hover = SubResource( 20 )
-texture_disabled = SubResource( 19 )
+texture_normal = SubResource( 8 )
+texture_pressed = SubResource( 9 )
+texture_hover = SubResource( 10 )
+texture_disabled = SubResource( 9 )
 expand = true
 script = ExtResource( 15 )
 __meta__ = {
@@ -235,10 +232,10 @@ rect_min_size = Vector2( 26, 28 )
 hint_tooltip = "Close SARM"
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 15 )
-texture_pressed = SubResource( 16 )
-texture_hover = SubResource( 17 )
-texture_disabled = SubResource( 16 )
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 12 )
+texture_hover = SubResource( 13 )
+texture_disabled = SubResource( 12 )
 expand = true
 script = ExtResource( 17 )
 __meta__ = {
@@ -253,10 +250,10 @@ rect_min_size = Vector2( 26, 28 )
 hint_tooltip = "Close SARM"
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 21 )
-texture_pressed = SubResource( 22 )
-texture_hover = SubResource( 23 )
-texture_disabled = SubResource( 22 )
+texture_normal = SubResource( 14 )
+texture_pressed = SubResource( 15 )
+texture_hover = SubResource( 16 )
+texture_disabled = SubResource( 15 )
 expand = true
 script = ExtResource( 19 )
 __meta__ = {
@@ -271,10 +268,10 @@ rect_min_size = Vector2( 26, 28 )
 hint_tooltip = "Close SARM"
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 8 )
-texture_pressed = SubResource( 9 )
-texture_hover = SubResource( 10 )
-texture_disabled = SubResource( 9 )
+texture_normal = SubResource( 17 )
+texture_pressed = SubResource( 18 )
+texture_hover = SubResource( 19 )
+texture_disabled = SubResource( 18 )
 expand = true
 script = ExtResource( 10 )
 __meta__ = {
@@ -382,7 +379,7 @@ margin_bottom = 26.0
 rect_min_size = Vector2( 0, 26 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 20 )
 text = "Create mod recipes:"
 valign = 1
 
@@ -392,7 +389,7 @@ margin_right = 998.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 14 )
+theme = SubResource( 23 )
 
 [node name="Control" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer"]
 margin_right = 564.0

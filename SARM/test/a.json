@@ -1,0 +1,17 @@
+{
+	"credit": "Made using SARM tool by GibberishDev",
+	"type": "create:sequenced_assembly",
+	"ingredient": {"item": ":"},
+	"transitionalItem": {"item": ":"},
+	"sequence": [
+		{
+			"type": "create:pressing",
+			"ingredients": [{"item": ":"}],
+			"results": [{"item": ":"}]
+		}
+	],
+	"results": [
+
+	],
+	"loops": 1
+}

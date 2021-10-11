@@ -30,6 +30,7 @@ window/per_pixel_transparency/enabled=true
 [global]
 
 sha=false
+etc=false
 
 [input]
 
@@ -39,6 +40,11 @@ test_input={
  ]
 }
 
+[locale]
+
+translations=PoolStringArray( "res://assets/lang/en_us.po" )
+locale_filter=[ 0, [ "en_GB", "ru" ] ]
+
 [physics]
 
 common/enable_pause_aware_picking=true
@@ -46,6 +52,5 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 vram_compression/import_etc=true
-vram_compression/import_etc2=false
 quality/directional_shadow/size=8096
 environment/default_environment="res://default_env.tres"

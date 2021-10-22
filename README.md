@@ -3,7 +3,8 @@
 Nifty standalone program for mod pack developers. It is used for creating json text for recipes for popular mods.
 
 In development web version:
-<a href="https://gibberishdev.github.io">[CLICK!]</a>
+<a href="https://gibberishdev.github.io">[CLICK!]</a><br>
+(For the momment it is outdated but will be updated soon)
 
 ## Currently in developement:
 * support for custom themes

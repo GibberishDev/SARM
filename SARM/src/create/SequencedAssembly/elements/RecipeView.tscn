@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/bg.png" type="Texture" id=1]
 [ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://src/create/SequencedAssembly/elements/warningPopUp.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/create/SequencedAssembly/signalScripts/fileEdit.gd" type="Script" id=10]
 [ext_resource path="res://src/create/SequencedAssembly/elements/savePopup.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/themes/BtnTheme.tres" type="Theme" id=12]
+[ext_resource path="res://assets/themes/LineEdit.tres" type="Theme" id=13]
+[ext_resource path="res://assets/themes/scroll_bar_theme.tres" type="Theme" id=14]
 
 [sub_resource type="InputEventKey" id=1]
 scancode = 16777217
@@ -36,6 +39,8 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 20
+extra_spacing_top = -3
+extra_spacing_bottom = -3
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=8]
@@ -45,13 +50,6 @@ font_data = ExtResource( 5 )
 [sub_resource type="DynamicFont" id=9]
 size = 20
 font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 20
-font_data = ExtResource( 5 )
-
-[sub_resource type="Theme" id=11]
-default_font = SubResource( 10 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -210,21 +208,22 @@ margin_right = 310.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 16, 0 )
 
-[node name="fileName" type="TextEdit" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="fileName" type="LineEdit" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 310.0
-margin_right = 798.0
+margin_right = 802.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 384, 0 )
 size_flags_horizontal = 3
+theme = ExtResource( 13 )
 custom_fonts/font = SubResource( 7 )
 script = ExtResource( 10 )
 warnPopUp = ExtResource( 9 )
 
 [node name="dud4" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 798.0
+margin_left = 802.0
 margin_right = 992.0
 margin_bottom = 24.0
-rect_min_size = Vector2( 194, 0 )
+rect_min_size = Vector2( 190, 0 )
 
 [node name="dud4" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer"]
 margin_top = 40.0
@@ -235,15 +234,15 @@ rect_min_size = Vector2( 0, 4 )
 [node name="HBoxContainer2" type="HBoxContainer" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer"]
 margin_top = 44.0
 margin_right = 992.0
-margin_bottom = 70.0
+margin_bottom = 72.0
 rect_min_size = Vector2( 0, 24 )
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="TextEdit2" type="Label" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_top = 3.0
+margin_top = 4.0
 margin_right = 294.0
-margin_bottom = 23.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 294, 0 )
 custom_fonts/font = SubResource( 6 )
 text = "File path:"
@@ -251,62 +250,89 @@ text = "File path:"
 [node name="dud3" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 294.0
 margin_right = 310.0
-margin_bottom = 26.0
+margin_bottom = 28.0
 rect_min_size = Vector2( 16, 0 )
 
-[node name="filePath" type="TextEdit" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="filePath" type="LineEdit" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 310.0
-margin_right = 798.0
-margin_bottom = 26.0
+margin_right = 802.0
+margin_bottom = 28.0
 rect_min_size = Vector2( 384, 0 )
+focus_neighbour_left = NodePath("../../HBoxContainer/fileName")
+focus_neighbour_top = NodePath("../../HBoxContainer/fileName")
+focus_previous = NodePath("../../HBoxContainer/fileName")
 size_flags_horizontal = 3
+theme = ExtResource( 13 )
 custom_fonts/font = SubResource( 7 )
-readonly = true
+editable = false
 script = ExtResource( 10 )
 warnPopUp = ExtResource( 9 )
 
 [node name="dud" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 798.0
-margin_right = 814.0
-margin_bottom = 26.0
+margin_left = 802.0
+margin_right = 818.0
+margin_bottom = 28.0
 rect_min_size = Vector2( 16, 0 )
 
 [node name="Button" type="Button" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 814.0
+margin_left = 818.0
 margin_right = 992.0
-margin_bottom = 26.0
+margin_bottom = 28.0
+focus_mode = 0
+theme = ExtResource( 12 )
 custom_fonts/font = SubResource( 8 )
+enabled_focus_mode = 0
 text = "Select Directory"
 
 [node name="dud3" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer"]
-margin_top = 70.0
+margin_top = 72.0
 margin_right = 992.0
-margin_bottom = 74.0
+margin_bottom = 76.0
 rect_min_size = Vector2( 0, 4 )
 
 [node name="recipe" type="TextEdit" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer"]
-margin_top = 74.0
+margin_top = 76.0
 margin_right = 992.0
-margin_bottom = 528.0
+margin_bottom = 526.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 14 )
 custom_fonts/font = SubResource( 9 )
+custom_colors/code_folding_color = Color( 0, 0, 0, 1 )
+custom_colors/symbol_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_colors/selection_color = Color( 1, 1, 1, 1 )
+custom_colors/caret_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/line_number_color = Color( 0, 0, 0, 1 )
+custom_colors/completion_font_color = Color( 1, 0, 0, 1 )
+custom_colors/current_line_color = Color( 1, 1, 1, 0.207843 )
+custom_colors/word_highlighted_color = Color( 0.682353, 0.682353, 0.682353, 1 )
+custom_colors/font_color_readonly = Color( 0, 0, 0, 1 )
 readonly = true
+highlight_current_line = true
+syntax_highlighting = true
 show_line_numbers = true
 draw_tabs = true
+breakpoint_gutter = true
 highlight_all_occurrences = true
+smooth_scrolling = true
+hiding_enabled = true
 
 [node name="dud5" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer"]
-margin_top = 528.0
+margin_top = 526.0
 margin_right = 992.0
-margin_bottom = 532.0
+margin_bottom = 530.0
 rect_min_size = Vector2( 0, 4 )
 
 [node name="Button2" type="Button" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer"]
-margin_top = 532.0
+margin_top = 530.0
 margin_right = 992.0
 margin_bottom = 558.0
+focus_mode = 0
+theme = ExtResource( 12 )
 custom_fonts/font = SubResource( 8 )
+enabled_focus_mode = 0
 text = "Save file"
 
 [node name="dud2" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer"]
@@ -328,7 +354,7 @@ margin_left = 128.0
 margin_top = 64.0
 margin_right = -128.0
 margin_bottom = -64.0
-theme = SubResource( 11 )
+theme = ExtResource( 12 )
 window_title = "Open a Directory"
 mode = 2
 access = 2

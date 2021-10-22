@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/bg.png" type="Texture" id=1]
 [ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://src/create/SequencedAssembly/elements/savePopup.gd" type="Script" id=6]
 [ext_resource path="res://src/create/SequencedAssembly/elements/warningPopUp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/themes/BtnTheme.tres" type="Theme" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -133,7 +134,7 @@ size_flags_horizontal = 3
 [node name="TextEdit" type="TextEdit" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
 margin_top = 8.0
 margin_right = 252.0
-margin_bottom = 68.0
+margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
@@ -141,28 +142,30 @@ text = " Overwrite existing file?"
 readonly = true
 
 [node name="dud2" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
-margin_top = 68.0
+margin_top = 60.0
 margin_right = 252.0
-margin_bottom = 76.0
+margin_bottom = 68.0
 rect_min_size = Vector2( 0, 8 )
 size_flags_horizontal = 3
 
 [node name="Button" type="HBoxContainer" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]
-margin_top = 76.0
+margin_top = 68.0
 margin_right = 252.0
 margin_bottom = 96.0
 
 [node name="Button" type="Button" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer/Button"]
 margin_right = 124.0
-margin_bottom = 20.0
+margin_bottom = 28.0
 size_flags_horizontal = 3
+theme = ExtResource( 8 )
 text = "Yes"
 
 [node name="Button2" type="Button" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer/Button"]
 margin_left = 128.0
 margin_right = 252.0
-margin_bottom = 20.0
+margin_bottom = 28.0
 size_flags_horizontal = 3
+theme = ExtResource( 8 )
 text = "No"
 
 [node name="dud3" type="Control" parent="VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer"]

@@ -1,4 +1,4 @@
 extends TextureButton
 
 func onPress():
-	OS.window_minimized = true
+	$minimize_anim.start_anim()

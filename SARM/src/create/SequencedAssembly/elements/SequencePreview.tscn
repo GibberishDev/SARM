@@ -1,11 +1,10 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/create/SequencedAssembly/elements/Machine.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/bg_blueprint.png" type="Texture" id=2]
+[ext_resource path="res://assets/bg_blueprint_scrollbar_transparent.png" type="Texture" id=2]
 [ext_resource path="res://assets/themes/scroll_bar_theme.tres" type="Theme" id=3]
 [ext_resource path="res://src/create/SequencedAssembly/elements/SequencePreview.gd" type="Script" id=4]
 [ext_resource path="res://assets/bg_blueprint_scrollbar.png" type="Texture" id=5]
-[ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=10]
 [ext_resource path="res://assets/bg_tint.png" type="Texture" id=11]
 [ext_resource path="res://assets/sequence_buttons.png" type="Texture" id=12]
 [ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=13]
@@ -13,63 +12,59 @@
 [ext_resource path="res://src/create/SequencedAssembly/elements/conveyors_node.tscn" type="PackedScene" id=16]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 2 )
-region = Rect2( 48, 32, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 12 )
 
-[sub_resource type="StyleBoxTexture" id=3]
-texture = SubResource( 2 )
+[sub_resource type="StyleBoxTexture" id=2]
+texture = SubResource( 1 )
 region_rect = Rect2( 15, 29, 12, 12 )
 margin_left = 4.0
 margin_right = 4.0
 margin_top = 4.0
 margin_bottom = 4.0
 
-[sub_resource type="StyleBoxTexture" id=4]
-texture = SubResource( 2 )
+[sub_resource type="StyleBoxTexture" id=3]
+texture = SubResource( 1 )
 region_rect = Rect2( 29, 29, 12, 12 )
 margin_left = 4.0
 margin_right = 4.0
 margin_top = 4.0
 margin_bottom = 4.0
 
-[sub_resource type="StyleBoxTexture" id=5]
-texture = SubResource( 2 )
+[sub_resource type="StyleBoxTexture" id=4]
+texture = SubResource( 1 )
 region_rect = Rect2( 1, 29, 12, 12 )
 margin_left = 4.0
 margin_right = 4.0
 margin_top = 4.0
 margin_bottom = 4.0
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 30
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 15 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 12 )
 region = Rect2( 1, 15, 12, 12 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 12 )
 region = Rect2( 29, 15, 12, 12 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 12 )
 region = Rect2( 15, 15, 12, 12 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 12 )
 region = Rect2( 1, 1, 12, 12 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 12 )
 region = Rect2( 29, 1, 12, 12 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 12 )
 region = Rect2( 15, 1, 12, 12 )
 
@@ -150,10 +145,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 5
 size_flags_stretch_ratio = 0.25
 
-[node name="bg" type="NinePatchRect" parent="HBoxContainer/visualizerContainerOptions"]
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/visualizerContainerOptions"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 1 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 64, 64 )
+patch_margin_left = 48
+patch_margin_top = 48
+patch_margin_right = 48
+patch_margin_bottom = 48
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 __meta__ = {
@@ -175,7 +177,7 @@ margin_left = 16.0
 margin_top = 16.0
 margin_right = 240.0
 margin_bottom = 584.0
-rect_min_size = Vector2( 0, 364 )
+rect_min_size = Vector2( 0, 380 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -190,7 +192,7 @@ __meta__ = {
 [node name="dud" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
 margin_right = 224.0
 margin_bottom = 110.0
-rect_min_size = Vector2( 0, 8 )
+rect_min_size = Vector2( 0, 16 )
 size_flags_vertical = 3
 
 [node name="1" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
@@ -256,10 +258,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -268,7 +270,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/1/HBoxContainer/Control/Control2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "Machine 1"
 align = 1
 valign = 1
@@ -346,10 +348,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -358,7 +360,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/2/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "Machine 2"
 align = 1
 valign = 1
@@ -409,11 +411,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 7 )
-texture_pressed = SubResource( 8 )
-texture_hover = SubResource( 9 )
-texture_disabled = SubResource( 8 )
-texture_focused = SubResource( 9 )
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
+texture_hover = SubResource( 8 )
+texture_disabled = SubResource( 7 )
+texture_focused = SubResource( 8 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -493,10 +495,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -505,7 +507,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/3/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "Machine 3"
 align = 1
 valign = 1
@@ -557,11 +559,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 7 )
-texture_pressed = SubResource( 8 )
-texture_hover = SubResource( 9 )
-texture_disabled = SubResource( 8 )
-texture_focused = SubResource( 9 )
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
+texture_hover = SubResource( 8 )
+texture_disabled = SubResource( 7 )
+texture_focused = SubResource( 8 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -609,11 +611,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 10 )
-texture_pressed = SubResource( 11 )
-texture_hover = SubResource( 12 )
-texture_disabled = SubResource( 11 )
-texture_focused = SubResource( 12 )
+texture_normal = SubResource( 9 )
+texture_pressed = SubResource( 10 )
+texture_hover = SubResource( 11 )
+texture_disabled = SubResource( 10 )
+texture_focused = SubResource( 11 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -696,10 +698,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -708,7 +710,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/4/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "Machine 4"
 align = 1
 valign = 1
@@ -760,11 +762,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 7 )
-texture_pressed = SubResource( 8 )
-texture_hover = SubResource( 9 )
-texture_disabled = SubResource( 8 )
-texture_focused = SubResource( 9 )
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
+texture_hover = SubResource( 8 )
+texture_disabled = SubResource( 7 )
+texture_focused = SubResource( 8 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -812,11 +814,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 10 )
-texture_pressed = SubResource( 11 )
-texture_hover = SubResource( 12 )
-texture_disabled = SubResource( 11 )
-texture_focused = SubResource( 12 )
+texture_normal = SubResource( 9 )
+texture_pressed = SubResource( 10 )
+texture_hover = SubResource( 11 )
+texture_disabled = SubResource( 10 )
+texture_focused = SubResource( 11 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -899,10 +901,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -911,7 +913,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/5/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "Machine 5"
 align = 1
 valign = 1
@@ -963,11 +965,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 7 )
-texture_pressed = SubResource( 8 )
-texture_hover = SubResource( 9 )
-texture_disabled = SubResource( 8 )
-texture_focused = SubResource( 9 )
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
+texture_hover = SubResource( 8 )
+texture_disabled = SubResource( 7 )
+texture_focused = SubResource( 8 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1015,11 +1017,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 10 )
-texture_pressed = SubResource( 11 )
-texture_hover = SubResource( 12 )
-texture_disabled = SubResource( 11 )
-texture_focused = SubResource( 12 )
+texture_normal = SubResource( 9 )
+texture_pressed = SubResource( 10 )
+texture_hover = SubResource( 11 )
+texture_disabled = SubResource( 10 )
+texture_focused = SubResource( 11 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1102,10 +1104,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1114,7 +1116,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/6/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "Machine 6"
 align = 1
 valign = 1
@@ -1166,11 +1168,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 7 )
-texture_pressed = SubResource( 8 )
-texture_hover = SubResource( 9 )
-texture_disabled = SubResource( 8 )
-texture_focused = SubResource( 9 )
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
+texture_hover = SubResource( 8 )
+texture_disabled = SubResource( 7 )
+texture_focused = SubResource( 8 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1218,11 +1220,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 10 )
-texture_pressed = SubResource( 11 )
-texture_hover = SubResource( 12 )
-texture_disabled = SubResource( 11 )
-texture_focused = SubResource( 12 )
+texture_normal = SubResource( 9 )
+texture_pressed = SubResource( 10 )
+texture_hover = SubResource( 11 )
+texture_disabled = SubResource( 10 )
+texture_focused = SubResource( 11 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1303,11 +1305,11 @@ margin_bottom = 20.0
 rect_min_size = Vector2( 0, 40 )
 focus_mode = 0
 enabled_focus_mode = 0
-texture_normal = SubResource( 10 )
-texture_pressed = SubResource( 11 )
-texture_hover = SubResource( 12 )
-texture_disabled = SubResource( 11 )
-texture_focused = SubResource( 12 )
+texture_normal = SubResource( 9 )
+texture_pressed = SubResource( 10 )
+texture_hover = SubResource( 11 )
+texture_disabled = SubResource( 10 )
+texture_focused = SubResource( 11 )
 expand = true
 stretch_mode = 4
 __meta__ = {
@@ -1318,19 +1320,23 @@ __meta__ = {
 margin_top = 458.0
 margin_right = 224.0
 margin_bottom = 568.0
-rect_min_size = Vector2( 0, 8 )
+rect_min_size = Vector2( 0, 16 )
 size_flags_vertical = 3
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="HBoxContainer/visualizerContainerOptions"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 10 )
-region_rect = Rect2( 0, 0, 12, 12 )
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+draw_center = false
+region_rect = Rect2( 0, 0, 64, 64 )
+patch_margin_left = 48
+patch_margin_top = 48
+patch_margin_right = 48
+patch_margin_bottom = 48
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -1,4 +1,4 @@
-extends TextEdit
+extends LineEdit
 
 export(PackedScene) var warnPopUp
 
@@ -7,14 +7,14 @@ var allowedID = "abcdefghijklmnopqrstuvwxyz_0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 signal successfulText(text)
 
-func textChanged():
+func textChanged(new_text):
 	if text.length() > 0:
 		if text[text.length() - 1] in allowedID:
 			previous_text = text
 			emit_signal("successfulText", previous_text)
 		else:
 			text = previous_text
-			cursor_set_column(999)
+			set_cursor_position(999)
 			var newWarn = warnPopUp.instance()
 			newWarn.rect_position = rect_global_position + Vector2(0, 24)
 			newWarn.mode = 5

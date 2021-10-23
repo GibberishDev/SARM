@@ -17,8 +17,7 @@ func set_orig_size() -> void:
 	OS.window_size = orig_size
 
 func start_anim() -> void:
+	get_orig_size()
 	$AnimationPlayer.play("minimize")
+	$Timer.start()
 
-func _unhandled_key_input(event):
-	if Input.is_key_pressed(KEY_O):
-		start_anim()

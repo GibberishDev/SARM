@@ -15,6 +15,7 @@ func get_orig_size() -> void:
 
 func set_orig_size() -> void:
 	OS.window_size = orig_size
+	OS.window_minimized = true
 
 func start_anim() -> void:
 	get_orig_size()

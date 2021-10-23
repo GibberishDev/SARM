@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/bg.png" type="Texture" id=1]
 [ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/themes/BtnTheme.tres" type="Theme" id=12]
 [ext_resource path="res://assets/themes/LineEdit.tres" type="Theme" id=13]
 [ext_resource path="res://assets/themes/scroll_bar_theme.tres" type="Theme" id=14]
+[ext_resource path="res://assets/bg_blueprint_scrollbar_transparent.png" type="Texture" id=15]
 
 [sub_resource type="InputEventKey" id=1]
 scancode = 16777217
@@ -300,24 +301,36 @@ theme = ExtResource( 14 )
 custom_fonts/font = SubResource( 9 )
 custom_colors/code_folding_color = Color( 0, 0, 0, 1 )
 custom_colors/symbol_color = Color( 0.501961, 0.501961, 0.501961, 1 )
-custom_colors/selection_color = Color( 1, 1, 1, 1 )
+custom_colors/selection_color = Color( 1, 1, 1, 0.294118 )
 custom_colors/caret_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.678431, 0.678431, 0.678431, 1 )
 custom_colors/line_number_color = Color( 0, 0, 0, 1 )
-custom_colors/completion_font_color = Color( 1, 0, 0, 1 )
 custom_colors/current_line_color = Color( 1, 1, 1, 0.207843 )
-custom_colors/word_highlighted_color = Color( 0.682353, 0.682353, 0.682353, 1 )
+custom_colors/word_highlighted_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_readonly = Color( 0, 0, 0, 1 )
 readonly = true
 highlight_current_line = true
 syntax_highlighting = true
 show_line_numbers = true
 draw_tabs = true
-breakpoint_gutter = true
 highlight_all_occurrences = true
 smooth_scrolling = true
 hiding_enabled = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/recipe"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="dud5" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer"]
 margin_top = 526.0
@@ -355,6 +368,9 @@ margin_top = 64.0
 margin_right = -128.0
 margin_bottom = -64.0
 theme = ExtResource( 12 )
+custom_colors/folder_icon_modulate = Color( 0.74902, 0.603922, 0.266667, 1 )
+custom_colors/files_disabled = Color( 0.819608, 0.647059, 0.360784, 1 )
+custom_colors/file_icon_modulate = Color( 0.341176, 0.160784, 0, 1 )
 window_title = "Open a Directory"
 mode = 2
 access = 2

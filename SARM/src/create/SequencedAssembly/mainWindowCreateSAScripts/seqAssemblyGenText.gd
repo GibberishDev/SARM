@@ -28,6 +28,8 @@ onready var nodeInstance_SIP = get_node("Control/bgOverlay/MainFrame/HBC/VBoxCon
 onready var nodeInstance_TIP = get_node("Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/TransitItem/TransitItemParams") #Transit item params node
 onready var nodeInstance_LP = get_node("Control/bgOverlay/MainFrame/HBC/VBoxContainer/mainMenu/loopsParams") #Transit item params node
 
+var dir = ""
+
 func genText():
 	var bufferText = ""
 	bufferText = startingText()
@@ -101,13 +103,16 @@ func endingText				(resultItem:String,loops:int):
 """ + resultItem + """
 	],
 	\"loops\": """ + str(loops) + """
-}"""
+}
+
+"""
 	return endingRecipeText
 func addToOutputText		(text:String)-> void:
 	outputText += text
 func showRecipeWindow		(text:String)-> void:
 	var recipeTextSceneNew = recipeTextScene.instance()
 	recipeTextSceneNew.recipe = text.replace("TRPH", transitItem)
+	recipeTextSceneNew.Dir = dir
 	get_tree().get_current_scene().add_child(recipeTextSceneNew)
 
 func openSequenceRecipeEditor():

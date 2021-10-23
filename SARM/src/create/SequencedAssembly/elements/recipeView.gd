@@ -8,8 +8,14 @@ var recipe = ""
 var Dir = ""
 
 func _ready():
-	$RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer2/filePath.text = OS.get_user_data_dir().substr(0, 2) + $FileDialog.current_dir
-	Dir = OS.get_user_data_dir().substr(0, 2) + $FileDialog.current_dir 
+	if Dir == "":
+		match OS.get_name():
+			"Windows":
+				Dir = OS.get_user_data_dir().substr(0, 2) + $FileDialog.current_dir
+			"X11":
+				Dir = "~/.minecraft"
+	$RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer2/filePath.text = Dir
+	$FileDialog.current_dir = Dir
 	$RecipeWindow.rect_size = OS.window_size - Vector2(64, 64)
 	$RecipeWindow.rect_position = Vector2(32, 32)
 	$RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/recipe.text = recipe
@@ -18,6 +24,7 @@ func close():
 
 func save_file(dir: String):
 	Dir = dir
+	get_tree().get_current_scene().dir = dir
 	$RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer2/filePath.text = dir
 
 func Save():

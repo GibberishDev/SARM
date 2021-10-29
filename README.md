@@ -8,7 +8,7 @@ In development web version:
 ## Currently in developement:
 * support for custom themes
 * installer to widen up app fetures and make settings be  thing
-* json files loading in program
+* json files loading and editing in program
 
 ## Planned:
 * recipe maker for Create mod - Mechanical Crafter

@@ -34,11 +34,14 @@ func make_root(name: String) -> void:
 func get_content():
 	pass
 
-func make_tree(parent: String, dict: Dictionary) -> void:
+func make_tree(dict: Dictionary) -> void:
+	var has_dicts = true
 	root = create_item()
-	for i in dict.keys():
+	root.set_text(0, dict.keys()[0])
+	for i in dict["root"].keys():
+		print(i)
 		var a = create_item(root)
 		a.set_text(0, i)
 
 func _ready():
-	make_tree("a", TESTDICTIONARY)
+	make_tree(TESTDICTIONARY)

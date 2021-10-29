@@ -8,7 +8,6 @@
 [node name="Tree" type="Tree"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 32.0
 theme = ExtResource( 3 )
 allow_rmb_select = true
 script = ExtResource( 2 )

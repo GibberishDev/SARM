@@ -1,14 +1,13 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://src/create/SequencedAssembly/elements/Machine.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/bg_blueprint_scrollbar_transparent.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui/bg_blueprint_scrollbar_transparent.png" type="Texture" id=2]
 [ext_resource path="res://assets/themes/scroll_bar_theme.tres" type="Theme" id=3]
 [ext_resource path="res://src/create/SequencedAssembly/elements/SequencePreview.gd" type="Script" id=4]
-[ext_resource path="res://assets/bg_blueprint_scrollbar.png" type="Texture" id=5]
-[ext_resource path="res://assets/bg_tint.png" type="Texture" id=11]
-[ext_resource path="res://assets/sequence_buttons.png" type="Texture" id=12]
-[ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=13]
-[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=15]
+[ext_resource path="res://assets/gui/bg_blueprint_scrollbar.png" type="Texture" id=5]
+[ext_resource path="res://assets/mods/create/sequence_buttons.png" type="Texture" id=12]
+[ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=13]
+[ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=15]
 [ext_resource path="res://src/create/SequencedAssembly/elements/conveyors_node.tscn" type="PackedScene" id=16]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -92,19 +91,6 @@ margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.75
-
-[node name="ColorRect" type="TextureRect" parent="HBoxContainer/visualizerContainer"]
-visible = false
-modulate = Color( 0, 0, 0, 1 )
-self_modulate = Color( 1, 1, 1, 0.294118 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 11 )
-expand = true
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/visualizerContainer"]
 modulate = Color( 0.298039, 0.298039, 0.298039, 1 )

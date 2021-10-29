@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://assets/bg.png" type="Texture" id=1]
-[ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=2]
-[ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=3]
-[ext_resource path="res://assets/header_bg.png" type="Texture" id=4]
-[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/gui/bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui/bg_ninePatch.png" type="Texture" id=3]
+[ext_resource path="res://assets/gui/header_bg.png" type="Texture" id=4]
+[ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://src/create/SequencedAssembly/elements/warningSign.gd" type="Script" id=6]
-[ext_resource path="res://assets/closeBtnFrames.png" type="Texture" id=7]
+[ext_resource path="res://assets/gui/closeBtnFrames.png" type="Texture" id=7]
 
 [sub_resource type="InputEventKey" id=1]
 scancode = 16777217

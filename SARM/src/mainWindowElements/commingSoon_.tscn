@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/mainWindowElements/CommingSoon_.gd" type="Script" id=1]
-[ext_resource path="res://assets/blur.shader" type="Shader" id=2]
-[ext_resource path="res://assets/white.png" type="Texture" id=3]
-[ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=4]
-[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/shaders/blur.shader" type="Shader" id=2]
+[ext_resource path="res://assets/gui/white.png" type="Texture" id=3]
+[ext_resource path="res://assets/gui/bg_ninePatch.png" type="Texture" id=4]
+[ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=5]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )

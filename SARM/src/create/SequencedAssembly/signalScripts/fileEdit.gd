@@ -7,7 +7,7 @@ var allowedID = "abcdefghijklmnopqrstuvwxyz_0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 signal successfulText(text)
 
-func textChanged(new_text):
+func textChanged(_new_text):
 	if text.length() > 0:
 		if text[text.length() - 1] in allowedID:
 			previous_text = text

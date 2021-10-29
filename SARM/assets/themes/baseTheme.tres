@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=8 format=2]
 
-[ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=1]
-[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )

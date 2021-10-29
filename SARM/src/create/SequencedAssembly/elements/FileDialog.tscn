@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/create/SequencedAssembly/elements/save_dialog.gd" type="Script" id=1]
+[ext_resource path="res://assets/themes/BtnTheme.tres" type="Theme" id=2]
+
+[node name="FileDialog" type="FileDialog"]
+visible = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 128.0
+margin_top = 64.0
+margin_right = -128.0
+margin_bottom = -64.0
+theme = ExtResource( 2 )
+custom_colors/folder_icon_modulate = Color( 0.74902, 0.603922, 0.266667, 1 )
+custom_colors/files_disabled = Color( 0.819608, 0.647059, 0.360784, 1 )
+custom_colors/file_icon_modulate = Color( 0.341176, 0.160784, 0, 1 )
+window_title = "Open a Directory"
+mode = 2
+access = 2
+show_hidden_files = true
+current_dir = "/gitFork/SARM/SARM"
+current_path = "/gitFork/SARM/SARM/"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="dir_selected" from="." to="." method="_on_FileDialog_dir_selected"]

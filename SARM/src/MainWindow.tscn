@@ -1,26 +1,33 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=65 format=2]
 
-[ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=1]
-[ext_resource path="res://assets/header_bg.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=1]
+[ext_resource path="res://assets/gui/header_bg.png" type="Texture" id=2]
 [ext_resource path="res://src/create/MechanicalCrafters/mainWindowCreateMCScripts/titlebarHitbox.gd" type="Script" id=3]
-[ext_resource path="res://assets/bg.png" type="Texture" id=4]
-[ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=5]
-[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/themes/BtnTheme.tres" type="Theme" id=4]
+[ext_resource path="res://assets/gui/btn.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://src/mainWindowElements/PreviewCreateSA.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/mainWindowElements/CommingSoon.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/create/SequencedAssembly/elements/closePopUp.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/closeBTN.gd" type="Script" id=10]
-[ext_resource path="res://assets/closeBtnFrames.png" type="Texture" id=11]
+[ext_resource path="res://assets/gui/closeBtnFrames.png" type="Texture" id=11]
 [ext_resource path="res://src/MainWindow.gd" type="Script" id=12]
-[ext_resource path="res://assets/ScrollBarTheme.tres" type="Theme" id=13]
-[ext_resource path="res://assets/loading_anim.png" type="Texture" id=14]
+[ext_resource path="res://assets/themes/ScrollBarTheme.tres" type="Theme" id=13]
+[ext_resource path="res://assets/gui/loading_anim.png" type="Texture" id=14]
 [ext_resource path="res://src/mainWindowScripts/GithubBtn.gd" type="Script" id=15]
-[ext_resource path="res://assets/PatreonBtnFrames.png" type="Texture" id=16]
+[ext_resource path="res://assets/gui/PatreonBtnFrames.png" type="Texture" id=16]
 [ext_resource path="res://src/mainWindowScripts/PatreonBtn.gd" type="Script" id=17]
-[ext_resource path="res://assets/GithubBtnFrames.png" type="Texture" id=18]
+[ext_resource path="res://assets/gui/GithubBtnFrames.png" type="Texture" id=18]
 [ext_resource path="res://src/mainWindowScripts/MinimizeBtn.gd" type="Script" id=19]
-[ext_resource path="res://assets/MinimizeBtnFrames.png" type="Texture" id=20]
+[ext_resource path="res://assets/gui/MinimizeBtnFrames.png" type="Texture" id=20]
 [ext_resource path="res://src/mainWindowElements/minimize_anim.tscn" type="PackedScene" id=21]
+[ext_resource path="res://assets/gui/bg_blueprint_scrollbar_transparent.png" type="Texture" id=22]
+[ext_resource path="res://assets/gui/bg_blueprint_scrollbar.png" type="Texture" id=23]
+[ext_resource path="res://src/mainWindowScripts/ModList.gd" type="Script" id=24]
+[ext_resource path="res://assets/gui/bg.png" type="Texture" id=25]
+[ext_resource path="res://assets/gui/bg_ninePatch.png" type="Texture" id=26]
+[ext_resource path="res://assets/gui/maximizeBtnFrames.png" type="Texture" id=27]
+[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/changeSize.gd" type="Script" id=28]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 14 )
@@ -90,6 +97,18 @@ region = Rect2( 52, 0, 26, 28 )
 atlas = ExtResource( 20 )
 region = Rect2( 26, 0, 26, 28 )
 
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 27 )
+region = Rect2( 0, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 27 )
+region = Rect2( 52, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 27 )
+region = Rect2( 26, 0, 26, 28 )
+
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 26, 28 )
@@ -101,6 +120,81 @@ region = Rect2( 52, 0, 26, 28 )
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 11 )
 region = Rect2( 26, 0, 26, 28 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=31]
+content_margin_left = 16.0
+content_margin_right = 16.0
+texture = SubResource( 30 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 4.0
+margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=28]
+content_margin_left = 16.0
+content_margin_right = 16.0
+texture = SubResource( 27 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 4.0
+margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id=29]
+content_margin_left = 16.0
+content_margin_right = 16.0
+texture = SubResource( 27 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 4.0
+margin_right = 4.0
+margin_top = 4.0
+margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="DynamicFont" id=32]
+size = 20
+extra_spacing_bottom = 1
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=26]
+default_font = SubResource( 32 )
+TabContainer/colors/font_color_bg = Color( 0, 0, 0, 1 )
+TabContainer/colors/font_color_disabled = Color( 0, 0, 0, 0.490196 )
+TabContainer/colors/font_color_fg = Color( 1, 1, 1, 1 )
+TabContainer/constants/hseparation = 4
+TabContainer/constants/label_valign_bg = 2
+TabContainer/constants/label_valign_fg = 0
+TabContainer/constants/side_margin = 8
+TabContainer/constants/top_margin = 24
+TabContainer/fonts/font = null
+TabContainer/icons/decrement = null
+TabContainer/icons/decrement_highlight = null
+TabContainer/icons/increment = null
+TabContainer/icons/increment_highlight = null
+TabContainer/icons/menu = null
+TabContainer/icons/menu_highlight = null
+TabContainer/styles/panel = SubResource( 31 )
+TabContainer/styles/tab_bg = SubResource( 28 )
+TabContainer/styles/tab_disabled = SubResource( 29 )
+TabContainer/styles/tab_fg = SubResource( 31 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="DynamicFont" id=20]
 size = 20
@@ -134,8 +228,80 @@ VScrollBar/styles/grabber_pressed = SubResource( 21 )
 VScrollBar/styles/scroll = SubResource( 22 )
 VScrollBar/styles/scroll_focus = SubResource( 22 )
 
+[sub_resource type="Animation" id=40]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Interface/VBoxContainer/Control/TabContainer/datapack/recipes:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Interface/VBoxContainer/Control/TabContainer/datapack/recipes:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "slideIn"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Interface/VBoxContainer/Control/TabContainer/datapack/recipes:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( -4, -4, 1 ),
+"update": 0,
+"values": [ Vector2( 2048, 0 ), Vector2( 16, 0 ), Vector2( 32, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Interface/VBoxContainer/Control/TabContainer/datapack/recipes:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Interface/VBoxContainer/Control/TabContainer/datapack/recipes:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.05, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Root" type="Node"]
 script = ExtResource( 12 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 104.0, 104.0, 584.0 ],
+"_edit_vertical_guides_": [ 16.0, 1008.0 ]
+}
 
 [node name="Interface" type="Control" parent="."]
 anchor_right = 1.0
@@ -167,7 +333,7 @@ __meta__ = {
 }
 
 [node name="TitleBarPlane" type="NinePatchRect" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
-margin_right = 920.0
+margin_right = 894.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 0, 28 )
 size_flags_horizontal = 3
@@ -195,7 +361,7 @@ __meta__ = {
 position = Vector2( 44, 14 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 7 )
-frame = 8
+frame = 9
 playing = true
 
 [node name="HitBox" type="Control" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane"]
@@ -208,8 +374,8 @@ __meta__ = {
 }
 
 [node name="GithubBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
-margin_left = 920.0
-margin_right = 946.0
+margin_left = 894.0
+margin_right = 920.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 26, 28 )
 hint_tooltip = "Close SARM"
@@ -226,8 +392,8 @@ __meta__ = {
 }
 
 [node name="PatreonBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
-margin_left = 946.0
-margin_right = 972.0
+margin_left = 920.0
+margin_right = 946.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 26, 28 )
 hint_tooltip = "Close SARM"
@@ -244,8 +410,8 @@ __meta__ = {
 }
 
 [node name="MinimizeBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
-margin_left = 972.0
-margin_right = 998.0
+margin_left = 946.0
+margin_right = 972.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 26, 28 )
 hint_tooltip = "Close SARM"
@@ -262,6 +428,24 @@ __meta__ = {
 }
 
 [node name="minimize_anim" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" instance=ExtResource( 21 )]
+
+[node name="MaximizeBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
+margin_left = 972.0
+margin_right = 998.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 26, 26 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 37 )
+texture_pressed = SubResource( 38 )
+texture_hover = SubResource( 39 )
+texture_disabled = SubResource( 38 )
+texture_focused = SubResource( 39 )
+expand = true
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CloseBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
 margin_left = 998.0
@@ -289,25 +473,163 @@ margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Interface/VBoxContainer/Control"]
+[node name="NinePatchRect2" type="NinePatchRect" parent="Interface/VBoxContainer/Control"]
+modulate = Color( 0.298039, 0.298039, 0.298039, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 0, 80 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = ExtResource( 13 )
+texture = ExtResource( 23 )
+region_rect = Rect2( 0, 0, 64, 64 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 15
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer"]
-margin_right = 998.0
+[node name="NinePatchRect3" type="NinePatchRect" parent="Interface/VBoxContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 22 )
+region_rect = Rect2( 0, 0, 64, 64 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 15
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="Interface/VBoxContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 26 )
+tab_align = 0
+drag_to_rearrange_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="datapack" type="Control" parent="Interface/VBoxContainer/Control/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 33.0
+margin_right = -16.0
+margin_bottom = -4.0
+
+[node name="files" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/datapack"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Interface/VBoxContainer/Control/TabContainer/datapack/files"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -510.0
+margin_bottom = 28.0
+focus_mode = 0
+theme = ExtResource( 4 )
+enabled_focus_mode = 0
+text = "--Temporal button-- --Press to show recipes--"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileDialog" type="FileDialog" parent="Interface/VBoxContainer/Control/TabContainer/datapack/files"]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -484.0
+margin_top = -255.5
+margin_right = 484.0
+margin_bottom = 255.5
+window_title = ""
+mode_overrides_title = false
+mode = 0
+
+[node name="recipes" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/datapack"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2044.03
+margin_right = 2012.03
+rect_pivot_offset = Vector2( -32, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="NinePatchRect" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 33 )
+region_rect = Rect2( 0, 0, 16, 16 )
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/bg"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -6.0
+margin_top = -33.0
+margin_right = 6.0
+margin_bottom = -6.0
+focus_mode = 0
+theme = ExtResource( 4 )
+enabled_focus_mode = 0
+text = " Cancel "
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.00012
+margin_bottom = -24.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 13 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer"]
+margin_right = 928.0
 margin_bottom = 768.0
 rect_min_size = Vector2( 0, 768 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource( 24 )
+Number_of_mods = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Interface/VBoxContainer/Control/ScrollContainer/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 167.0
@@ -316,8 +638,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="createSection" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer"]
-margin_right = 998.0
+[node name="createSection" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer"]
+margin_right = 920.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 0, 192 )
 size_flags_horizontal = 3
@@ -325,31 +647,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 2, 12, 8 )
-patch_margin_left = 4
-patch_margin_top = 2
-patch_margin_right = 4
-patch_margin_bottom = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/MainWindowOutline"]
+[node name="MainWindowBG" type="NinePatchRect" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection"]
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 2
+texture = ExtResource( 25 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = 0
@@ -357,50 +670,51 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="dud" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
-margin_right = 998.0
+[node name="dud" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
+margin_right = 920.0
 margin_bottom = 8.0
 rect_min_size = Vector2( 0, 8 )
 
-[node name="Label" type="HBoxContainer" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
+[node name="Label" type="HBoxContainer" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
 margin_top = 8.0
-margin_right = 998.0
+margin_right = 920.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 0, 26 )
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
-[node name="dud" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/Label"]
+[node name="dud" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/Label"]
 margin_right = 20.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 20, 8 )
 
-[node name="Label" type="Label" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/Label"]
+[node name="Label" type="Label" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/Label"]
 margin_left = 20.0
-margin_right = 998.0
+margin_right = 276.0
 margin_bottom = 26.0
-rect_min_size = Vector2( 0, 26 )
-size_flags_horizontal = 3
+rect_min_size = Vector2( 256, 26 )
 size_flags_vertical = 1
+theme = ExtResource( 4 )
 custom_fonts/font = SubResource( 20 )
 text = "Create mod recipes:"
+align = 1
 valign = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
 margin_top = 34.0
-margin_right = 998.0
+margin_right = 920.0
 margin_bottom = 184.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 23 )
 
-[node name="Control" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer"]
+[node name="Control" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer"]
 margin_right = 564.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 564, 0 )
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -410,158 +724,76 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="dud" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
+[node name="dud" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
 margin_right = 20.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 20, 0 )
 
-[node name="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Control" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 20.0
 margin_top = 15.0
 margin_right = 276.0
 margin_bottom = 135.0
 size_flags_vertical = 4
 
-[node name="dud2" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
+[node name="dud2" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
 margin_left = 276.0
 margin_right = 292.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 16, 0 )
 
-[node name="CommingSoon" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 8 )]
+[node name="CommingSoon" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 8 )]
 margin_left = 292.0
 margin_top = 15.0
 margin_right = 548.0
 margin_bottom = 135.0
 size_flags_vertical = 4
 
-[node name="Label" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer/CommingSoon/ViewportContainer/Viewport/CS" index="2"]
-rect_scale = Vector2( 0.52, 1 )
-text = "Mechanical Crafters
-Comming Soon!"
-
-[node name="dud3" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
+[node name="dud3" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
 margin_left = 548.0
 margin_right = 564.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 16, 0 )
 
-[node name="dud2" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
+[node name="dud2" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]
 margin_top = 184.0
-margin_right = 998.0
+margin_right = 920.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 0, 8 )
 
-[node name="end" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer"]
-margin_top = 192.0
-margin_right = 998.0
-margin_bottom = 384.0
-rect_min_size = Vector2( 0, 192 )
-size_flags_horizontal = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/end"]
+[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 12, 10 )
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/end/MainWindowOutline"]
-self_modulate = Color( 0, 0, 0, 1 )
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="end2" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer"]
-margin_top = 384.0
-margin_right = 998.0
-margin_bottom = 576.0
-rect_min_size = Vector2( 0, 192 )
-size_flags_horizontal = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/end2"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 12, 10 )
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/end2/MainWindowOutline"]
-self_modulate = Color( 0, 0, 0, 1 )
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="end3" type="Control" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer"]
-margin_top = 576.0
-margin_right = 998.0
-margin_bottom = 768.0
-rect_min_size = Vector2( 0, 192 )
-size_flags_horizontal = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MainWindowOutline" type="NinePatchRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/end3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 26 )
 region_rect = Rect2( 0, 0, 12, 12 )
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/end3/MainWindowOutline"]
-self_modulate = Color( 0, 0, 0, 1 )
-show_behind_parent = true
+[node name="settings" type="Control" parent="Interface/VBoxContainer/Control/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 4 )
-expand = true
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = 16.0
+margin_top = 33.0
+margin_right = -16.0
+margin_bottom = -4.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 40 )
+anims/slideIn = SubResource( 36 )
 
 [connection signal="gui_input" from="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" to="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" method="HitBoxInput"]
 [connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/GithubBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/GithubBtn" method="onPress"]
 [connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/PatreonBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/PatreonBtn" method="onPress"]
 [connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" method="onPress"]
+[connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/MaximizeBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/MaximizeBtn" method="onButtonPress"]
 [connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" method="closePopUp"]
-
-[editable path="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer/CommingSoon"]
-[editable path="Interface/VBoxContainer/Control/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer/CommingSoon/ViewportContainer/Viewport/CS"]
+[connection signal="pressed" from="Interface/VBoxContainer/Control/TabContainer/datapack/files/Button" to="." method="show_recipes"]
+[connection signal="pressed" from="Interface/VBoxContainer/Control/TabContainer/datapack/recipes/bg/Button" to="." method="hide_recipes"]

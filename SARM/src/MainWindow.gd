@@ -1,9 +1,26 @@
 extends Node
 
+func show_recipes() -> void:
+	$AnimationPlayer.play("slideIn")
+
+func hide_recipes() -> void:
+	$AnimationPlayer.play_backwards("slideIn")
+
+func get_filelist(scan_dir : String) -> Dictionary:
+	var my_dict : Dictionary = {}
+	var my_files : Array = []
+	var dir := Directory.new()
+	dir.open(scan_dir)
+	dir.list_dir_begin(true, true)
+	var file_name := dir.get_next()
+	while file_name != "":
+		my_files.append(file_name)
+		file_name = dir.get_next()
+	my_dict[scan_dir] = my_files
+	return my_dict
+
 func _ready():
-	OS.window_fullscreen = false
-	OS.window_size = Vector2(1024, 600)
-	OS.window_position = OS.get_screen_size() / 2 - Vector2(512, 300)
-	TranslationServer.set_locale("ru")
+	get_filelist("E:/gitFork/SARM/SARM/assets/mods/create")
+	$Interface/VBoxContainer/Control/TabContainer/datapack/files/FileDialog.popup()
 
 

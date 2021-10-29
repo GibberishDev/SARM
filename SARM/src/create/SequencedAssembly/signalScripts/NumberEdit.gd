@@ -9,7 +9,7 @@ signal successfulText(text)
 func _ready():
 	emit_signal("successfulText", "1")
 
-func textChanged(new_text):
+func textChanged(_new_text):
 	if text.length() > 0:
 		if text[text.length()-1].is_valid_integer():
 			if int(text) > 0 and int(text) <= 1000000000:

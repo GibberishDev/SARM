@@ -1,14 +1,14 @@
 [gd_resource type="Theme" load_steps=8 format=2]
 
-[ext_resource path="res://assets/lineEdit.png" type="Texture" id=1]
-[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/gui/lineEdit.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=2]
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="StyleBoxTexture" id=21]
-texture = SubResource( 20 )
+[sub_resource type="StyleBoxTexture" id=2]
+texture = SubResource( 1 )
 region_rect = Rect2( 0, 0, 16, 16 )
 margin_left = 3.0
 margin_right = 3.0
@@ -17,12 +17,12 @@ margin_bottom = 3.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="StyleBoxTexture" id=23]
-texture = SubResource( 22 )
+[sub_resource type="StyleBoxTexture" id=4]
+texture = SubResource( 3 )
 region_rect = Rect2( 0, 0, 16, 16 )
 margin_left = 3.0
 margin_right = 3.0
@@ -49,6 +49,6 @@ LineEdit/colors/selection_color = Color( 0.388235, 0.380392, 0.380392, 1 )
 LineEdit/constants/minimum_spaces = 12
 LineEdit/fonts/font = null
 LineEdit/icons/clear = null
-LineEdit/styles/focus = SubResource( 21 )
-LineEdit/styles/normal = SubResource( 23 )
-LineEdit/styles/read_only = SubResource( 23 )
+LineEdit/styles/focus = SubResource( 2 )
+LineEdit/styles/normal = SubResource( 4 )
+LineEdit/styles/read_only = SubResource( 4 )

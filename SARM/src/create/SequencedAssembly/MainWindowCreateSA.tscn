@@ -3,14 +3,14 @@
 [ext_resource path="res://src/create/SequencedAssembly/elements/closePopUp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/create/SequencedAssembly/elements/RecipeView.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/create/SequencedAssembly/elements/warningPopUp.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/toggle_button.png" type="Texture" id=4]
-[ext_resource path="res://assets/maximizeBtnFrames.png" type="Texture" id=5]
-[ext_resource path="res://assets/bg.png" type="Texture" id=6]
-[ext_resource path="res://assets/header_ninePatch.png" type="Texture" id=7]
-[ext_resource path="res://assets/loading_anim.png" type="Texture" id=8]
-[ext_resource path="res://assets/bg_ninePatch.png" type="Texture" id=9]
-[ext_resource path="res://assets/header_bg.png" type="Texture" id=10]
-[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=11]
+[ext_resource path="res://assets/gui/toggle_button.png" type="Texture" id=4]
+[ext_resource path="res://assets/gui/maximizeBtnFrames.png" type="Texture" id=5]
+[ext_resource path="res://assets/gui/bg.png" type="Texture" id=6]
+[ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=7]
+[ext_resource path="res://assets/gui/loading_anim.png" type="Texture" id=8]
+[ext_resource path="res://assets/gui/bg_ninePatch.png" type="Texture" id=9]
+[ext_resource path="res://assets/gui/header_bg.png" type="Texture" id=10]
+[ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=11]
 [ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/changeSize.gd" type="Script" id=12]
 [ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/seqAssemblyGenText.gd" type="Script" id=13]
 [ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/starting_ingridient.gd" type="Script" id=14]
@@ -20,13 +20,13 @@
 [ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/loops.gd" type="Script" id=18]
 [ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/closeBTN.gd" type="Script" id=19]
 [ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/transit_item.gd" type="Script" id=20]
-[ext_resource path="res://assets/closeBtnFrames.png" type="Texture" id=21]
+[ext_resource path="res://assets/gui/closeBtnFrames.png" type="Texture" id=21]
 [ext_resource path="res://src/create/SequencedAssembly/signalScripts/TagEdit.gd" type="Script" id=22]
 [ext_resource path="res://src/create/SequencedAssembly/elements/SequencePreview.tscn" type="PackedScene" id=23]
 [ext_resource path="res://src/create/SequencedAssembly/elements/Machine.tscn" type="PackedScene" id=24]
 [ext_resource path="res://src/create/SequencedAssembly/elements/ResultItemsWindow.tscn" type="PackedScene" id=25]
 [ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/resultItem.gd" type="Script" id=26]
-[ext_resource path="res://assets/MinimizeBtnFrames.png" type="Texture" id=27]
+[ext_resource path="res://assets/gui/MinimizeBtnFrames.png" type="Texture" id=27]
 [ext_resource path="res://src/mainWindowScripts/MinimizeBtn.gd" type="Script" id=28]
 [ext_resource path="res://src/mainWindowElements/minimize_anim.tscn" type="PackedScene" id=29]
 [ext_resource path="res://assets/themes/BtnTheme.tres" type="Theme" id=30]
@@ -78,15 +78,15 @@ region = Rect2( 26, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 25, 25 )
+region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 5 )
-region = Rect2( 50, 0, 25, 25 )
+region = Rect2( 52, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 5 )
-region = Rect2( 25, 0, 25, 25 )
+region = Rect2( 26, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 21 )
@@ -206,7 +206,7 @@ __meta__ = {
 position = Vector2( 44, 14 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 7 )
-frame = 6
+frame = 7
 playing = true
 
 [node name="titlebarHitbox" type="Control" parent="Control/bgOverlay/TitleBar/HBoxContainer/header_ninePatch"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/mainWindowElements/foulder.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/mainWindowElements/fileSystem.gd" type="Script" id=2]
+[ext_resource path="res://assets/themes/BtnTheme.tres" type="Theme" id=3]
+[ext_resource path="res://src/mainWindowElements/file.tscn" type="PackedScene" id=4]
+
+[node name="Tree" type="Tree"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 32.0
+theme = ExtResource( 3 )
+allow_rmb_select = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+file = ExtResource( 4 )
+foulder = ExtResource( 1 )

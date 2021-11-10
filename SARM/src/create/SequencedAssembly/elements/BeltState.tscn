@@ -1,19 +1,21 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/create/SequencedAssembly/elements/BeltState.gd" type="Script" id=1]
-[ext_resource path="res://assets/models/CreateSA/models/belt_side/model.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://assets/models/CreateSA/models/saw/model.obj" type="ArrayMesh" id=3]
-[ext_resource path="res://assets/models/CreateSA/models/belt_middle/model.obj" type="ArrayMesh" id=4]
-[ext_resource path="res://assets/models/CreateSA/models/deployer/model.obj" type="ArrayMesh" id=5]
-[ext_resource path="res://assets/models/CreateSA/models/press/model.obj" type="ArrayMesh" id=6]
-[ext_resource path="res://assets/models/CreateSA/models/spout/model.obj" type="ArrayMesh" id=7]
-[ext_resource path="res://assets/models/CreateSA/models/belt_single/model.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://assets/models/Create/models/belt_side/model.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://assets/models/Create/models/saw/model.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://assets/models/Create/models/belt_middle/model.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://assets/models/Create/models/deployer/model.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://assets/models/Create/models/press/model.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://assets/models/Create/models/spout/model.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://assets/models/Create/models/depot/depot.obj" type="ArrayMesh" id=8]
 
 [node name="BeltState" type="Spatial"]
 script = ExtResource( 1 )
+belt_state = 3
+machine_state = 1
 belt_side = ExtResource( 2 )
 belt_middle = ExtResource( 4 )
-belt_single = ExtResource( 8 )
+depot = ExtResource( 8 )
 saw = ExtResource( 3 )
 press = ExtResource( 6 )
 spout = ExtResource( 7 )
@@ -22,6 +24,65 @@ deployer = ExtResource( 5 )
 [node name="BeltPart" type="MeshInstance" parent="."]
 cast_shadow = 2
 use_in_baked_light = true
+mesh = ExtResource( 8 )
+material/0 = null
+material/1 = null
+material/2 = null
 
 [node name="MachinePart" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+mesh = ExtResource( 6 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
+material/18 = null
+material/19 = null
+material/20 = null
+material/21 = null
+material/22 = null
+material/23 = null
+material/24 = null
+material/25 = null
+material/26 = null
+material/27 = null
+material/28 = null
+material/29 = null
+material/30 = null
+material/31 = null
+material/32 = null
+material/33 = null
+material/34 = null
+material/35 = null
+material/36 = null
+material/37 = null
+material/38 = null
+material/39 = null
+material/40 = null
+material/41 = null
+material/42 = null
+material/43 = null
+material/44 = null
+material/45 = null
+material/46 = null
+material/47 = null
+material/48 = null
+material/49 = null
+material/50 = null
+material/51 = null
+material/52 = null
+material/53 = null

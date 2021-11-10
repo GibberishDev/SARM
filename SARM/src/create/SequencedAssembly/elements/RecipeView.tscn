@@ -314,6 +314,7 @@ highlight_current_line = true
 syntax_highlighting = true
 show_line_numbers = true
 draw_tabs = true
+fold_gutter = true
 highlight_all_occurrences = true
 smooth_scrolling = true
 hiding_enabled = true

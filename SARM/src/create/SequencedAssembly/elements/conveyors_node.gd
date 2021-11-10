@@ -2,6 +2,8 @@ extends Spatial
 
 var conveyors
 
+export var setting_animations = bool(true)
+
 var zCenter = float(0.0)
 var SpotlightWaveUp = bool()
 
@@ -47,9 +49,13 @@ func ChangeModels(key:Array):
 			false:
 				pass
 	for i in range(6):
-		get_node("conveyors/BeltState" + str(i)).update()
+		get_node("conveyors/BeltState" + str(i)).update("")
 
 func _physics_process(delta):
 	if $Camera.translation.z != zCenter:
-		$Camera.translation = $Camera.translation.move_toward(Vector3($Camera.translation.x, $Camera.translation.y, zCenter), delta*8)
-		$SpotLight.translation = $SpotLight.translation.move_toward(Vector3($SpotLight.translation.x, $SpotLight.translation.y, zCenter), delta*8)
+		if setting_animations:
+			$Camera.translation = $Camera.translation.move_toward(Vector3($Camera.translation.x, $Camera.translation.y, zCenter), delta*8)
+			$SpotLight.translation = $SpotLight.translation.move_toward(Vector3($SpotLight.translation.x, $SpotLight.translation.y, zCenter), delta*8)
+		else:
+			$Camera.translation = Vector3($Camera.translation.x, $Camera.translation.y, zCenter)
+			$SpotLight.translation = Vector3($SpotLight.translation.x, $SpotLight.translation.y, zCenter)

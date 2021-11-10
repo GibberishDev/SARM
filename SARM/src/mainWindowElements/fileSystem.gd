@@ -39,9 +39,9 @@ func make_tree(dict: Dictionary) -> void:
 	root = create_item()
 	root.set_text(0, dict.keys()[0])
 	for i in dict["root"].keys():
-		print(i)
 		var a = create_item(root)
 		a.set_text(0, i)
+	print(self.)
 
 func _ready():
 	make_tree(TESTDICTIONARY)

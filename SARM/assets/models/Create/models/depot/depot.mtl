@@ -1,0 +1,8 @@
+# Made in Blockbench 4.0.1
+newmtl m_1
+map_Kd depot_side.png 
+newmtl m_2
+map_Kd depot_top.png 
+newmtl m_3
+map_Kd andesite_casing.png 
+newmtl none

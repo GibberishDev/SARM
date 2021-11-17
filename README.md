@@ -10,32 +10,37 @@ Nifty standalone program for mod pack developers. It is used for creating json t
   <a href="https://github.com/GibberishDev/SARM#suggest-features-to-add-over-at-my-discord-server">Suggest features</a><br>
   <a href="https://github.com/GibberishDev/SARM#trello-board-link">Trello board</a><br>
   <a href="https://github.com/GibberishDev/SARM#qa">Q&A</a><br>
-  
 </details>
 
 
 ## In development web version:
 <a href="https://gibberishdev.github.io">[CLICK!]</a>
+<a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Currently in developement:
 * support for custom themes (less and less hope on that one)
 * installer to widen up app fetures and make settings be  thing (probb wil ditch that option and opt in for a quick easy to use thing instead with 0 installation needed)
 * json files loading and editing in program
+<a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Planned:
 * the rest of create mod recipes
 * Farmer's Delight mod recipes
 * Eidolon recipes
 * (suggest more mods over at my discord)
+<a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Done:
 * recipe maker for Create mod - Sequenced Assembly (Alpha design)
+<a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Suggest features to add over at my Discord server:
 <a href="https://discord.gg/bhAnEEXUfV"><img src="https://github.com/GibberishDev/resrrep/blob/main/discord_invite.png" alt="Discord"></a>
+<a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Trello board link:
 <a href="https://trello.com/invite/b/S5NVXcmB/70bfc8f9c0b89b69065b30551c42fb5a/sarm">[CLICK!]</a>
+<a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Q&A
 #### Q: will there be support for an X platform except windows?<br>
@@ -49,3 +54,4 @@ Nifty standalone program for mod pack developers. It is used for creating json t
 ---
 #### Q: Ya have patreon linked in the program. Should we expect some features be patreon supporter only?<br>
 #### A: Prob not. At maximum some cosmetics and nothing that in any way limits probgram functionality.<br>
+<a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>

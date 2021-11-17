@@ -53,5 +53,5 @@ Nifty standalone program for mod pack developers. It is used for creating json t
 - After you finished adding the feature (you need at least test it :|) open pull request and wait till my approval or denial.<br>
 ---
 #### Q: Ya have patreon linked in the program. Should we expect some features be patreon supporter only?<br>
-#### A: Prob not. At maximum some cosmetics and nothing that in any way limits probgram functionality.<br>
+#### A: Prob not. At maximum some cosmetics and nothing that in any way limits program functionality.<br>
 <a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>

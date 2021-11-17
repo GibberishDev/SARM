@@ -1,8 +1,20 @@
 # SARM
 
 Nifty standalone program for mod pack developers. It is used for creating json text for recipes for popular mods.
+<details>
+  <summary>shortcuts:</summary>
+  <a href="https://github.com/GibberishDev/SARM#in-development-web-version">Web version</a><br>
+  <a href="https://github.com/GibberishDev/SARM#currently-in-development">Currently in developement</a><br>
+  <a href="https://github.com/GibberishDev/SARM#planned">Planned</a><br>
+  <a href="https://github.com/GibberishDev/SARM#done">Done</a><br>
+  <a href="https://github.com/GibberishDev/SARM#suggest-features-to-add-over-at-my-discord-server">Suggest features</a><br>
+  <a href="https://github.com/GibberishDev/SARM#trello-board-link">Trello board</a><br>
+  <a href="https://github.com/GibberishDev/SARM#q&a">Q&A</a><br>
+  
+</details>
 
-In development web version:
+
+## In development web version:
 <a href="https://gibberishdev.github.io">[CLICK!]</a>
 
 ## Currently in developement:
@@ -21,6 +33,9 @@ In development web version:
 
 ## Suggest features to add over at my Discord server:
 <a href="https://discord.gg/bhAnEEXUfV"><img src="https://github.com/GibberishDev/resrrep/blob/main/discord_invite.png" alt="Discord"></a>
+
+## Trello board link:
+<a href="https://trello.com/invite/b/S5NVXcmB/70bfc8f9c0b89b69065b30551c42fb5a/sarm">[CLICK!]</a>
 
 ## Q&A
 #### Q: will there be support for an X platform except windows?<br>

@@ -39,7 +39,7 @@ Nifty standalone program for mod pack developers. It is used for creating json t
 <a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Trello board link:
-<a href="https://trello.com/invite/b/S5NVXcmB/70bfc8f9c0b89b69065b30551c42fb5a/sarm">[CLICK!]</a><br>
+<a href="https://trello.com/b/S5NVXcmB">[CLICK!]</a><br>
 <a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Q&A

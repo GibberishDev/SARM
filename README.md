@@ -9,7 +9,7 @@ Nifty standalone program for mod pack developers. It is used for creating json t
   <a href="https://github.com/GibberishDev/SARM#done">Done</a><br>
   <a href="https://github.com/GibberishDev/SARM#suggest-features-to-add-over-at-my-discord-server">Suggest features</a><br>
   <a href="https://github.com/GibberishDev/SARM#trello-board-link">Trello board</a><br>
-  <a href="https://github.com/GibberishDev/SARM#q&a">Q&A</a><br>
+  <a href="https://github.com/GibberishDev/SARM#qa">Q&A</a><br>
   
 </details>
 

@@ -14,32 +14,32 @@ Nifty standalone program for mod pack developers. It is used for creating json t
 
 
 ## In development web version:
-<a href="https://gibberishdev.github.io">[CLICK!]</a>
+<a href="https://gibberishdev.github.io">[CLICK!]</a><br>
 <a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Currently in developement:
 * support for custom themes (less and less hope on that one)
 * installer to widen up app fetures and make settings be  thing (probb wil ditch that option and opt in for a quick easy to use thing instead with 0 installation needed)
-* json files loading and editing in program
+* json files loading and editing in program<br>
 <a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Planned:
 * the rest of create mod recipes
 * Farmer's Delight mod recipes
 * Eidolon recipes
-* (suggest more mods over at my discord)
+* (suggest more mods over at my discord)<br>
 <a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Done:
-* recipe maker for Create mod - Sequenced Assembly (Alpha design)
+* recipe maker for Create mod - Sequenced Assembly (Alpha design)<br>
 <a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Suggest features to add over at my Discord server:
-<a href="https://discord.gg/bhAnEEXUfV"><img src="https://github.com/GibberishDev/resrrep/blob/main/discord_invite.png" alt="Discord"></a>
+<a href="https://discord.gg/bhAnEEXUfV"><img src="https://github.com/GibberishDev/resrrep/blob/main/discord_invite.png" alt="Discord"></a><br>
 <a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Trello board link:
-<a href="https://trello.com/invite/b/S5NVXcmB/70bfc8f9c0b89b69065b30551c42fb5a/sarm">[CLICK!]</a>
+<a href="https://trello.com/invite/b/S5NVXcmB/70bfc8f9c0b89b69065b30551c42fb5a/sarm">[CLICK!]</a><br>
 <a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Q&A

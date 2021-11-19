@@ -1,10 +1,54 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=1]
 [ext_resource path="res://assets/gui/header_bg.png" type="Texture" id=2]
 [ext_resource path="res://src/create/MechanicalCrafters/mainWindowCreateMCScripts/titlebarHitbox.gd" type="Script" id=3]
 [ext_resource path="res://assets/gui/bg.png" type="Texture" id=4]
 [ext_resource path="res://assets/gui/bg_ninePatch.png" type="Texture" id=5]
+[ext_resource path="res://assets/gui/MinimizeBtnFrames.png" type="Texture" id=6]
+[ext_resource path="res://assets/gui/closeBtnFrames.png" type="Texture" id=7]
+[ext_resource path="res://assets/gui/maximizeBtnFrames.png" type="Texture" id=8]
+[ext_resource path="res://src/mainWindowElements/minimize_anim.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/shared/closePopUp.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/closeBTN.gd" type="Script" id=11]
+[ext_resource path="res://src/mainWindowScripts/MinimizeBtn.gd" type="Script" id=12]
+[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/changeSize.gd" type="Script" id=13]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 6 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 6 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 8 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 8 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 7 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 7 )
+region = Rect2( 24, 0, 28, 26 )
 
 [node name="Root" type="Node"]
 
@@ -32,12 +76,13 @@ size_flags_horizontal = 3
 [node name="HBoxContainer" type="HBoxContainer" parent="Interface/VBoxContainer/TitleBar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TitleBarPlane" type="NinePatchRect" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
-margin_right = 1024.0
+margin_right = 946.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -67,6 +112,66 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MinimizeBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
+margin_left = 946.0
+margin_right = 972.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 26, 26 )
+hint_tooltip = "Close SARM"
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 1 )
+texture_pressed = SubResource( 2 )
+texture_hover = SubResource( 3 )
+texture_disabled = SubResource( 2 )
+expand = true
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="minimize_anim" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" instance=ExtResource( 9 )]
+show_behind_parent = true
+
+[node name="MaximizeBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
+margin_left = 972.0
+margin_right = 998.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 26, 26 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 4 )
+texture_pressed = SubResource( 5 )
+texture_hover = SubResource( 6 )
+texture_disabled = SubResource( 5 )
+texture_focused = SubResource( 6 )
+expand = true
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
+margin_left = 998.0
+margin_right = 1024.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 26, 26 )
+hint_tooltip = "Exit to
+Main Menu"
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 7 )
+texture_pressed = SubResource( 8 )
+texture_hover = SubResource( 9 )
+texture_disabled = SubResource( 8 )
+expand = true
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+closeMode = 1
+closePopUpScene = ExtResource( 10 )
 
 [node name="MainFrame" type="Control" parent="Interface/VBoxContainer"]
 margin_top = 26.0
@@ -99,3 +204,6 @@ __meta__ = {
 }
 
 [connection signal="gui_input" from="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" to="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" method="HitBoxInput"]
+[connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" method="onPress"]
+[connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/MaximizeBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/MaximizeBtn" method="onButtonPress"]
+[connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" method="closePopUp"]

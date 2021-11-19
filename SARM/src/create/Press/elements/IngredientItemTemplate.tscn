@@ -1,0 +1,140 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/themes/LineEdit.tres" type="Theme" id=1]
+[ext_resource path="res://assets/gui/toggle_button.png" type="Texture" id=2]
+[ext_resource path="res://src/create/SequencedAssembly/signalScripts/TextEdit.gd" type="Script" id=3]
+[ext_resource path="res://src/create/SequencedAssembly/signalScripts/TagEdit.gd" type="Script" id=4]
+[ext_resource path="res://src/create/shared/warningPopUp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( -1, 0, 33, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 33, 16 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+extra_spacing_top = -3
+extra_spacing_bottom = -3
+font_data = ExtResource( 6 )
+
+[node name="Ingredients" type="VBoxContainer"]
+anchor_right = 1.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tagModeChanger" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 26.0
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="tagModeChanger"]
+margin_right = 196.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 196, 26 )
+
+[node name="itemLabel" type="Label" parent="tagModeChanger"]
+margin_left = 196.0
+margin_right = 232.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+custom_fonts/font = SubResource( 1 )
+text = "item"
+valign = 1
+
+[node name="modeSwithcer" type="CheckButton" parent="tagModeChanger"]
+margin_left = 232.0
+margin_right = 277.0
+margin_bottom = 26.0
+focus_mode = 0
+custom_icons/off = SubResource( 2 )
+custom_icons/on = SubResource( 3 )
+enabled_focus_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tagLabel" type="Label" parent="tagModeChanger"]
+margin_left = 277.0
+margin_right = 309.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+custom_fonts/font = SubResource( 1 )
+text = "tag"
+valign = 1
+
+[node name="idLine" type="HBoxContainer" parent="."]
+margin_top = 26.0
+margin_right = 1024.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 0, 18 )
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="idLine"]
+margin_right = 196.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 196, 26 )
+
+[node name="identifierLabel" type="Label" parent="idLine"]
+margin_left = 196.0
+margin_right = 452.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 256, 26 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 4 )
+text = "[MODID]:[IDENTIFIER]"
+valign = 1
+
+[node name="identifierKey" type="LineEdit" parent="idLine"]
+margin_left = 452.0
+margin_right = 736.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 5 )
+caret_blink = true
+script = ExtResource( 3 )
+warnPopUp = ExtResource( 5 )
+
+[node name="colon" type="Label" parent="idLine"]
+margin_left = 736.0
+margin_right = 740.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 4 )
+text = ":"
+valign = 1
+
+[node name="identifierValue" type="LineEdit" parent="idLine"]
+margin_left = 740.0
+margin_right = 1024.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 5 )
+caret_blink = true
+script = ExtResource( 4 )
+
+[connection signal="text_changed" from="idLine/identifierKey" to="idLine/identifierKey" method="textChanged"]
+[connection signal="text_changed" from="idLine/identifierValue" to="idLine/identifierValue" method="textChanged"]

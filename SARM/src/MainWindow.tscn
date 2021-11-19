@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=1]
 [ext_resource path="res://assets/gui/header_bg.png" type="Texture" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://src/mainWindowElements/PreviewCreateSA.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/mainWindowElements/CommingSoon.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/create/SequencedAssembly/elements/closePopUp.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/shared/closePopUp.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/closeBTN.gd" type="Script" id=10]
 [ext_resource path="res://assets/gui/closeBtnFrames.png" type="Texture" id=11]
 [ext_resource path="res://src/MainWindow.gd" type="Script" id=12]
@@ -26,8 +26,6 @@
 [ext_resource path="res://src/mainWindowScripts/ModList.gd" type="Script" id=24]
 [ext_resource path="res://assets/gui/bg.png" type="Texture" id=25]
 [ext_resource path="res://assets/gui/bg_ninePatch.png" type="Texture" id=26]
-[ext_resource path="res://assets/gui/maximizeBtnFrames.png" type="Texture" id=27]
-[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/changeSize.gd" type="Script" id=28]
 [ext_resource path="res://src/mainWindowElements/Settings.gd" type="Script" id=29]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -96,18 +94,6 @@ region = Rect2( 52, 0, 26, 28 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 20 )
-region = Rect2( 26, 0, 26, 28 )
-
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 27 )
-region = Rect2( 0, 0, 26, 28 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 27 )
-region = Rect2( 52, 0, 26, 28 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 27 )
 region = Rect2( 26, 0, 26, 28 )
 
 [sub_resource type="AtlasTexture" id=17]
@@ -351,7 +337,7 @@ __meta__ = {
 }
 
 [node name="TitleBarPlane" type="NinePatchRect" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
-margin_right = 894.0
+margin_right = 920.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 0, 28 )
 size_flags_horizontal = 3
@@ -379,7 +365,7 @@ __meta__ = {
 position = Vector2( 44, 14 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 7 )
-frame = 19
+frame = 14
 playing = true
 
 [node name="HitBox" type="Control" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane"]
@@ -392,8 +378,8 @@ __meta__ = {
 }
 
 [node name="GithubBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
-margin_left = 894.0
-margin_right = 920.0
+margin_left = 920.0
+margin_right = 946.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 26, 28 )
 hint_tooltip = "Close SARM"
@@ -410,8 +396,8 @@ __meta__ = {
 }
 
 [node name="PatreonBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
-margin_left = 920.0
-margin_right = 946.0
+margin_left = 946.0
+margin_right = 972.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 26, 28 )
 hint_tooltip = "Close SARM"
@@ -428,8 +414,8 @@ __meta__ = {
 }
 
 [node name="MinimizeBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
-margin_left = 946.0
-margin_right = 972.0
+margin_left = 972.0
+margin_right = 998.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 26, 28 )
 hint_tooltip = "Close SARM"
@@ -446,24 +432,6 @@ __meta__ = {
 }
 
 [node name="minimize_anim" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" instance=ExtResource( 21 )]
-
-[node name="MaximizeBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
-margin_left = 972.0
-margin_right = 998.0
-margin_bottom = 28.0
-rect_min_size = Vector2( 26, 26 )
-focus_mode = 0
-enabled_focus_mode = 0
-texture_normal = SubResource( 37 )
-texture_pressed = SubResource( 38 )
-texture_hover = SubResource( 39 )
-texture_disabled = SubResource( 38 )
-texture_focused = SubResource( 39 )
-expand = true
-script = ExtResource( 28 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CloseBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
 margin_left = 998.0
@@ -571,15 +539,11 @@ __meta__ = {
 
 [node name="recipes" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack"]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_left = -16.0
 margin_top = -4.0
-margin_right = -16.0
-margin_bottom = -4.0
+margin_right = 952.0
+margin_bottom = 507.0
 rect_pivot_offset = Vector2( -32, 0 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -630,7 +594,7 @@ __meta__ = {
 }
 
 [node name="Control" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/recipes/ScrollContainer"]
-margin_right = 952.0
+margin_right = 960.0
 margin_bottom = 768.0
 rect_min_size = Vector2( 0, 768 )
 size_flags_horizontal = 3
@@ -640,7 +604,6 @@ script = ExtResource( 24 )
 [node name="VBoxContainer" type="VBoxContainer" parent="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/recipes/ScrollContainer/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = 167.0
 custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -825,7 +788,6 @@ anims/slideIn = SubResource( 36 )
 [connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/GithubBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/GithubBtn" method="onPress"]
 [connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/PatreonBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/PatreonBtn" method="onPress"]
 [connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" method="onPress"]
-[connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/MaximizeBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/MaximizeBtn" method="onButtonPress"]
 [connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" method="closePopUp"]
 [connection signal="pressed" from="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/files/Button" to="." method="show_recipes"]
 [connection signal="pressed" from="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/recipes/bg/Button" to="." method="hide_recipes"]

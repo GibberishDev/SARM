@@ -91,7 +91,7 @@ func sendText():
 			emit_signal("MachineData", machine_number, 1, saw_processing_time)
 		2:
 			makeSpoutRecipe()
-			emit_signal("MachineData", machine_number, 2, [spout_fluid_identifier.replace("\"", ""), spout_fluid_amount])
+			emit_signal("MachineData", machine_number, 2, [spout_fluid_identifier.replace("\"", ""), spout_fluid_nbt, spout_fluid_amount])
 		3:
 			makeDeployerRecipe()
 			emit_signal("MachineData", machine_number, 3, [deployer_addition_item.replace("\"", ""), deployer_item_mode])
@@ -124,11 +124,19 @@ func makeSpoutRecipe():
 	recipe_text = ""
 	spout_fluid_identifier ="\"" + $VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/modid.text + ":" + $VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/identifier.text + "\""
 	spout_fluid_amount = $VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control2/HBoxContainer/amount.text
+	if $VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control3/HBoxContainer/TextEdit.text == "":
+		spout_fluid_nbt = "{}"
+	else:
+		spout_fluid_nbt = $VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control3/HBoxContainer/TextEdit.text
 	recipe_text = """		{
 			"type": "create:filling",
 			"ingredients": [
 				{\"item\": TRPH},
-				{"fluid": """ + spout_fluid_identifier + """, "nbt": """ + spout_fluid_nbt + """, "amount": """ + str(spout_fluid_amount) + """}],
+				{
+					"fluid": """ + spout_fluid_identifier + """,
+					"nbt": """ + spout_fluid_nbt + """,
+					"amount": """ + str(spout_fluid_amount) + """
+				}],
 			"results": [{\"item\": TRPH}]
 		}"""
 
@@ -151,4 +159,6 @@ func deployerModeSwitcher(state):
 			deployer_item_mode = "item"
 			$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/DeployerRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control/HBoxContainer/deployer_identifier_label.text = "[MODID]:[IDENTIFIER]"
 
+func loadDefaultNBT() -> void:
+	$VBoxContainer/Control/Control/VBoxContainer/Control/VBoxContainer/VBoxContainer/SpoutRecipe/VBoxContainer/Control/VBoxContainer/HBoxContainer/VBoxContainer/Control3/HBoxContainer/TextEdit.text = """{"Bottle": "REGULAR", "Potion": "[REPLACE WITH POTION ID]"}"""
 

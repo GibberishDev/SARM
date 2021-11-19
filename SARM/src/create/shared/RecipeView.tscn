@@ -1,20 +1,20 @@
 [gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://assets/gui/bg.png" type="Texture" id=1]
-[ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=2]
-[ext_resource path="res://assets/gui/bg_ninePatch.png" type="Texture" id=3]
-[ext_resource path="res://assets/gui/header_bg.png" type="Texture" id=4]
-[ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://src/create/SequencedAssembly/elements/recipeView.gd" type="Script" id=6]
-[ext_resource path="res://assets/gui/closeBtnFrames.png" type="Texture" id=7]
-[ext_resource path="res://src/create/SequencedAssembly/elements/FileDialog.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/create/SequencedAssembly/elements/warningPopUp.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/create/SequencedAssembly/signalScripts/fileEdit.gd" type="Script" id=10]
-[ext_resource path="res://src/create/SequencedAssembly/elements/savePopup.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/themes/BtnTheme.tres" type="Theme" id=12]
-[ext_resource path="res://assets/themes/LineEdit.tres" type="Theme" id=13]
-[ext_resource path="res://assets/themes/scroll_bar_theme.tres" type="Theme" id=14]
-[ext_resource path="res://assets/gui/bg_blueprint_scrollbar_transparent.png" type="Texture" id=15]
+[ext_resource path="res://src/create/shared/recipeView.gd" type="Script" id=1]
+[ext_resource path="res://assets/gui/header_bg.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=3]
+[ext_resource path="res://assets/gui/bg_ninePatch.png" type="Texture" id=4]
+[ext_resource path="res://assets/gui/bg.png" type="Texture" id=5]
+[ext_resource path="res://assets/gui/closeBtnFrames.png" type="Texture" id=6]
+[ext_resource path="res://assets/gui/bg_blueprint_scrollbar_transparent.png" type="Texture" id=7]
+[ext_resource path="res://src/create/shared/FileDialog.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/create/shared/savePopup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/create/shared/warningPopUp.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/create/SequencedAssembly/signalScripts/fileEdit.gd" type="Script" id=11]
+[ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=12]
+[ext_resource path="res://assets/themes/BtnTheme.tres" type="Theme" id=13]
+[ext_resource path="res://assets/themes/LineEdit.tres" type="Theme" id=14]
+[ext_resource path="res://assets/themes/scroll_bar_theme.tres" type="Theme" id=15]
 
 [sub_resource type="InputEventKey" id=1]
 scancode = 16777217
@@ -23,44 +23,44 @@ scancode = 16777217
 shortcut = SubResource( 1 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 6 )
 region = Rect2( 52, 0, 26, 26 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 7 )
+atlas = ExtResource( 6 )
 region = Rect2( 26, 0, 26, 26 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 20
-font_data = ExtResource( 5 )
+font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 20
 extra_spacing_top = -3
 extra_spacing_bottom = -3
-font_data = ExtResource( 5 )
+font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 20
-font_data = ExtResource( 5 )
+font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 20
-font_data = ExtResource( 5 )
+font_data = ExtResource( 12 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-warn = ExtResource( 11 )
-warnName = ExtResource( 9 )
+warn = ExtResource( 9 )
+warnName = ExtResource( 10 )
 
 [node name="bg" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -88,7 +88,7 @@ custom_constants/separation = 0
 margin_right = 998.0
 margin_bottom = 26.0
 size_flags_horizontal = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 draw_center = false
 region_rect = Rect2( 0, 0, 16, 10 )
 patch_margin_left = 4
@@ -100,7 +100,7 @@ patch_margin_bottom = 2
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 expand = true
 stretch_mode = 2
 __meta__ = {
@@ -138,7 +138,7 @@ margin_right = 1024.0
 margin_bottom = 574.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 12, 12 )
 patch_margin_left = 4
 patch_margin_top = 4
@@ -152,7 +152,7 @@ __meta__ = {
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 expand = true
 stretch_mode = 2
 __meta__ = {
@@ -211,20 +211,20 @@ rect_min_size = Vector2( 16, 0 )
 
 [node name="fileName" type="LineEdit" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 310.0
-margin_right = 798.0
+margin_right = 794.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 384, 28 )
 size_flags_horizontal = 3
-theme = ExtResource( 13 )
+theme = ExtResource( 14 )
 custom_fonts/font = SubResource( 7 )
-script = ExtResource( 10 )
-warnPopUp = ExtResource( 9 )
+script = ExtResource( 11 )
+warnPopUp = ExtResource( 10 )
 
 [node name="dud4" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 798.0
+margin_left = 794.0
 margin_right = 992.0
 margin_bottom = 28.0
-rect_min_size = Vector2( 194, 0 )
+rect_min_size = Vector2( 198, 0 )
 
 [node name="dud4" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer"]
 margin_top = 44.0
@@ -263,11 +263,11 @@ focus_neighbour_left = NodePath("../../HBoxContainer/fileName")
 focus_neighbour_top = NodePath("../../HBoxContainer/fileName")
 focus_previous = NodePath("../../HBoxContainer/fileName")
 size_flags_horizontal = 3
-theme = ExtResource( 13 )
+theme = ExtResource( 14 )
 custom_fonts/font = SubResource( 7 )
 editable = false
-script = ExtResource( 10 )
-warnPopUp = ExtResource( 9 )
+script = ExtResource( 11 )
+warnPopUp = ExtResource( 10 )
 
 [node name="dud" type="Control" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 794.0
@@ -280,7 +280,7 @@ margin_left = 810.0
 margin_right = 992.0
 margin_bottom = 28.0
 focus_mode = 0
-theme = ExtResource( 12 )
+theme = ExtResource( 13 )
 custom_fonts/font = SubResource( 8 )
 enabled_focus_mode = 0
 text = "Select Directory"
@@ -297,7 +297,7 @@ margin_right = 992.0
 margin_bottom = 526.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 14 )
+theme = ExtResource( 15 )
 custom_colors/code_folding_color = Color( 0, 0, 0, 1 )
 custom_colors/symbol_color = Color( 0.501961, 0.501961, 0.501961, 1 )
 custom_colors/selection_color = Color( 1, 1, 1, 0.294118 )
@@ -322,7 +322,7 @@ hiding_enabled = true
 [node name="NinePatchRect" type="NinePatchRect" parent="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/recipe"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 15 )
+texture = ExtResource( 7 )
 patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
@@ -344,7 +344,7 @@ margin_top = 530.0
 margin_right = 992.0
 margin_bottom = 558.0
 focus_mode = 0
-theme = ExtResource( 12 )
+theme = ExtResource( 13 )
 custom_fonts/font = SubResource( 8 )
 enabled_focus_mode = 0
 text = "Save file"

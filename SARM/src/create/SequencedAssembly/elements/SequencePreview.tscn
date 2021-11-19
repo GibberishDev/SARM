@@ -1,43 +1,159 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://src/create/SequencedAssembly/elements/Machine.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/gui/bg_blueprint_scrollbar_transparent.png" type="Texture" id=2]
 [ext_resource path="res://assets/themes/scroll_bar_theme.tres" type="Theme" id=3]
 [ext_resource path="res://src/create/SequencedAssembly/elements/SequencePreview.gd" type="Script" id=4]
 [ext_resource path="res://assets/gui/bg_blueprint_scrollbar.png" type="Texture" id=5]
+[ext_resource path="res://assets/gui/bg_blueprint_scrollbar_elements.png" type="Texture" id=6]
+[ext_resource path="res://assets/mods/create/saw.png" type="Texture" id=7]
+[ext_resource path="res://assets/mods/create/deployer.png" type="Texture" id=8]
+[ext_resource path="res://assets/mods/create/press.png" type="Texture" id=9]
+[ext_resource path="res://assets/mods/create/spout.png" type="Texture" id=10]
+[ext_resource path="res://assets/gui/btn.png" type="Texture" id=11]
 [ext_resource path="res://assets/mods/create/sequence_buttons.png" type="Texture" id=12]
 [ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=13]
 [ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=15]
 [ext_resource path="res://src/create/SequencedAssembly/elements/conveyors_node.tscn" type="PackedScene" id=16]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 64, 64 )
+margin_left = 16.0
+margin_right = 16.0
+margin_top = 16.0
+margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color( 0.298039, 0.298039, 0.298039, 1 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 6 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = SubResource( 2 )
+region_rect = Rect2( 47, 31, 17, 6 )
+margin_left = 2.0
+margin_right = 11.0
+margin_top = 1.0
+margin_bottom = 1.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = SubResource( 2 )
+region_rect = Rect2( 47, 24, 17, 6 )
+margin_left = 2.0
+margin_right = 11.0
+margin_top = 1.0
+margin_bottom = 1.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = SubResource( 2 )
+region_rect = Rect2( 47, 0, 17, 24 )
+margin_left = 2.0
+margin_right = 11.0
+margin_top = 10.0
+margin_bottom = 10.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="Theme" id=12]
+TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
+TextEdit/colors/bookmark_color = Color( 0.08, 0.49, 0.98, 1 )
+TextEdit/colors/brace_mismatch_color = Color( 1, 0.2, 0.2, 1 )
+TextEdit/colors/breakpoint_color = Color( 0.8, 0.8, 0.4, 0.2 )
+TextEdit/colors/caret_background_color = Color( 0, 0, 0, 1 )
+TextEdit/colors/caret_color = Color( 0.88, 0.88, 0.88, 1 )
+TextEdit/colors/code_folding_color = Color( 0.8, 0.8, 0.8, 0.8 )
+TextEdit/colors/completion_background_color = Color( 0.17, 0.16, 0.2, 1 )
+TextEdit/colors/completion_existing_color = Color( 0.87, 0.87, 0.87, 0.13 )
+TextEdit/colors/completion_font_color = Color( 0.67, 0.67, 0.67, 1 )
+TextEdit/colors/completion_scroll_color = Color( 1, 1, 1, 1 )
+TextEdit/colors/completion_selected_color = Color( 0.26, 0.26, 0.27, 1 )
+TextEdit/colors/current_line_color = Color( 0.25, 0.25, 0.26, 0.8 )
+TextEdit/colors/executing_line_color = Color( 0.2, 0.8, 0.2, 0.4 )
+TextEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+TextEdit/colors/font_color_readonly = Color( 0.88, 0.88, 0.88, 0.5 )
+TextEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+TextEdit/colors/function_color = Color( 0.4, 0.64, 0.81, 1 )
+TextEdit/colors/line_number_color = Color( 0.67, 0.67, 0.67, 0.4 )
+TextEdit/colors/mark_color = Color( 1, 0.4, 0.4, 0.4 )
+TextEdit/colors/member_variable_color = Color( 0.9, 0.31, 0.35, 1 )
+TextEdit/colors/number_color = Color( 0.92, 0.58, 0.2, 1 )
+TextEdit/colors/safe_line_number_color = Color( 0.67, 0.78, 0.67, 0.6 )
+TextEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+TextEdit/colors/symbol_color = Color( 0.94, 0.94, 0.94, 1 )
+TextEdit/colors/word_highlighted_color = Color( 0.8, 0.9, 0.9, 0.15 )
+TextEdit/constants/completion_lines = 7
+TextEdit/constants/completion_max_width = 50
+TextEdit/constants/completion_scroll_width = 3
+TextEdit/constants/line_spacing = 4
+TextEdit/fonts/font = null
+TextEdit/icons/fold = null
+TextEdit/icons/folded = null
+TextEdit/icons/space = null
+TextEdit/icons/tab = null
+TextEdit/styles/completion = null
+TextEdit/styles/focus = null
+TextEdit/styles/normal = null
+TextEdit/styles/read_only = SubResource( 1 )
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 3 )
+VScrollBar/styles/grabber_highlight = SubResource( 4 )
+VScrollBar/styles/grabber_pressed = SubResource( 3 )
+VScrollBar/styles/scroll = SubResource( 5 )
+VScrollBar/styles/scroll_focus = null
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 11 )
+region = Rect2( 32, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 12 )
 
-[sub_resource type="StyleBoxTexture" id=2]
-texture = SubResource( 1 )
+[sub_resource type="StyleBoxTexture" id=15]
+texture = SubResource( 14 )
 region_rect = Rect2( 15, 29, 12, 12 )
 margin_left = 4.0
 margin_right = 4.0
 margin_top = 4.0
 margin_bottom = 4.0
 
-[sub_resource type="StyleBoxTexture" id=3]
-texture = SubResource( 1 )
+[sub_resource type="StyleBoxTexture" id=16]
+texture = SubResource( 14 )
 region_rect = Rect2( 29, 29, 12, 12 )
 margin_left = 4.0
 margin_right = 4.0
 margin_top = 4.0
 margin_bottom = 4.0
 
-[sub_resource type="StyleBoxTexture" id=4]
-texture = SubResource( 1 )
+[sub_resource type="StyleBoxTexture" id=17]
+texture = SubResource( 14 )
 region_rect = Rect2( 1, 29, 12, 12 )
 margin_left = 4.0
 margin_right = 4.0
 margin_top = 4.0
 margin_bottom = 4.0
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=18]
 size = 30
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -88,6 +204,8 @@ __meta__ = {
 [node name="visualizerContainer" type="Control" parent="HBoxContainer"]
 margin_right = 768.0
 margin_bottom = 600.0
+rect_min_size = Vector2( 72, 0 )
+rect_pivot_offset = Vector2( 2067, 44 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.75
@@ -141,6 +259,197 @@ axis_stretch_vertical = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="icons" type="ScrollContainer" parent="HBoxContainer/visualizerContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="HBoxContainer/visualizerContainer/icons"]
+margin_right = 768.0
+margin_bottom = 536.0
+rect_min_size = Vector2( 0, 314 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/visualizerContainer/icons/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dud1" type="Control" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer"]
+margin_right = 768.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 0, 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="Control" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer"]
+margin_top = 8.0
+margin_right = 768.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 0, 48 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="AnimatedSprite" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer/1"]
+position = Vector2( 32, 24 )
+frames = SubResource( 13 )
+
+[node name="dud2" type="Control" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer"]
+margin_top = 56.0
+margin_right = 768.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 0, 2 )
+
+[node name="2" type="Control" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer"]
+margin_top = 58.0
+margin_right = 768.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 0, 48 )
+size_flags_horizontal = 3
+
+[node name="icon" type="AnimatedSprite" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer/2"]
+position = Vector2( 32, 24 )
+frames = SubResource( 13 )
+
+[node name="dud3" type="Control" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer"]
+margin_top = 106.0
+margin_right = 768.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 0, 2 )
+
+[node name="3" type="Control" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer"]
+margin_top = 108.0
+margin_right = 768.0
+margin_bottom = 156.0
+rect_min_size = Vector2( 0, 48 )
+size_flags_horizontal = 3
+
+[node name="icon" type="AnimatedSprite" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer/3"]
+position = Vector2( 32, 24 )
+frames = SubResource( 13 )
+
+[node name="dud4" type="Control" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer"]
+margin_top = 156.0
+margin_right = 768.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 0, 2 )
+
+[node name="4" type="Control" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer"]
+margin_top = 158.0
+margin_right = 768.0
+margin_bottom = 206.0
+rect_min_size = Vector2( 0, 48 )
+size_flags_horizontal = 3
+
+[node name="icon" type="AnimatedSprite" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer/4"]
+position = Vector2( 32, 24 )
+frames = SubResource( 13 )
+
+[node name="dud5" type="Control" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer"]
+margin_top = 206.0
+margin_right = 768.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 0, 2 )
+
+[node name="5" type="Control" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer"]
+margin_top = 208.0
+margin_right = 768.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 0, 48 )
+size_flags_horizontal = 3
+
+[node name="icon" type="AnimatedSprite" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer/5"]
+position = Vector2( 32, 24 )
+frames = SubResource( 13 )
+
+[node name="dud6" type="Control" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer"]
+margin_top = 256.0
+margin_right = 768.0
+margin_bottom = 258.0
+rect_min_size = Vector2( 0, 2 )
+
+[node name="6" type="Control" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer"]
+margin_top = 258.0
+margin_right = 768.0
+margin_bottom = 306.0
+rect_min_size = Vector2( 0, 48 )
+size_flags_horizontal = 3
+
+[node name="icon" type="AnimatedSprite" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer/6"]
+position = Vector2( 32, 24 )
+frames = SubResource( 13 )
+
+[node name="dud7" type="Control" parent="HBoxContainer/visualizerContainer/icons/Control/VBoxContainer"]
+margin_top = 306.0
+margin_right = 768.0
+margin_bottom = 314.0
+rect_min_size = Vector2( 0, 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/visualizerContainer"]
+margin_left = 12.0
+margin_top = 8.0
+margin_right = 64.0
+margin_bottom = 56.0
+hint_tooltip = "Show/Hide 3d model visialisation"
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+texture_normal = SubResource( 20 )
+texture_pressed = SubResource( 19 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="minview_border" type="NinePatchRect" parent="HBoxContainer/visualizerContainer"]
+visible = false
+anchor_right = 1.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+texture = ExtResource( 2 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="minview_border2" type="NinePatchRect" parent="HBoxContainer/visualizerContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 64.0
+rect_pivot_offset = Vector2( 1146, -91 )
+texture = ExtResource( 2 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [node name="visualizerContainerOptions" type="Control" parent="HBoxContainer"]
 margin_left = 768.0
@@ -196,14 +505,13 @@ __meta__ = {
 
 [node name="dud" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
 margin_right = 224.0
-margin_bottom = 110.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 0, 16 )
-size_flags_vertical = 3
 
 [node name="1" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 110.0
+margin_top = 16.0
 margin_right = 224.0
-margin_bottom = 158.0
+margin_bottom = 64.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 __meta__ = {
@@ -263,10 +571,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -275,7 +583,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/1/HBoxContainer/Control/Control2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 18 )
 text = "Machine 1"
 align = 1
 valign = 1
@@ -288,15 +596,15 @@ rect_min_size = Vector2( 16, 48 )
 size_flags_stretch_ratio = 0.25
 
 [node name="dud2" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 158.0
+margin_top = 64.0
 margin_right = 224.0
-margin_bottom = 160.0
+margin_bottom = 66.0
 rect_min_size = Vector2( 0, 2 )
 
 [node name="2" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 160.0
+margin_top = 66.0
 margin_right = 224.0
-margin_bottom = 208.0
+margin_bottom = 114.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 
@@ -353,10 +661,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -365,7 +673,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/2/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 18 )
 text = "Machine 2"
 align = 1
 valign = 1
@@ -435,15 +743,15 @@ rect_min_size = Vector2( 16, 48 )
 size_flags_stretch_ratio = 0.25
 
 [node name="dud3" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 208.0
+margin_top = 114.0
 margin_right = 224.0
-margin_bottom = 210.0
+margin_bottom = 116.0
 rect_min_size = Vector2( 0, 2 )
 
 [node name="3" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 210.0
+margin_top = 116.0
 margin_right = 224.0
-margin_bottom = 258.0
+margin_bottom = 164.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 
@@ -500,10 +808,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -512,7 +820,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/3/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 18 )
 text = "Machine 3"
 align = 1
 valign = 1
@@ -638,15 +946,15 @@ __meta__ = {
 }
 
 [node name="dud4" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 258.0
+margin_top = 164.0
 margin_right = 224.0
-margin_bottom = 260.0
+margin_bottom = 166.0
 rect_min_size = Vector2( 0, 2 )
 
 [node name="4" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 260.0
+margin_top = 166.0
 margin_right = 224.0
-margin_bottom = 308.0
+margin_bottom = 214.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 
@@ -703,10 +1011,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -715,7 +1023,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/4/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 18 )
 text = "Machine 4"
 align = 1
 valign = 1
@@ -841,15 +1149,15 @@ __meta__ = {
 }
 
 [node name="dud5" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 308.0
+margin_top = 214.0
 margin_right = 224.0
-margin_bottom = 310.0
+margin_bottom = 216.0
 rect_min_size = Vector2( 0, 2 )
 
 [node name="5" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 310.0
+margin_top = 216.0
 margin_right = 224.0
-margin_bottom = 358.0
+margin_bottom = 264.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 
@@ -906,10 +1214,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -918,7 +1226,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/5/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 18 )
 text = "Machine 5"
 align = 1
 valign = 1
@@ -1044,15 +1352,15 @@ __meta__ = {
 }
 
 [node name="dud6" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 358.0
+margin_top = 264.0
 margin_right = 224.0
-margin_bottom = 360.0
+margin_bottom = 266.0
 rect_min_size = Vector2( 0, 2 )
 
 [node name="6" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 360.0
+margin_top = 266.0
 margin_right = 224.0
-margin_bottom = 408.0
+margin_bottom = 314.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 
@@ -1109,10 +1417,10 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 focus_mode = 0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1121,7 +1429,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/6/HBoxContainer/Control/sequenceBtn"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 18 )
 text = "Machine 6"
 align = 1
 valign = 1
@@ -1247,15 +1555,15 @@ __meta__ = {
 }
 
 [node name="dud7" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 408.0
+margin_top = 314.0
 margin_right = 224.0
-margin_bottom = 410.0
+margin_bottom = 316.0
 rect_min_size = Vector2( 0, 2 )
 
 [node name="removeBtn" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 410.0
+margin_top = 316.0
 margin_right = 224.0
-margin_bottom = 458.0
+margin_bottom = 364.0
 rect_min_size = Vector2( 0, 48 )
 size_flags_horizontal = 3
 __meta__ = {
@@ -1322,7 +1630,7 @@ __meta__ = {
 }
 
 [node name="dud8" type="Control" parent="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer"]
-margin_top = 458.0
+margin_top = 364.0
 margin_right = 224.0
 margin_bottom = 568.0
 rect_min_size = Vector2( 0, 16 )
@@ -1347,6 +1655,7 @@ __meta__ = {
 }
 
 [connection signal="resized" from="." to="." method="_on_Control_resized"]
+[connection signal="toggled" from="HBoxContainer/visualizerContainer/TextureButton" to="." method="toggle_preview"]
 [connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/1/HBoxContainer/Control/Control2/TextureButton" to="." method="machineWindowOne"]
 [connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/2/HBoxContainer/Control/sequenceBtn/TextureButton" to="." method="machineWindowTwo"]
 [connection signal="pressed" from="HBoxContainer/visualizerContainerOptions/ScrollContainer/Control/VBoxContainer/2/HBoxContainer/Control/HBoxContainer/add/TextureButton" to="." method="toggleBtn_2"]

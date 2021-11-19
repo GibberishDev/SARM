@@ -1,0 +1,455 @@
+[gd_scene load_steps=45 format=2]
+
+[ext_resource path="res://assets/gui/bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/gui/bg_ninePatch.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui/MinimizeBtnFrames.png" type="Texture" id=3]
+[ext_resource path="res://assets/gui/closeBtnFrames.png" type="Texture" id=4]
+[ext_resource path="res://assets/gui/maximizeBtnFrames.png" type="Texture" id=5]
+[ext_resource path="res://src/mainWindowElements/minimize_anim.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/shared/closePopUp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/create/MechanicalCrafters/mainWindowCreateMCScripts/titlebarHitbox.gd" type="Script" id=8]
+[ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=9]
+[ext_resource path="res://assets/gui/header_bg.png" type="Texture" id=10]
+[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/closeBTN.gd" type="Script" id=11]
+[ext_resource path="res://src/mainWindowScripts/MinimizeBtn.gd" type="Script" id=12]
+[ext_resource path="res://src/create/SequencedAssembly/mainWindowCreateSAScripts/changeSize.gd" type="Script" id=13]
+[ext_resource path="res://src/create/Press/MainWindowCreateP.gd" type="Script" id=14]
+[ext_resource path="res://assets/gui/loading_anim.png" type="Texture" id=15]
+[ext_resource path="res://assets/themes/BtnTheme.tres" type="Theme" id=16]
+[ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=17]
+[ext_resource path="res://src/create/shared/RecipeView.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/themes/LineEdit.tres" type="Theme" id=19]
+[ext_resource path="res://src/create/SequencedAssembly/signalScripts/TextEdit.gd" type="Script" id=20]
+[ext_resource path="res://src/create/shared/warningPopUp.tscn" type="PackedScene" id=21]
+[ext_resource path="res://src/create/Press/elements/pressing.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/create/Press/elements/basinContents.tscn" type="PackedScene" id=23]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 15 )
+region = Rect2( 64, 0, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 15 )
+region = Rect2( 128, 0, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 16, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 15 )
+region = Rect2( 64, 16, 64, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 15 )
+region = Rect2( 128, 16, 64, 16 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 2 ), SubResource( 1 ), SubResource( 1 ), SubResource( 2 ), SubResource( 2 ), SubResource( 1 ), SubResource( 1 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 5 ), SubResource( 4 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 5 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 26, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 52, 0, 26, 26 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 24, 0, 28, 26 )
+
+[sub_resource type="Gradient" id=22]
+offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=23]
+gradient = SubResource( 22 )
+width = 256
+
+[sub_resource type="DynamicFont" id=18]
+size = 20
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 20
+extra_spacing_top = -3
+extra_spacing_bottom = -3
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 20
+font_data = ExtResource( 17 )
+
+[node name="Root" type="Node"]
+script = ExtResource( 14 )
+recipeTextScene = ExtResource( 18 )
+
+[node name="Interface" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleBar" type="Control" parent="Interface/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Interface/VBoxContainer/TitleBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleBarPlane" type="NinePatchRect" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
+margin_right = 946.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 9 )
+draw_center = false
+region_rect = Rect2( 0, 0, 16, 10 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 2
+
+[node name="BG" type="TextureRect" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HitBox" type="Control" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane"]
+position = Vector2( 44, 14 )
+scale = Vector2( 1.25, 1.25 )
+frames = SubResource( 10 )
+playing = true
+
+[node name="MinimizeBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
+margin_left = 946.0
+margin_right = 972.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 26, 26 )
+hint_tooltip = "Close SARM"
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 11 )
+texture_pressed = SubResource( 12 )
+texture_hover = SubResource( 13 )
+texture_disabled = SubResource( 12 )
+expand = true
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="minimize_anim" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" instance=ExtResource( 6 )]
+show_behind_parent = true
+
+[node name="MaximizeBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
+margin_left = 972.0
+margin_right = 998.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 26, 26 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 14 )
+texture_pressed = SubResource( 15 )
+texture_hover = SubResource( 16 )
+texture_disabled = SubResource( 15 )
+texture_focused = SubResource( 16 )
+expand = true
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
+margin_left = 998.0
+margin_right = 1024.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 26, 26 )
+hint_tooltip = "Exit to
+Main Menu"
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 7 )
+texture_pressed = SubResource( 8 )
+texture_hover = SubResource( 9 )
+texture_disabled = SubResource( 8 )
+expand = true
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+closeMode = 1
+closePopUpScene = ExtResource( 7 )
+
+[node name="MainFrame" type="Control" parent="Interface/VBoxContainer"]
+margin_top = 26.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="bg" type="NinePatchRect" parent="Interface/VBoxContainer/MainFrame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainWindowBG" type="TextureRect" parent="Interface/VBoxContainer/MainFrame/bg"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Interface/VBoxContainer/MainFrame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/VBoxContainer/MainFrame/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 433, -18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer"]
+margin_right = 992.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_vertical = 1
+theme = ExtResource( 16 )
+text = "Mechanical press recipe"
+valign = 1
+
+[node name="OptionButton" type="OptionButton" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer"]
+margin_top = 30.0
+margin_right = 256.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 256, 0 )
+focus_mode = 0
+size_flags_horizontal = 0
+theme = ExtResource( 16 )
+enabled_focus_mode = 0
+text = "Pressing recipe"
+items = [ "Pressing recipe", null, false, 0, null, "Compacting recipe", null, false, 1, null ]
+selected = 0
+
+[node name="separator" type="TextureRect" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer"]
+margin_top = 62.0
+margin_right = 992.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 23 )
+expand = true
+
+[node name="pressing" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer" instance=ExtResource( 22 )]
+visible = false
+margin_top = 67.0
+margin_bottom = 145.0
+
+[node name="basinContents" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer" instance=ExtResource( 23 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 67.0
+margin_right = 992.0
+margin_bottom = 430.0
+size_flags_vertical = 3
+
+[node name="separator2" type="TextureRect" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer"]
+margin_top = 434.0
+margin_right = 992.0
+margin_bottom = 435.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 23 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResultItem" type="HBoxContainer" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer"]
+margin_top = 439.0
+margin_right = 992.0
+margin_bottom = 465.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer/ResultItem"]
+margin_right = 196.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 196, 0 )
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 18 )
+text = " Resulting item"
+valign = 1
+
+[node name="idLine" type="HBoxContainer" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer/ResultItem"]
+margin_left = 196.0
+margin_right = 992.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 18 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="identifierLabel" type="Label" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer/ResultItem/idLine"]
+margin_right = 256.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 256, 26 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 18 )
+text = "[MODID]:[IDENTIFIER]"
+valign = 1
+
+[node name="identifierKey" type="LineEdit" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer/ResultItem/idLine"]
+margin_left = 256.0
+margin_right = 524.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 19 )
+custom_fonts/font = SubResource( 19 )
+caret_blink = true
+script = ExtResource( 20 )
+warnPopUp = ExtResource( 21 )
+
+[node name="colon" type="Label" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer/ResultItem/idLine"]
+margin_left = 524.0
+margin_top = 3.0
+margin_right = 528.0
+margin_bottom = 23.0
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 18 )
+text = ":"
+
+[node name="identifierValue" type="LineEdit" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer/ResultItem/idLine"]
+margin_left = 528.0
+margin_right = 796.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 19 )
+custom_fonts/font = SubResource( 19 )
+caret_blink = true
+script = ExtResource( 20 )
+
+[node name="Control" type="Control" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer"]
+margin_top = 469.0
+margin_right = 992.0
+margin_bottom = 488.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="recipe_btn" type="HBoxContainer" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer"]
+margin_top = 492.0
+margin_right = 992.0
+margin_bottom = 542.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Button" type="Button" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer/recipe_btn"]
+margin_left = 398.0
+margin_right = 594.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 196, 0 )
+focus_mode = 0
+size_flags_horizontal = 6
+theme = ExtResource( 16 )
+custom_fonts/font = SubResource( 17 )
+enabled_focus_mode = 0
+text = "Show recipe"
+
+[connection signal="gui_input" from="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" to="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane/HitBox" method="HitBoxInput"]
+[connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/MinimizeBtn" method="onPress"]
+[connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/MaximizeBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/MaximizeBtn" method="onButtonPress"]
+[connection signal="pressed" from="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" to="Interface/VBoxContainer/TitleBar/HBoxContainer/CloseBtn" method="closePopUp"]
+[connection signal="item_selected" from="Interface/VBoxContainer/MainFrame/Control/VBoxContainer/OptionButton" to="." method="change_recipe_type"]
+[connection signal="text_changed" from="Interface/VBoxContainer/MainFrame/Control/VBoxContainer/ResultItem/idLine/identifierKey" to="Interface/VBoxContainer/MainFrame/Control/VBoxContainer/ResultItem/idLine/identifierKey" method="textChanged"]
+[connection signal="text_changed" from="Interface/VBoxContainer/MainFrame/Control/VBoxContainer/ResultItem/idLine/identifierValue" to="Interface/VBoxContainer/MainFrame/Control/VBoxContainer/ResultItem/idLine/identifierValue" method="textChanged"]
+[connection signal="pressed" from="Interface/VBoxContainer/MainFrame/Control/VBoxContainer/recipe_btn/Button" to="." method="gen_text"]

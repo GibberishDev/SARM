@@ -30,6 +30,7 @@ func ChangeModels(key:Array):
 			conveyors[i + 1] = true
 		elif key[i] == -1:
 			get_node("conveyors/BeltState" + str(i)).visible = false
+	$Camera.translation = Vector3(-3, 2.5, zCenter + 0.5)
 	for i in range(1, 7): #Conveyor texture changer
 		match conveyors[i]:
 			true:
@@ -50,12 +51,3 @@ func ChangeModels(key:Array):
 				pass
 	for i in range(6):
 		get_node("conveyors/BeltState" + str(i)).update("")
-
-func _physics_process(delta):
-	if $Camera.translation.z != zCenter:
-		if setting_animations:
-			$Camera.translation = $Camera.translation.move_toward(Vector3($Camera.translation.x, $Camera.translation.y, zCenter), delta*8)
-			$SpotLight.translation = $SpotLight.translation.move_toward(Vector3($SpotLight.translation.x, $SpotLight.translation.y, zCenter), delta*8)
-		else:
-			$Camera.translation = Vector3($Camera.translation.x, $Camera.translation.y, zCenter)
-			$SpotLight.translation = Vector3($SpotLight.translation.x, $SpotLight.translation.y, zCenter)

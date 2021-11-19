@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=3]
 [ext_resource path="res://assets/gui/header_bg.png" type="Texture" id=4]
 [ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://src/create/SequencedAssembly/elements/closePopUp.gd" type="Script" id=6]
+[ext_resource path="res://src/shared/closePopUp.gd" type="Script" id=6]
 [ext_resource path="res://assets/themes/BtnTheme.tres" type="Theme" id=7]
 
 [sub_resource type="DynamicFont" id=1]

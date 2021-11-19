@@ -25,14 +25,45 @@ var SMD = {
 	"6": {"active": false, "type": 0, "data": null}
 }
 
-func recieveMachineData(machineId: int, type: int, data):
+var preview_state = true
+
+func toggle_preview(state) -> void:
+	preview_state = state
+	$HBoxContainer/visualizerContainer/icons.visible = state
+	$HBoxContainer/visualizerContainer/minview_border.visible = state
+	$HBoxContainer/visualizerContainer/minview_border2.visible = state
+	$HBoxContainer/visualizerContainer/ViewportContainer.visible = !state
+	if state:
+		$HBoxContainer/visualizerContainer.set_stretch_ratio(0)
+	else:
+		$HBoxContainer/visualizerContainer.set_stretch_ratio(0.75)
+
+func update_preview():
+	for i in range(1, 7):
+		if SMD[str(i)].active:
+			get_node("HBoxContainer/visualizerContainer/icons/Control/VBoxContainer/" + str(i) +"/icon").visible = true
+			match SMD[str(i)].type:
+				0:
+					get_node("HBoxContainer/visualizerContainer/icons/Control/VBoxContainer/" + str(i) +"/icon").frame = 0
+				1:
+					get_node("HBoxContainer/visualizerContainer/icons/Control/VBoxContainer/" + str(i) +"/icon").frame = 1
+				2:
+					get_node("HBoxContainer/visualizerContainer/icons/Control/VBoxContainer/" + str(i) +"/icon").frame = 2
+				3:
+					get_node("HBoxContainer/visualizerContainer/icons/Control/VBoxContainer/" + str(i) +"/icon").frame = 4
+		else:
+			get_node("HBoxContainer/visualizerContainer/icons/Control/VBoxContainer/" + str(i) +"/icon").visible = false
+	
+
+func recieveMachineData(machineId: int, type: int, data) -> void:
 	SMD[str(machineId)].type = type
 	SMD[str(machineId)].data = data
 	updateSequenceSprites()
 
-func recieveMachineText(machineId: int, text: String):
+func recieveMachineText(machineId: int, text: String) -> void:
 	sequenceText[machineId-1] = text
 	emit_signal("SendRecipes", sequenceText)
+	update_preview()
 
 func addMAchineEditorWindow(machineId: int):
 	var new_machine_window = MachineWindow.instance()
@@ -74,6 +105,7 @@ func addMAchineEditorWindow(machineId: int):
 				new_machine_window.changeRecipeEditor(3, 20, ":", 250, SMD[str(machineId)].data[0], SMD[str(machineId)].data[1])
 
 func _ready():
+	update_preview()
 	updateSequenceSprites()
 	ThisNode = self
 # warning-ignore:return_value_discarded
@@ -116,6 +148,7 @@ func toggleBtn_2() -> void:
 	SMD["2"].data = null
 	emit_signal("SendRecipes", sequenceText)
 	updateSequenceSprites()
+	update_preview()
 func toggleBtn_3() -> void:
 	get_node(pathToButtons + str(3) + pathToSeqButton).visible = !get_node(pathToButtons + str(3) + pathToSeqButton).visible
 	get_node(pathToButtons + str(3) + pathToControls).visible = !get_node(pathToButtons + str(3) + pathToControls).visible
@@ -133,6 +166,7 @@ func toggleBtn_3() -> void:
 	SMD["3"].data = null
 	emit_signal("SendRecipes", sequenceText)
 	updateSequenceSprites()
+	update_preview()
 func toggleBtn_4() -> void:
 	get_node(pathToButtons + str(4) + pathToSeqButton).visible = !get_node(pathToButtons + str(4) + pathToSeqButton).visible
 	get_node(pathToButtons + str(4) + pathToControls).visible = !get_node(pathToButtons + str(4) + pathToControls).visible
@@ -150,6 +184,7 @@ func toggleBtn_4() -> void:
 	SMD["4"].data = null
 	emit_signal("SendRecipes", sequenceText)
 	updateSequenceSprites()
+	update_preview()
 func toggleBtn_5() -> void:
 	get_node(pathToButtons + str(5) + pathToSeqButton).visible = !get_node(pathToButtons + str(5) + pathToSeqButton).visible
 	get_node(pathToButtons + str(5) + pathToControls).visible = !get_node(pathToButtons + str(5) + pathToControls).visible
@@ -167,6 +202,7 @@ func toggleBtn_5() -> void:
 	SMD["5"].data = null
 	emit_signal("SendRecipes", sequenceText)
 	updateSequenceSprites()
+	update_preview()
 func toggleBtn_6() -> void:
 	get_node(pathToButtons + str(6) + pathToSeqButton).visible = !get_node(pathToButtons + str(6) + pathToSeqButton).visible
 	get_node(pathToButtons + str(6) + pathToControls).visible = !get_node(pathToButtons + str(6) + pathToControls).visible
@@ -184,6 +220,7 @@ func toggleBtn_6() -> void:
 	SMD["6"].data = null
 	emit_signal("SendRecipes", sequenceText)
 	updateSequenceSprites()
+	update_preview()
 
 func machineWindowOne():
 	addMAchineEditorWindow(1)

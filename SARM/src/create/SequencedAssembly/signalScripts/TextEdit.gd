@@ -14,7 +14,6 @@ func textChanged(_new_text):
 			emit_signal("successfulText", previous_text)
 		elif text[text.length() - 1] in "	":
 			if Input.is_action_pressed("ui_focus_prev"):
-				print("aa")
 				text = previous_text
 				ui_previous()
 				emit_signal("successfulText", previous_text)

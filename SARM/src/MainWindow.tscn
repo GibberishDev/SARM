@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=1]
 [ext_resource path="res://assets/gui/header_bg.png" type="Texture" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://src/mainWindowScripts/ModList.gd" type="Script" id=24]
 [ext_resource path="res://assets/gui/bg.png" type="Texture" id=25]
 [ext_resource path="res://assets/gui/bg_ninePatch.png" type="Texture" id=26]
+[ext_resource path="res://src/mainWindowElements/PreviewCreatePress.tscn" type="PackedScene" id=27]
 [ext_resource path="res://src/mainWindowElements/Settings.gd" type="Script" id=29]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -365,7 +366,7 @@ __meta__ = {
 position = Vector2( 44, 14 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 7 )
-frame = 14
+frame = 17
 playing = true
 
 [node name="HitBox" type="Control" parent="Interface/VBoxContainer/TitleBar/HBoxContainer/TitleBarPlane"]
@@ -688,8 +689,9 @@ size_flags_vertical = 3
 [node name="HBoxContainer" type="HBoxContainer" parent="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 272.0
+margin_bottom = -30.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
 custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -697,33 +699,45 @@ __meta__ = {
 
 [node name="dud" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
 margin_right = 20.0
-margin_bottom = 150.0
+margin_bottom = 120.0
 rect_min_size = Vector2( 20, 0 )
 
-[node name="Control" parent="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 7 )]
+[node name="SA" parent="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 20.0
-margin_top = 15.0
+margin_top = 0.0
 margin_right = 276.0
-margin_bottom = 135.0
+margin_bottom = 120.0
 size_flags_vertical = 4
 
 [node name="dud2" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
 margin_left = 276.0
 margin_right = 292.0
-margin_bottom = 150.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 16, 0 )
+
+[node name="press" parent="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 27 )]
+margin_left = 292.0
+margin_top = 0.0
+margin_right = 548.0
+margin_bottom = 120.0
+
+[node name="dud4" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
+margin_left = 548.0
+margin_right = 564.0
+margin_bottom = 120.0
 rect_min_size = Vector2( 16, 0 )
 
 [node name="CommingSoon" parent="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer" instance=ExtResource( 8 )]
-margin_left = 292.0
-margin_top = 15.0
-margin_right = 548.0
-margin_bottom = 135.0
+margin_left = 564.0
+margin_top = 0.0
+margin_right = 820.0
+margin_bottom = 120.0
 size_flags_vertical = 4
 
 [node name="dud3" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer/ScrollContainer/Control/HBoxContainer"]
-margin_left = 548.0
-margin_right = 564.0
-margin_bottom = 150.0
+margin_left = 820.0
+margin_right = 836.0
+margin_bottom = 120.0
 rect_min_size = Vector2( 16, 0 )
 
 [node name="dud2" type="Control" parent="Interface/VBoxContainer/Control/TabContainer/Datapack/Datapack/recipes/ScrollContainer/Control/VBoxContainer/createSection/VBoxContainer"]

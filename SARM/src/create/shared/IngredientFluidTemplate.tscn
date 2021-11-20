@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/themes/LineEdit.tres" type="Theme" id=1]
 [ext_resource path="res://src/create/SequencedAssembly/signalScripts/TextEdit.gd" type="Script" id=2]
@@ -31,6 +31,14 @@ colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
 gradient = SubResource( 6 )
 width = 256
 
+[sub_resource type="Gradient" id=11]
+offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=12]
+gradient = SubResource( 11 )
+width = 256
+
 [node name="VBoxContainer" type="VBoxContainer"]
 margin_right = 1024.0
 margin_bottom = 256.0
@@ -42,7 +50,7 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_right = 1024.0
-margin_bottom = 256.0
+margin_bottom = 251.0
 size_flags_vertical = 3
 custom_constants/separation = 0
 __meta__ = {
@@ -50,22 +58,24 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="HBoxContainer"]
-margin_right = 196.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 196, 20 )
+margin_right = 64.0
+margin_bottom = 251.0
+rect_min_size = Vector2( 64, 20 )
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 7 )
+text = "0"
+align = 1
 valign = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 196.0
+margin_left = 64.0
 margin_right = 1024.0
-margin_bottom = 256.0
+margin_bottom = 251.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer"]
-margin_right = 828.0
+margin_right = 960.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 24 )
 
@@ -90,7 +100,7 @@ __meta__ = {
 
 [node name="modid" type="LineEdit" parent="HBoxContainer/VBoxContainer/Control/HBoxContainer"]
 margin_left = 260.0
-margin_right = 538.0
+margin_right = 604.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -100,8 +110,8 @@ script = ExtResource( 2 )
 warnPopUp = ExtResource( 5 )
 
 [node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/Control/HBoxContainer"]
-margin_left = 542.0
-margin_right = 546.0
+margin_left = 608.0
+margin_right = 612.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 0, 20 )
 size_flags_vertical = 1
@@ -112,8 +122,8 @@ __meta__ = {
 }
 
 [node name="identifier" type="LineEdit" parent="HBoxContainer/VBoxContainer/Control/HBoxContainer"]
-margin_left = 550.0
-margin_right = 828.0
+margin_left = 616.0
+margin_right = 960.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -124,7 +134,7 @@ warnPopUp = ExtResource( 5 )
 
 [node name="separator2" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
 margin_top = 28.0
-margin_right = 828.0
+margin_right = 960.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 0, 1 )
 size_flags_horizontal = 5
@@ -133,7 +143,7 @@ expand = true
 
 [node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer"]
 margin_top = 33.0
-margin_right = 828.0
+margin_right = 960.0
 margin_bottom = 57.0
 rect_min_size = Vector2( 0, 24 )
 
@@ -157,7 +167,7 @@ __meta__ = {
 
 [node name="amount" type="LineEdit" parent="HBoxContainer/VBoxContainer/Control2/HBoxContainer"]
 margin_left = 260.0
-margin_right = 828.0
+margin_right = 960.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -168,7 +178,7 @@ warnPopUp = ExtResource( 5 )
 
 [node name="separator3" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
 margin_top = 61.0
-margin_right = 828.0
+margin_right = 960.0
 margin_bottom = 62.0
 rect_min_size = Vector2( 0, 1 )
 size_flags_horizontal = 5
@@ -180,8 +190,8 @@ __meta__ = {
 
 [node name="Control3" type="Control" parent="HBoxContainer/VBoxContainer"]
 margin_top = 66.0
-margin_right = 828.0
-margin_bottom = 224.0
+margin_right = 960.0
+margin_bottom = 219.0
 rect_min_size = Vector2( 0, 24 )
 size_flags_vertical = 3
 
@@ -194,7 +204,7 @@ __meta__ = {
 
 [node name="identifier_label" type="Label" parent="HBoxContainer/VBoxContainer/Control3/HBoxContainer"]
 margin_right = 256.0
-margin_bottom = 158.0
+margin_bottom = 153.0
 rect_min_size = Vector2( 256, 20 )
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 8 )
@@ -208,8 +218,8 @@ __meta__ = {
 
 [node name="TextEdit" type="TextEdit" parent="HBoxContainer/VBoxContainer/Control3/HBoxContainer"]
 margin_left = 260.0
-margin_right = 828.0
-margin_bottom = 158.0
+margin_right = 960.0
+margin_bottom = 153.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 7 )
@@ -221,9 +231,9 @@ breakpoint_gutter = true
 fold_gutter = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 228.0
-margin_right = 828.0
-margin_bottom = 256.0
+margin_top = 223.0
+margin_right = 960.0
+margin_bottom = 251.0
 
 [node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_right = 256.0
@@ -232,7 +242,7 @@ rect_min_size = Vector2( 256, 0 )
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 260.0
-margin_right = 828.0
+margin_right = 960.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 0, 26 )
 focus_mode = 0
@@ -241,6 +251,16 @@ theme = ExtResource( 7 )
 enabled_focus_mode = 0
 text = "Load  default potion template"
 
+[node name="separator" type="TextureRect" parent="."]
+margin_top = 255.0
+margin_right = 1024.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 12 )
+expand = true
+
 [connection signal="text_changed" from="HBoxContainer/VBoxContainer/Control/HBoxContainer/modid" to="HBoxContainer/VBoxContainer/Control/HBoxContainer/modid" method="textChanged"]
 [connection signal="text_changed" from="HBoxContainer/VBoxContainer/Control/HBoxContainer/identifier" to="HBoxContainer/VBoxContainer/Control/HBoxContainer/identifier" method="textChanged"]
 [connection signal="text_changed" from="HBoxContainer/VBoxContainer/Control2/HBoxContainer/amount" to="HBoxContainer/VBoxContainer/Control2/HBoxContainer/amount" method="textChanged"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/Button" to="." method="load_default_potion_nbt"]

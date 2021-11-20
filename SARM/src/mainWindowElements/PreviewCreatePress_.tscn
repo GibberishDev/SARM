@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/mods/create/preview_create_sequenced_assembly.png" type="Texture" id=1]
+[ext_resource path="res://assets/mods/create/preview_create_press.png" type="Texture" id=1]
 [ext_resource path="res://assets/shaders/blur.shader" type="Shader" id=2]
 [ext_resource path="res://assets/gui/white.png" type="Texture" id=3]
 [ext_resource path="res://assets/gui/bg_ninePatch.png" type="Texture" id=4]
@@ -123,7 +123,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.666667, 0.77037 ), Vector2( 0.533333, 0.555555 ) ]
 }
 
-[node name="CSAMiniview" type="Control"]
+[node name="PressMiniview" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1024, 600 )
@@ -177,8 +177,8 @@ margin_top = 640.0
 margin_right = 952.0
 margin_bottom = 963.0
 custom_fonts/font = SubResource( 4 )
-text = "Sequenced
-assembly"
+text = "Press
+recipes"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

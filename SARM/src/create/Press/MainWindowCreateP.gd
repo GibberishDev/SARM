@@ -22,9 +22,8 @@ func gen_text() -> void:
 			recipe += "\"type\": \"create:pressing\",\n"
 		1:
 			recipe += "\"type\": \"create:compacting\",\n"
-	recipe += "	\"ingredients\": [\n"
 	recipe += get_ingredients_text()
-	recipe += "	],\n"
+	recipe += ",\n"
 	recipe += "	\"results\": [\n"
 	recipe += get_result_item()
 	recipe += "	]\n}"

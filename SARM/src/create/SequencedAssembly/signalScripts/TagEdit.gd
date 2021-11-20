@@ -15,7 +15,6 @@ func textChanged(_new_text):
 		elif text[text.length() - 1] in "	":
 			if Input.is_key_pressed(KEY_SHIFT):
 				text = previous_text
-				print("aaa")
 				ui_previous()
 			else:
 				text = previous_text

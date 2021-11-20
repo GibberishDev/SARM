@@ -369,3 +369,4 @@ visible = false
 [connection signal="text_changed" from="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer2/filePath" to="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer2/filePath" method="textChanged"]
 [connection signal="pressed" from="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/HBoxContainer2/Button" to="." method="openSaveFile"]
 [connection signal="pressed" from="RecipeWindow/HBoxContainer2/RecipeBoundry/HBoxContainer/VBoxContainer/Button2" to="." method="Save"]
+[connection signal="SendDir" from="FileDialog" to="." method="save_file"]

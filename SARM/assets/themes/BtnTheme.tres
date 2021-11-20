@@ -1,9 +1,11 @@
-[gd_resource type="Theme" load_steps=41 format=2]
+[gd_resource type="Theme" load_steps=37 format=2]
 
 [ext_resource path="res://assets/gui/bg_blueprint_scrollbar_elements.png" type="Texture" id=1]
 [ext_resource path="res://assets/gui/btn.png" type="Texture" id=2]
 [ext_resource path="res://assets/gui/lineEdit.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/gui/bg_blueprint_scrollbar.png" type="Texture" id=5]
+[ext_resource path="res://assets/gui/closeBtnFrames.png" type="Texture" id=6]
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 2 )
@@ -65,22 +67,16 @@ margin_bottom = 4.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[sub_resource type="StreamTexture" id=8]
-load_path = "res://.import/btn.png-ba92942352d7f75685d9ece45749918b.stex"
-
 [sub_resource type="AtlasTexture" id=9]
-atlas = SubResource( 8 )
+atlas = ExtResource( 2 )
 region = Rect2( 32, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
 region = Rect2( 16, 32, 16, 16 )
 
-[sub_resource type="StreamTexture" id=11]
-load_path = "res://.import/btn.png-ba92942352d7f75685d9ece45749918b.stex"
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = SubResource( 11 )
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 2 )
 region = Rect2( 0, 32, 16, 16 )
 
 [sub_resource type="StyleBoxFlat" id=35]
@@ -122,18 +118,12 @@ axis_stretch_vertical = 1
 atlas = ExtResource( 2 )
 region = Rect2( 16, 16, 16, 16 )
 
-[sub_resource type="StreamTexture" id=18]
-load_path = "res://.import/btn.png-ba92942352d7f75685d9ece45749918b.stex"
-
 [sub_resource type="AtlasTexture" id=19]
-atlas = SubResource( 18 )
+atlas = ExtResource( 2 )
 region = Rect2( 0, 16, 16, 16 )
 
-[sub_resource type="StreamTexture" id=30]
-load_path = "res://.import/bg_blueprint_scrollbar.png-a71636e3d2ebf78205879fc4fc840a25.stex"
-
 [sub_resource type="StyleBoxTexture" id=20]
-texture = SubResource( 30 )
+texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 64, 64 )
 margin_left = 16.0
 margin_right = 16.0
@@ -216,18 +206,12 @@ margin_bottom = 10.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[sub_resource type="StreamTexture" id=31]
-load_path = "res://.import/closeBtnFrames.png-98db358241604cdb2fe74f7a80428c9e.stex"
-
 [sub_resource type="AtlasTexture" id=25]
-atlas = SubResource( 31 )
+atlas = ExtResource( 6 )
 region = Rect2( 0, 2, 24, 24 )
 
-[sub_resource type="StreamTexture" id=26]
-load_path = "res://.import/closeBtnFrames.png-98db358241604cdb2fe74f7a80428c9e.stex"
-
 [sub_resource type="AtlasTexture" id=33]
-atlas = SubResource( 26 )
+atlas = ExtResource( 6 )
 region = Rect2( 26, 2, 24, 24 )
 
 [sub_resource type="StyleBoxTexture" id=28]
@@ -265,7 +249,7 @@ FileDialog/icons/file = null
 FileDialog/icons/folder = null
 FileDialog/icons/parent_folder = SubResource( 9 )
 FileDialog/icons/reload = SubResource( 10 )
-FileDialog/icons/toggle_hidden = SubResource( 12 )
+FileDialog/icons/toggle_hidden = SubResource( 40 )
 Label/styles/normal = SubResource( 35 )
 LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
 LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )

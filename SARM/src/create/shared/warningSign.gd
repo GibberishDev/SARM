@@ -18,5 +18,7 @@ func _ready():
 			$VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer/TextEdit.text = " File saved"
 		8:
 			$VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer/TextEdit.text = " Please specify\n file path!"
+		9:
+			$VBoxContainer/NinePatchRect/HBoxContainer2/VBoxContainer/TextEdit.text = " Only 1 - 16\n are allowed!"
 func _on_Timer_timeout():
 	queue_free()

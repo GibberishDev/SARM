@@ -5,12 +5,12 @@ var tag_mode = bool(false) #false - item, true - tag
 
 
 func get_text() -> String:
-	text = ""
+	text = """	"ingredients": [\n"""
 	if tag_mode:
 		text += "		{\"tag\": \""
 	else:
 		text += "		{\"item\": \""
-	text += $Ingredients/idLine/identifierKey.text + ":" + $Ingredients/idLine/identifierValue.text + "\"}\n"
+	text += $Ingredients/idLine/identifierKey.text + ":" + $Ingredients/idLine/identifierValue.text + "\"}\n	]"
 	return text
 
 

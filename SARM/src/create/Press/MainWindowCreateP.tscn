@@ -22,7 +22,7 @@
 [ext_resource path="res://src/create/SequencedAssembly/signalScripts/TextEdit.gd" type="Script" id=20]
 [ext_resource path="res://src/create/shared/warningPopUp.tscn" type="PackedScene" id=21]
 [ext_resource path="res://src/create/Press/elements/pressing.tscn" type="PackedScene" id=22]
-[ext_resource path="res://src/create/Press/elements/basinContents.tscn" type="PackedScene" id=23]
+[ext_resource path="res://src/create/shared/basinContents.tscn" type="PackedScene" id=23]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 15 )
@@ -92,12 +92,12 @@ region = Rect2( 52, 0, 26, 26 )
 atlas = ExtResource( 4 )
 region = Rect2( 24, 0, 28, 26 )
 
-[sub_resource type="Gradient" id=22]
+[sub_resource type="Gradient" id=24]
 offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
 colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
 
 [sub_resource type="GradientTexture" id=23]
-gradient = SubResource( 22 )
+gradient = SubResource( 24 )
 width = 256
 
 [sub_resource type="DynamicFont" id=18]
@@ -183,6 +183,7 @@ __meta__ = {
 position = Vector2( 44, 14 )
 scale = Vector2( 1.25, 1.25 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="MinimizeBtn" type="TextureButton" parent="Interface/VBoxContainer/TitleBar/HBoxContainer"]
@@ -326,22 +327,22 @@ texture = SubResource( 23 )
 expand = true
 
 [node name="pressing" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer" instance=ExtResource( 22 )]
-visible = false
 margin_top = 67.0
 margin_bottom = 145.0
 
 [node name="basinContents" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer" instance=ExtResource( 23 )]
+visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 67.0
+margin_top = 149.0
 margin_right = 992.0
-margin_bottom = 430.0
+margin_bottom = 434.0
 size_flags_vertical = 3
 
 [node name="separator2" type="TextureRect" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer"]
-margin_top = 434.0
+margin_top = 149.0
 margin_right = 992.0
-margin_bottom = 435.0
+margin_bottom = 150.0
 rect_min_size = Vector2( 0, 1 )
 size_flags_horizontal = 5
 texture = SubResource( 23 )
@@ -351,9 +352,9 @@ __meta__ = {
 }
 
 [node name="ResultItem" type="HBoxContainer" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer"]
-margin_top = 439.0
+margin_top = 154.0
 margin_right = 992.0
-margin_bottom = 465.0
+margin_bottom = 180.0
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
@@ -419,7 +420,7 @@ caret_blink = true
 script = ExtResource( 20 )
 
 [node name="Control" type="Control" parent="Interface/VBoxContainer/MainFrame/Control/VBoxContainer"]
-margin_top = 469.0
+margin_top = 184.0
 margin_right = 992.0
 margin_bottom = 488.0
 size_flags_vertical = 3

@@ -1,0 +1,417 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://src/create/shared/compacting.gd" type="Script" id=1]
+[ext_resource path="res://assets/themes/BtnTheme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/gui/bg_blueprint_scrollbar_transparent.png" type="Texture" id=3]
+[ext_resource path="res://src/create/shared/IngredientFluidTemplate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/create/shared/IngredientItemTemplate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/mods/create/sequence_buttons.png" type="Texture" id=6]
+[ext_resource path="res://assets/gui/header_ninePatch.png" type="Texture" id=7]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.1, 0.9, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 256
+
+[sub_resource type="Theme" id=9]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 6 )
+region = Rect2( 1, 15, 12, 12 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 6 )
+region = Rect2( 29, 15, 12, 12 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 6 )
+region = Rect2( 15, 15, 12, 12 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 6 )
+region = Rect2( 1, 1, 12, 12 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 6 )
+region = Rect2( 29, 1, 12, 12 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 6 )
+region = Rect2( 15, 1, 12, 12 )
+
+[node name="basinContents" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+IngredientItemScene = ExtResource( 5 )
+IngredientFluidScene = ExtResource( 4 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+follow_focus = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IngredientsHousing" type="Control" parent="ScrollContainer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1008.0
+margin_bottom = 261.0
+rect_min_size = Vector2( 0, 245 )
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/IngredientsHousing"]
+anchor_right = 1.0
+margin_bottom = 96.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/IngredientsHousing/VBoxContainer"]
+margin_right = 992.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 0, 26 )
+theme = ExtResource( 2 )
+text = "Ingredients:"
+valign = 1
+
+[node name="separator" type="TextureRect" parent="ScrollContainer/IngredientsHousing/VBoxContainer"]
+margin_top = 30.0
+margin_right = 992.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="itemslabel" type="Label" parent="ScrollContainer/IngredientsHousing/VBoxContainer"]
+margin_top = 35.0
+margin_right = 992.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 0, 26 )
+theme = ExtResource( 2 )
+text = "  Item types:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemsHousing" type="VBoxContainer" parent="ScrollContainer/IngredientsHousing/VBoxContainer"]
+margin_top = 65.0
+margin_right = 992.0
+margin_bottom = 65.0
+theme = SubResource( 9 )
+
+[node name="BtnItems" type="HBoxContainer" parent="ScrollContainer/IngredientsHousing/VBoxContainer"]
+margin_top = 69.0
+margin_right = 124.0
+margin_bottom = 117.0
+rect_min_size = Vector2( 96, 48 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="dud" type="Control" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnItems"]
+margin_right = 24.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 24, 0 )
+
+[node name="addBtn" type="Control" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnItems"]
+margin_left = 24.0
+margin_right = 72.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnItems/addBtn"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+texture = ExtResource( 7 )
+draw_center = false
+region_rect = Rect2( 0, 0, 16, 12 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnItems/addBtn"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 44.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 40, 40 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 3 )
+texture_pressed = SubResource( 4 )
+texture_hover = SubResource( 5 )
+texture_disabled = SubResource( 4 )
+texture_focused = SubResource( 5 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dud2" type="Control" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnItems"]
+margin_left = 72.0
+margin_right = 76.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 4, 0 )
+
+[node name="removeBtn" type="Control" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnItems"]
+margin_left = 76.0
+margin_right = 124.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnItems/removeBtn"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+texture = ExtResource( 7 )
+draw_center = false
+region_rect = Rect2( 0, 0, 16, 12 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnItems/removeBtn"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 44.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 0, 40 )
+focus_mode = 0
+disabled = true
+enabled_focus_mode = 0
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
+texture_hover = SubResource( 8 )
+texture_disabled = SubResource( 7 )
+texture_focused = SubResource( 8 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="separator2" type="TextureRect" parent="ScrollContainer/IngredientsHousing/VBoxContainer"]
+margin_top = 121.0
+margin_right = 992.0
+margin_bottom = 122.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fluidslabel" type="Label" parent="ScrollContainer/IngredientsHousing/VBoxContainer"]
+margin_top = 126.0
+margin_right = 992.0
+margin_bottom = 152.0
+rect_min_size = Vector2( 0, 26 )
+theme = ExtResource( 2 )
+text = "  Fluids:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FluidsHousing" type="VBoxContainer" parent="ScrollContainer/IngredientsHousing/VBoxContainer"]
+margin_top = 156.0
+margin_right = 992.0
+margin_bottom = 156.0
+
+[node name="BtnFluids" type="HBoxContainer" parent="ScrollContainer/IngredientsHousing/VBoxContainer"]
+margin_top = 160.0
+margin_right = 124.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 96, 48 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="dud" type="Control" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnFluids"]
+margin_right = 24.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 24, 0 )
+
+[node name="addBtn" type="Control" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnFluids"]
+margin_left = 24.0
+margin_right = 72.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnFluids/addBtn"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+texture = ExtResource( 7 )
+draw_center = false
+region_rect = Rect2( 0, 0, 16, 12 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnFluids/addBtn"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 44.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 40, 40 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = SubResource( 3 )
+texture_pressed = SubResource( 4 )
+texture_hover = SubResource( 5 )
+texture_disabled = SubResource( 4 )
+texture_focused = SubResource( 5 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dud2" type="Control" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnFluids"]
+margin_left = 72.0
+margin_right = 76.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 4, 0 )
+
+[node name="removeBtn" type="Control" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnFluids"]
+margin_left = 76.0
+margin_right = 124.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnFluids/removeBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 24.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 48, 48 )
+texture = ExtResource( 7 )
+draw_center = false
+region_rect = Rect2( 0, 0, 16, 12 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/IngredientsHousing/VBoxContainer/BtnFluids/removeBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 40 )
+focus_mode = 0
+disabled = true
+enabled_focus_mode = 0
+texture_normal = SubResource( 6 )
+texture_pressed = SubResource( 7 )
+texture_hover = SubResource( 8 )
+texture_disabled = SubResource( 7 )
+texture_focused = SubResource( 8 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="separator3" type="TextureRect" parent="ScrollContainer/IngredientsHousing/VBoxContainer"]
+margin_top = 212.0
+margin_right = 992.0
+margin_bottom = 213.0
+rect_min_size = Vector2( 0, 1 )
+size_flags_horizontal = 5
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="heating" type="HBoxContainer" parent="ScrollContainer/IngredientsHousing/VBoxContainer"]
+margin_top = 217.0
+margin_right = 992.0
+margin_bottom = 245.0
+rect_min_size = Vector2( 0, 28 )
+custom_constants/separation = 0
+
+[node name="Control" type="Control" parent="ScrollContainer/IngredientsHousing/VBoxContainer/heating"]
+margin_right = 24.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 24, 0 )
+
+[node name="OptionButton" type="OptionButton" parent="ScrollContainer/IngredientsHousing/VBoxContainer/heating"]
+margin_left = 24.0
+margin_right = 280.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 256, 28 )
+text = "No heating"
+items = [ "No heating", null, false, 0, null, "Heated", null, false, 1, null, "Super heated", null, false, 2, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="ScrollContainer/IngredientsHousing/VBoxContainer/BtnItems/addBtn/TextureButton" to="." method="add_item_ingredient"]
+[connection signal="pressed" from="ScrollContainer/IngredientsHousing/VBoxContainer/BtnItems/removeBtn/TextureButton2" to="." method="remove_item_ingredient"]
+[connection signal="pressed" from="ScrollContainer/IngredientsHousing/VBoxContainer/BtnFluids/addBtn/TextureButton" to="." method="add_fluid_ingredient"]
+[connection signal="pressed" from="ScrollContainer/IngredientsHousing/VBoxContainer/BtnFluids/removeBtn/TextureButton2" to="." method="remove_fluid_ingredient"]
+[connection signal="item_selected" from="ScrollContainer/IngredientsHousing/VBoxContainer/heating/OptionButton" to="." method="change_heating"]

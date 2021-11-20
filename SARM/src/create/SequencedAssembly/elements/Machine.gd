@@ -136,7 +136,8 @@ func makeSpoutRecipe():
 					"fluid": """ + spout_fluid_identifier + """,
 					"nbt": """ + spout_fluid_nbt + """,
 					"amount": """ + str(spout_fluid_amount) + """
-				}],
+				}
+			],
 			"results": [{\"item\": TRPH}]
 		}"""
 

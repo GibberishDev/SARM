@@ -52,7 +52,7 @@ test_input={
 
 [locale]
 
-translations=PoolStringArray( "res://assets/lang/en_us.po" )
+translations=PoolStringArray(  )
 locale_filter=[ 0, [ "en_GB", "ru" ] ]
 
 [physics]

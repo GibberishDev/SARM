@@ -1,6 +1,8 @@
 # SARM
 
 Nifty standalone program for mod pack developers. It is used for creating json text for recipes for popular mods.
+previously SARM standed for Sequenced Asembly Recipe Maker but now when it includes more that Sequenced assembly I call it *Sureley Awesome Recipe Maker* (Yeah Yeah I know. Im a Genius)
+
 <details>
   <summary>shortcuts:</summary>
   <a href="https://github.com/GibberishDev/SARM#in-development-web-version">Web version</a><br>
@@ -26,6 +28,7 @@ Nifty standalone program for mod pack developers. It is used for creating json t
 ## Planned:
 * the rest of create mod recipes
 * Farmer's Delight mod recipes
+* Vanilla recipes
 * Eidolon recipes
 * (suggest more mods over at my discord)<br>
 <a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>

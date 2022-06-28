@@ -24,7 +24,7 @@ previously SARM standed for Sequenced Asembly Recipe Maker but now when it inclu
 
 
 ## In development web version:
-<a href="https://gibberishdev.github.io">[CLICK!]</a><br>
+[There was a link but now there is no web version :P]
 <a href="https://github.com/GibberishDev/SARM#sarm">^^^</a>
 
 ## Currently in developement:
@@ -60,7 +60,7 @@ previously SARM standed for Sequenced Asembly Recipe Maker but now when it inclu
 #### Q: Can I contribute X feature to the program?<br>
 #### A: Of cource you can. Steps for that:<br>
 - Ask me on discord or open issue here on github.<br>
-- After permission, download latest Godot engine (<a href="https://godotengine.org/download">3.4</a> as of right now) and fork this project.<br>
+- After permission, download latest Godot engine (<a href="https://godotengine.org/download">3.4.4</a> as of right now) and fork this project.<br>
 - After you finished adding the feature (you need at least test it :|) open pull request and wait till my approval or denial.<br>
 ---
 #### Q: Ya have patreon linked in the program. Should we expect some features be patreon supporter only?<br>

@@ -1,9 +1,8 @@
 # IMPORTANT
-I got over Microsoft locking me off my game but Ill start development on the Better version once Godot 4.0 releases in beta. There are some features that will make my Life SOOO much easier. Expect:
+SWITCHED ENGINE. Well actually just ditched idea of making it on game engine. I actually tried to make it now on Electron. It is what most cool apps use, including such as Blockbench. So go to https://github.com/GibberishDev/Jigsaw once it ready. Expect:
 * In-app theme editor
 * Multi-window support(Not the tabs in one app but rather Pop-out windows)
-* Support for minecraft textures and maybe from some popular mods(Or I would be omegamind by then and would be able to snag textures from .jar files of mods so muser would just supply their _mods_ foulder to snag resources from it)
-* Multi-screen support???
+* Support for minecraft textures and maybe from some popular mods(Or I would be omegamind by then and would be able to snag textures from .jar files of mods so user would just supply their _mods_ foulder to snag resources from it)
 * Much more that i cant think of rn but would surely see it as nessecety in future. Yeah. Maybe mod compat if i will develop some system of marketplace and setup servers for it... Oh and limit ppl from just developing keyloggers and other nasty stuff.
 
 # SARM

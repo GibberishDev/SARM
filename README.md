@@ -1,4 +1,6 @@
 # IMPORTANT
+2025 EDIT! Its dead. Im burnt out of minecraft in general. "maybe" one day...
+
 SWITCHED ENGINE. Well actually just ditched idea of making it on game engine. I actually tried to make it now on Electron. It is what most cool apps use, including such as Blockbench. So go to https://github.com/GibberishDev/Jigsaw once it ready. Expect:
 * In-app theme editor
 * Multi-window support(Not the tabs in one app but rather Pop-out windows)
